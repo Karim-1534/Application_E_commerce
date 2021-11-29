@@ -10,14 +10,14 @@
     android:background="@drawable/formulaire_">
 
     <ImageView
-    android:id="@+id/logo"
-    android:layout_width="35dp"
-    android:layout_height="35dp"
-    android:layout_alignParentLeft="true"
-    android:layout_marginLeft="360dp"
-    android:layout_alignParentTop="true"
-    android:layout_marginTop="11dp"
-    android:background="@drawable/logo" />
+        android:id="@+id/logo"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="360dp"
+        android:layout_marginTop="11dp"
+        android:background="@drawable/logo" />
 
 
     <!-- boutonValiderInscription -->
