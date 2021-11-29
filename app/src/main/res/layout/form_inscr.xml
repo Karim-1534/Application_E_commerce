@@ -3,7 +3,7 @@
 <!-- Formulaire Inscription -->
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/formulaire_"
+    android:id="@+id/formulaire_inscription"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:clipToOutline="true"
