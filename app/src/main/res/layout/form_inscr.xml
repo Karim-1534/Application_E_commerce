@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Formulaire Inscription -->
+<!-- Formulaire Inscription -->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/formulaire_"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:clipToOutline="true"
+    android:background="@drawable/formulaire_">
+
+    <ImageView
+    android:id="@+id/logo"
+    android:layout_width="35dp"
+    android:layout_height="35dp"
+    android:layout_alignParentLeft="true"
+    android:layout_marginLeft="360dp"
+    android:layout_alignParentTop="true"
+    android:layout_marginTop="11dp"
+    android:background="@drawable/logo" />
+
+
+    <!-- boutonValiderInscription -->
+    <Button
+        android:id="@+id/boutonvalid"
+        android:layout_width="340dp"
+        android:layout_height="48dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="685dp"
+        android:background="#00000000" />
+
+    <!-- S’inscrire -->
+    <TextView
+        android:id="@+id/s_inscrire"
+        android:layout_width="83dp"
+        android:layout_height="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="180.89dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="696dp"
+        android:text="@string/s_inscrire"
+        android:textAppearance="@style/s_inscrire"
+        android:lineSpacingExtra="4sp"
+        android:translationY="-1.8sp"
+        android:gravity="center_horizontal|top"
+        />
+    <!--
+      Font family: Inter
+      Line height: 25sp
+      translationY 1.8sp compensates for the line height adjustment of text
+    -->
+
+    <!-- Rectangle 30 -->
+    <View
+        android:id="@+id/rectangle_3"
+        android:layout_width="340dp"
+        android:layout_height="48dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="38dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="685dp"
+        android:background="@drawable/rectangle_3"
+        />
+
+
+
+
+
+
+
+</RelativeLayout>
+
+
+
+
+
+
+
