@@ -4,14 +4,44 @@
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">#FFFFFF</item>
     </style>
-</resources>
-
-    <style name="titreapplic">
-        <item name="android:textSize">36sp</item>
-        <item name="android:textColor">#1E0702</item>
-    </style>
-
-    <style name="profil">
+    <style name="nom_d_utili">
         <item name="android:textSize">10sp</item>
         <item name="android:textColor">#FFFFFF</item>
     </style>
+
+    <style name="adresse_ema">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+
+    <style name="num_tel">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="adresse">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="rue">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#999999</item>
+    </style>
+
+    <style name="mot_de_pass">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="confirmatio">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="bienvenue">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">#1E0702</item>
+    </style>
+</resources>
