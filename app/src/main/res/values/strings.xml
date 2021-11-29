@@ -8,17 +8,13 @@
     <string name="num_tel">Téléphone</string>
     <string name="logo">logo</string>
     <string name="adresse">Adresse</string>
-    <string name="rue">
-        Rue/Avenue
-    </string>
-    <string name="mot_de_pass">
-Mot de passe
-</string>
-    <string name="confirmatio">
-        Confirmation du mot de passe
-    </string>
-
-    <string name="bienvenue">
-        Bienvenue
-    </string>
+    <string name="rue">Rue/Avenue</string>
+    <string name="mot_de_pass">Mot de passe</string>
+    <string name="confirmatio">Confirmation du mot de passe</string>
+    <string name="bienvenue">Bienvenue</string>
+    <string name="adresse_ema">Adresse email</string>
+    <string name="bouttoncnxi">Se connecter en tant qu'inviter</string>
+    <string name="se_connecte">Se connecter</string>
+    <string name="pas_encore_">Pas encore de compte ?</string>
+    <string name="boutonsinsc">S'inscrire</string>
 </resources>

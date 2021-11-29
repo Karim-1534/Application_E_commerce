@@ -17,12 +17,7 @@
         android:layout_marginLeft="186dp"
         android:layout_marginTop="71dp"
         android:background="@drawable/logo" />
-    <!-- TitreApplication -->
-    <!--
-    Font family: Inter
-    Line height: 51sp
-    translationY 3.81sp compensates for the line height adjustment of text
--->
+
     <TextView
         android:id="@+id/titreapplic"
         android:layout_width="92dp"
@@ -42,7 +37,7 @@
         android:textSize="36sp"
         android:translationY="3.81sp" />
     <!-- ChoixCategorie -->
-    <EditText
+    <Spinner
         android:id="@+id/choixcatego"
         android:layout_width="166.11dp"
         android:layout_height="56dp"
@@ -50,18 +45,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="208dp"
         android:layout_marginTop="260dp"
-        android:background="#00000000" />
+        android:background="@drawable/rectangle_2" />
 
-    <!-- drop -->
-    <View
-        android:id="@+id/drop"
-        android:layout_width="36.64dp"
-        android:layout_height="33.34dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="323dp"
-        android:layout_marginTop="271dp"
-        android:background="#00000000" />
 
     <!-- rectangle1cnx -->
     <View
@@ -75,14 +60,18 @@
         android:clipToOutline="true" />
 
     <!-- Profil -->
+
+
+    <!-- emailUtilisateur -->
+
     <TextView
         android:id="@+id/profil"
         android:layout_width="36dp"
         android:layout_height="14dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="229dp"
-        android:layout_marginTop="254dp"
+        android:layout_marginLeft="228dp"
+        android:layout_marginTop="250dp"
         android:fontFamily="sans-serif"
         android:gravity="center_horizontal|top"
         android:lineHeight="14sp"
@@ -90,30 +79,134 @@
         android:text="@string/profil"
         android:textAlignment="center"
         android:textAppearance="@style/profil"
-        android:textSize="10ps"
+        android:textColorHint="#CDDC39"
+        android:textSize="12sp"
         android:translationY="1sp" />
 
-    <!-- emailUtilisateur -->
     <EditText
         android:id="@+id/emailutilis"
         android:layout_width="341dp"
         android:layout_height="56dp"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="33dp"
         android:layout_alignParentTop="true"
+        android:layout_marginLeft="33dp"
         android:layout_marginTop="332dp"
-        android:background="#00000000"
-        />
+        android:background="@drawable/rectangle_2" />
+
+    <View xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/frame_16"
+        android:layout_width="99dp"
+        android:layout_height="16dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="47.07dp"
+        android:layout_marginTop="332dp"
+        android:background="@drawable/frame_16"
+        android:clipToOutline="true"
+
+    <TextView
+        android:id="@+id/adresse_ema"
+        android:layout_width="81dp"
+        android:layout_height="14dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="333dp"
+        android:gravity="center_horizontal|top"
+        android:lineSpacingExtra="2sp"
+        android:text="@string/adresse_ema"
+        android:textAppearance="@style/adresse_ema"
+        android:translationY="-1sp" />
+
+
+    <EditText
+        android:id="@+id/group_18"
+        android:layout_width="341dp"
+        android:layout_height="56dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="33dp"
+        android:layout_marginTop="416dp"
+        android:background="@drawable/rectangle_2" />
 
     <View
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/titreEmail"
+        android:id="@+id/frame_16"
         android:layout_width="99.59dp"
         android:layout_height="16dp"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="47.07dp"
         android:layout_alignParentTop="true"
+        android:layout_marginLeft="43dp"
         android:layout_marginTop="416dp"
-        android:clipToOutline="true"
-        android:background="@drawable/petittitre"
-        />
+        android:background="@drawable/frame_16"
+        android:clipToOutline="true" />
+
+    <TextView
+        android:id="@+id/mot_de_pass"
+        android:layout_width="74dp"
+        android:layout_height="14dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="417dp"
+        android:gravity="center_horizontal|top"
+        android:lineSpacingExtra="2sp"
+        android:text="@string/mot_de_pass"
+        android:textAppearance="@style/mot_de_pass"
+        android:translationY="-1sp" />
+
+    <TextView
+        android:id="@+id/bouttoncnxi"
+        android:layout_width="279dp"
+        android:layout_height="42.4dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="72dp"
+        android:layout_marginTop="494dp"
+        android:gravity="center_horizontal|top"
+        android:lineSpacingExtra="6sp"
+        android:text="@string/bouttoncnxi"
+        android:textAppearance="@style/bouttoncnxi"
+        android:translationY="-2.91sp" />
+
+
+    <Button
+        android:id="@+id/se_connecte"
+        android:layout_width="344dp"
+        android:layout_height="48dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="557dp"
+        android:backgroundTint="#81AA66"
+        android:text="@string/se_connecte"
+        android:textAppearance="@style/se_connecte" />
+
+    <TextView
+        android:id="@+id/pas_encore_"
+        android:layout_width="184dp"
+        android:layout_height="23dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="58dp"
+        android:layout_marginTop="654dp"
+        android:gravity="center_horizontal|top"
+        android:lineSpacingExtra="3sp"
+        android:text="@string/pas_encore_"
+        android:textAppearance="@style/pas_encore_"
+        android:translationY="-1.6sp" />
+
+    <TextView
+        android:id="@+id/boutonsinsc"
+        android:layout_width="71dp"
+        android:layout_height="23dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="277dp"
+        android:layout_marginTop="654dp"
+        android:gravity="center_horizontal|top"
+        android:lineSpacingExtra="3sp"
+        android:text="@string/boutonsinsc"
+        android:textAppearance="@style/boutonsinsc"
+        android:translationY="-1.6sp" />
+
+
