@@ -4,9 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/formulaire_.xml" value="0.371875" />
+        <entry key="app/src/main/res/drawable/frame_16.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/logo.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/navheader_t.xml" value="0.371875" />
+        <entry key="app/src/main/res/drawable/rectangle_2.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/rectangle_3.xml" value="0.371875" />
+        <entry key="app/src/main/res/drawable/shape.xml" value="0.371875" />
+        <entry key="app/src/main/res/layout-v31/form_inscr.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/form_inscr.xml" value="0.35572916666666665" />
       </map>

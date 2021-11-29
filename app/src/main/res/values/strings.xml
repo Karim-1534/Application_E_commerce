@@ -1,4 +1,22 @@
 <resources>
     <string name="app_name">Application e-commerce</string>
-    <string name="s_inscrire">S\u00E2\u0080\u0099inscrire</string>
+    <string name="s_inscrire">S\'inscrire</string>
+    <string name="nom_d_utili">Nom d\'utilisateur</string>
+    <string name="adresse_ema">Adresse email</string>
+    <string name="num_tel">Téléphone</string>
+    <string name="logo">logo</string>
+    <string name="adresse">Adresse</string>
+    <string name="rue">
+        Rue/Avenue
+    </string>
+    <string name="mot_de_pass">
+Mot de passe
+</string>
+    <string name="confirmatio">
+        Confirmation du mot de passe
+    </string>
+
+    <string name="bienvenue">
+        Bienvenue
+    </string>
 </resources>
