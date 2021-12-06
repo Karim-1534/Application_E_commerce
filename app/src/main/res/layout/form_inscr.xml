@@ -20,37 +20,30 @@
     <!-- Bienvenue -->
     <TextView
         android:id="@+id/bienvenue"
-        android:layout_width="150dp"
-        android:layout_height="33dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="121dp"
+        android:layout_width="257dp"
+        android:layout_height="34dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="66dp"
+        android:layout_marginStart="69dp"
+        android:layout_marginTop="34dp"
+        android:lineSpacingExtra="5sp"
+        android:translationY="-2.4sp"
+        android:textAlignment="center"
         android:text="@string/bienvenue"
-        android:textAppearance="@style/bienvenue"
-        android:lineSpacingExtra="0sp"
-        android:gravity="center_horizontal|top"
-        />
+        android:textAppearance="@style/bienvenue" />
 
 
     <!-- Nom d'utilisateur -->
-    <View
+
+    <TextView
+        android:id="@+id/nom_d_utili"
         android:layout_width="120dp"
         android:layout_height="16dp"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="52.03dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="146dp"
+        android:layout_marginStart="62.03dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/bienvenue"
         android:background="@drawable/frame_16"
-        />
-    <TextView
-        android:id="@+id/nom_d_utili"
-        android:layout_width="102dp"
-        android:layout_height="14dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="61dp"
-        android:layout_marginTop="147dp"
         android:gravity="center_horizontal|top"
         android:lineSpacingExtra="2sp"
         android:text="@string/nom_d_utili"
@@ -59,50 +52,33 @@
 
     <EditText
         android:id="@+id/exemple_uer"
-        android:layout_width="117.65dp"
-        android:layout_height="19dp"
+        android:layout_width="315dp"
+        android:layout_height="48dp"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="80.1dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="163dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="-10dp"
+        android:layout_below="@+id/nom_d_utili"
+        android:alpha="0.2"
+        android:background="@drawable/rectangle_2"
         android:lineSpacingExtra="3sp"
         android:translationY="-1.6sp"
-        android:gravity="center_horizontal|top"
+        android:gravity="center"
         android:autofillHints="name"
         android:inputType="textPersonName"
         android:hint="@string/nom_d_utili"/>
 
-    <View
-        android:id="@+id/rectangle_2"
-        android:layout_width="340dp"
-        android:layout_height="38.57dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="152.43dp"
-        android:alpha="0.2"
-        android:background="@drawable/rectangle_2" />
-
     <!-- Adresse email -->
-    <View
-        android:layout_width="99dp"
-        android:layout_height="16dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="52.03dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="207dp"
-        android:background="@drawable/frame_16"
-        />
 
     <TextView
         android:id="@+id/adresse_ema"
-        android:layout_width="81dp"
-        android:layout_height="14dp"
+        android:layout_width="99dp"
+        android:layout_height="16dp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="61dp"
-        android:layout_marginTop="207dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/exemple_uer"
         android:gravity="center_horizontal|top"
+        android:background="@drawable/frame_16"
         android:lineSpacingExtra="2sp"
         android:text="@string/adresse_ema"
         android:textAppearance="@style/adresse_ema"
@@ -111,38 +87,21 @@
     <EditText
         android:id="@+id/email_exemp"
         android:hint="@string/adresse_ema"
-        android:layout_width="153.27dp"
-        android:layout_height="23dp"
+        android:layout_width="315dp"
+        android:layout_height="48dp"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="82.25dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="231dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="-10dp"
+        android:layout_below="@+id/adresse_ema"
+        android:alpha="0.2"
+        android:background="@drawable/rectangle_2"
         android:lineSpacingExtra="3sp"
         android:translationY="-1.6sp"
-        android:gravity="center_horizontal|top"
+        android:gravity="center"
         android:autofillHints="emailAddress"
         android:inputType="textEmailAddress" />
 
-    <View
-        android:layout_width="340dp"
-        android:layout_height="48dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="215dp"
-        android:alpha="0.2"
-        android:background="@drawable/rectangle_2" />
-
     <!-- Num_tel -->
-    <View
-        android:layout_width="93dp"
-        android:layout_height="16dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="52.03dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="286dp"
-        android:background="@drawable/frame_16"
-        />
 
     <TextView
         android:id="@+id/num_tel"
@@ -153,58 +112,42 @@
         android:gravity="center_horizontal|top"
         android:layout_width="93dp"
         android:layout_height="16dp"
+        android:background="@drawable/frame_16"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="52.03dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="286dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/email_exemp"
         />
 
     <EditText
         android:id="@+id/android_exe"
-        android:layout_width="154.35dp"
-        android:layout_height="23dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="80.1dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="307dp"
-        android:lineSpacingExtra="3sp"
-        android:translationY="-1.6sp"
-        android:gravity="center_horizontal|top"
-        android:autofillHints="phone"
-        android:inputType="phone" />
-
-    <View
-        android:layout_width="340dp"
+        android:layout_width="315dp"
         android:layout_height="48dp"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="38dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="294dp"
+        android:layout_marginStart="49dp"
         android:background="@drawable/rectangle_2"
         android:alpha="0.2"
-        />
+        android:lineSpacingExtra="3sp"
+        android:translationY="-1.6sp"
+        android:gravity="center"
+        android:autofillHints="phone"
+        android:inputType="phone"
+        android:layout_marginTop="-10dp"
+        android:layout_below="@+id/num_tel"/>
+
 
     <!-- Adresse -->
 
-
-    <View
-        android:layout_width="65dp"
-        android:layout_height="16dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="52.03dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="365dp"
-        android:background="@drawable/frame_16"
-        />
 
     <TextView
         android:id="@+id/adresse"
         android:layout_width="65dp"
         android:layout_height="16dp"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="52.03dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="365dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/android_exe"
+        android:background="@drawable/frame_16"
         android:text="@string/adresse"
         android:textAppearance="@style/adresse"
         android:lineSpacingExtra="2sp"
@@ -213,110 +156,80 @@
         />
 
     <View
-        android:layout_width="340dp"
-        android:layout_height="106.86dp"
+        android:id="@+id/adresse_case"
+        android:layout_width="315dp"
+        android:layout_height="110dp"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="38dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="373.14dp"
-        android:background="@drawable/rectangle_2"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="-10dp"
+        android:layout_below="@+id/adresse"
         android:alpha="0.2"
-        />
-
-    <View
-        android:layout_width="291.43dp"
-        android:layout_height="24.66dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="66.06dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="394dp"
-        android:background="@drawable/rectangle_2"
-        android:alpha="0.2"
-        />
+        android:background="@drawable/rectangle_2" />
 
     <EditText
         android:id="@+id/rue"
-        android:layout_width="230.66dp"
-        android:layout_height="16.81dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="102.03dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="397.36dp"
-        android:lineSpacingExtra="3sp"
-        android:translationY="-1.3sp"
-        android:gravity="top"
-        android:autofillHints="postalAddress"
-        android:inputType="textPostalAddress" />
-
-    <View
-        android:layout_width="147.87dp"
-        android:layout_height="24.66dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="224.73dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="438.95dp"
-        android:background="@drawable/rectangle_2"
-        android:alpha="0.2"
-        />
-
-    <EditText
-        android:id="@+id/ville"
-        android:layout_width="117.04dp"
-        android:layout_height="16.81dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="242.98dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="442.31dp"
-        android:lineSpacingExtra="3sp"
-        android:translationY="-1.3sp"
-        android:gravity="top"
-        android:autofillHints="postalAddress"
-        android:inputType="textPostalAddress" />
-
-    <View
-        android:layout_width="125.21dp"
+        android:layout_width="wrap_content"
         android:layout_height="24.66dp"
         android:layout_alignParentStart="true"
         android:layout_marginStart="66.06dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="438.95dp"
+        android:layout_marginEnd="66.06dp"
         android:background="@drawable/rectangle_2"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/adresse"
         android:alpha="0.2"
-        />
-
-    <EditText
-        android:id="@+id/cp"
-        android:layout_width="99.1dp"
-        android:layout_height="16.81dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="81.51dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="442.31dp"
         android:lineSpacingExtra="3sp"
         android:translationY="-1.3sp"
         android:gravity="top"
-        android:autofillHints="postalCode"
+        android:autofillHints="postalAddress"
         android:inputType="textPostalAddress" />
+
+
+    <EditText
+        android:id="@+id/ville"
+        android:layout_width="wrap_content"
+        android:layout_height="24.66dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="224.73dp"
+        android:layout_marginEnd="66.06dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/rue"
+        android:background="@drawable/rectangle_2"
+        android:alpha="0.2"
+        android:lineSpacingExtra="3sp"
+        android:translationY="-1.3sp"
+        android:gravity="top"
+        android:autofillHints="postalAddress"
+        android:inputType="textPostalAddress" />
+
+
+    <EditText
+        android:id="@+id/cp"
+        android:layout_width="wrap_content"
+        android:layout_height="24.66dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="66.06dp"
+        android:layout_marginEnd="224.73dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/rue"
+        android:background="@drawable/rectangle_2"
+        android:alpha="0.2"
+        android:autofillHints="postalCode"
+        android:gravity="top"
+        android:inputType="textPostalAddress"
+        android:lineSpacingExtra="3sp"
+        android:translationY="-1.3sp" />
 
     <!-- mot de passe -->
 
-    <View
-        android:layout_width="92dp"
-        android:layout_height="16dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="52.03dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="503dp"
-        android:background="@drawable/frame_16"
-        />
 
     <TextView
         android:layout_width="92dp"
         android:layout_height="16dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="52.03dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="503dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/adresse_case"
+        android:background="@drawable/frame_16"
         android:id="@+id/mot_de_pass"
         android:text="@string/mot_de_pass"
         android:textAppearance="@style/mot_de_pass"
@@ -327,50 +240,32 @@
 
     <EditText
         android:id="@+id/mdp_exemple"
-        android:layout_width="109.02dp"
-        android:layout_height="23dp"
+        android:layout_width="315dp"
+        android:layout_height="48dp"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="66.06dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="528dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="-10dp"
+        android:layout_below="@+id/mot_de_pass"
+        android:background="@drawable/rectangle_2"
+        android:alpha="0.2"
         android:lineSpacingExtra="3sp"
         android:translationY="-1.6sp"
         android:gravity="top"
         android:autofillHints="password"
         android:inputType="textPassword" />
 
-    <View
-        android:layout_width="340dp"
-        android:layout_height="48dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="38dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="511dp"
-        android:background="@drawable/rectangle_2"
-        android:alpha="0.2"
-        />
-
     <!-- confirmation du mot de passe -->
-
-    <View
-        android:layout_width="190dp"
-        android:layout_height="16dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="52.03dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="582dp"
-        android:background="@drawable/frame_16"
-        />
 
     <TextView
         android:id="@+id/confirmatio"
         android:layout_width="190dp"
         android:layout_height="16dp"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="52.03dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="582dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/mdp_exemple"
         android:text="@string/confirmatio"
+        android:background="@drawable/frame_16"
         android:textAppearance="@style/confirmatio"
         android:lineSpacingExtra="2sp"
         android:translationY="-1sp"
@@ -379,44 +274,36 @@
 
     <EditText
         android:id="@+id/mdp_confirm_exemple"
-        android:layout_width="109.02dp"
-        android:layout_height="23dp"
+        android:layout_width="315dp"
+        android:layout_height="48dp"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="66.06dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="607dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="-10dp"
+        android:layout_below="@+id/confirmatio"
+        android:background="@drawable/rectangle_2"
+        android:alpha="0.2"
         android:lineSpacingExtra="3sp"
         android:translationY="-1.6sp"
         android:gravity="top"
         android:autofillHints="password"
         android:inputType="textPassword" />
 
-    <View
-        android:layout_width="340dp"
-        android:layout_height="48dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="38dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="590dp"
-        android:background="@drawable/rectangle_2"
-        android:alpha="0.2"
-        />
-
     <!-- S’inscrire -->
     <Button
         android:id="@+id/s_inscrire"
-        android:layout_width="340dp"
+        android:layout_width="315dp"
         android:layout_height="48dp"
+        android:layout_below="@+id/mdp_confirm_exemple"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="685dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="#81AA66"
         android:text="@string/s_inscrire"
         android:textAppearance="@style/s_inscrire" />
 
 
 </RelativeLayout>
+
 
 
 

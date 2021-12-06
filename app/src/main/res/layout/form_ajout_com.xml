@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Gestionnaire Ajout Commercant -->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/gestionnair"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/formulaire_">
+
+    <!-- logo -->
+    <View
+        android:id="@+id/logo"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="360dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="11dp"
+        android:background="@drawable/logo"
+        />
+
+    <!-- Nouveau Commerçant -->
+    <TextView
+        android:id="@+id/nouveau_com"
+        android:layout_width="257dp"
+        android:layout_height="34dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="69dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="34dp"
+        android:text="@string/nouveau_com"
+        android:textAppearance="@style/nouveau_com"
+        android:textAlignment="center"
+        android:lineSpacingExtra="5sp"
+        android:translationY="-2.4sp"
+        />
+
+    <!-- Nom_commercant -->
+
+    <TextView
+        android:id="@+id/nom"
+        android:layout_width="43dp"
+        android:layout_height="16dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/nouveau_com"
+        android:background="@drawable/frame_16"
+        android:text="@string/nom"
+        android:textAppearance="@style/nom"
+        android:lineSpacingExtra="2sp"
+        android:translationY="-1sp"
+        android:gravity="center_horizontal|top"
+        />
+
+    <EditText
+        android:id="@+id/nom_text"
+        android:layout_width="315dp"
+        android:layout_height="48dp"
+        android:layout_below="@+id/nom"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="-10dp"
+        android:alpha="0.2"
+        android:background="@drawable/rectangle_2"
+        android:gravity="center_horizontal|top"
+        android:lineSpacingExtra="3sp"
+        android:translationY="-1.6sp" />
+
+
+    <!-- Services -->
+    <TextView
+        android:id="@+id/services"
+        android:layout_width="68dp"
+        android:layout_height="16dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="62dp"
+        android:layout_below="@+id/nom_text"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/frame_16"
+        android:gravity="center_horizontal|top"
+        android:lineSpacingExtra="2sp"
+        android:text="@string/services"
+        android:textAppearance="@style/services"
+        android:translationY="-1sp" />
+
+    <!-- animaux -->
+    <CheckBox
+        android:id="@+id/animaux"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:layout_below="@+id/services"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="40dp"
+        android:gravity="center"
+        android:lineSpacingExtra="0sp"
+        android:text="@string/animaux"
+        android:textAppearance="@style/animaux" />
+
+    <!-- mode -->
+    <CheckBox
+        android:id="@+id/mode"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:layout_below="@+id/animaux"
+        android:layout_marginStart="40dp"
+        android:background="#00000000"
+        android:gravity="center"
+        android:lineSpacingExtra="0sp"
+        android:text="@string/mode"
+        android:textAppearance="@style/mode" />
+
+    <!-- maison -->
+    <CheckBox
+        android:id="@+id/maison"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:layout_below="@+id/mode"
+        android:layout_marginStart="40dp"
+        android:background="#00000000"
+        android:gravity="center"
+        android:lineSpacingExtra="0sp"
+        android:text="@string/maison"
+        android:textAppearance="@style/maison" />
+
+    <!-- appareils -->
+    <CheckBox
+        android:id="@+id/appareil"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:layout_below="@+id/maison"
+        android:layout_marginStart="40dp"
+        android:background="#00000000"
+        android:gravity="center"
+        android:lineSpacingExtra="0sp"
+        android:text="@string/appareil"
+        android:textAppearance="@style/appareil" />
+
+    <!-- musique -->
+    <CheckBox
+        android:id="@+id/musique"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:layout_below="@+id/appareil"
+        android:layout_marginStart="40dp"
+        android:background="#00000000"
+        android:lineSpacingExtra="0sp"
+        android:text="@string/musique"
+        android:textAppearance="@style/musique" />
+
+    <!-- livre -->
+    <CheckBox
+        android:id="@+id/livre"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="230dp"
+        android:layout_below="@+id/services"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:lineSpacingExtra="0sp"
+        android:text="@string/livre"
+        android:textAppearance="@style/livre" />
+
+    <!-- jouet -->
+    <CheckBox
+        android:id="@+id/jouet"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:layout_below="@+id/livre"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="230dp"
+        android:gravity="center"
+        android:lineSpacingExtra="0sp"
+        android:text="@string/jouet"
+        android:textAppearance="@style/jouet" />
+
+    <!-- auto -->
+    <CheckBox
+        android:id="@+id/auto"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:layout_below="@+id/jouet"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="230dp"
+        android:gravity="center"
+        android:lineSpacingExtra="0sp"
+        android:text="@string/auto"
+        android:textAppearance="@style/auto" />
+
+    <!-- bureau -->
+    <CheckBox
+        android:id="@+id/bureau"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:layout_below="@+id/auto"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="230dp"
+        android:gravity="center"
+        android:lineSpacingExtra="0sp"
+        android:text="@string/bureau"
+        android:textAppearance="@style/bureau" />
+
+    <!-- sport -->
+    <CheckBox
+        android:id="@+id/sport"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:layout_below="@+id/bureau"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="230dp"
+        android:gravity="center"
+        android:lineSpacingExtra="0sp"
+        android:text="@string/sport"
+        android:textAppearance="@style/sport" />
+
+    <!-- Numéro Siret -->
+    <TextView
+        android:id="@+id/siret"
+        android:layout_width="92dp"
+        android:layout_height="16dp"
+        android:layout_below="@+id/musique"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/frame_16"
+        android:gravity="center_horizontal|top"
+        android:lineSpacingExtra="2sp"
+        android:text="@string/siret"
+        android:textAppearance="@style/siret"
+        android:translationY="-1sp" />
+
+    <EditText
+        android:id="@+id/num_siret"
+        android:layout_width="315dp"
+        android:layout_height="48dp"
+        android:layout_below="@+id/siret"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="-10dp"
+        android:alpha="0.2"
+        android:background="@drawable/rectangle_2"
+        android:gravity="center"
+        android:text="@string/num_siret"
+        android:textAppearance="@style/num_siret" />
+
+    <!-- Email -->
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="50dp"
+        android:layout_height="16dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="62dp"
+        android:layout_below="@+id/num_siret"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/frame_16"
+        android:gravity="center_horizontal|top"
+        android:lineSpacingExtra="2sp"
+        android:text="@string/email_label"
+        android:textAppearance="@style/email_label"
+        android:translationY="-1sp" />
+
+    <EditText
+        android:id="@+id/email_text"
+        android:layout_width="315dp"
+        android:layout_height="48dp"
+        android:layout_below="@+id/email"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="-10dp"
+        android:alpha="0.2"
+        android:background="@drawable/rectangle_2"
+        android:gravity="center"
+        android:text="@string/email"
+        android:textAppearance="@style/email" />
+
+    <!-- Mot de passe -->
+    <TextView
+        android:id="@+id/mdp"
+        android:layout_width="74dp"
+        android:layout_height="14dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="62dp"
+        android:layout_below="@+id/email_text"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/frame_16"
+        android:gravity="center_horizontal|top"
+        android:lineSpacingExtra="2sp"
+        android:text="@string/mot_de_pass"
+        android:textAppearance="@style/mot_de_pass"
+        android:translationY="-1sp" />
+
+    <EditText
+        android:id="@+id/mdp_text"
+        android:layout_width="315dp"
+        android:layout_height="48dp"
+        android:layout_below="@+id/mdp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="-10dp"
+        android:alpha="0.2"
+        android:background="@drawable/rectangle_2"
+        android:gravity="center" />
+
+    <!-- S’inscrire -->
+    <Button
+        android:id="@+id/s_inscrire"
+        android:layout_width="315dp"
+        android:layout_height="48dp"
+        android:layout_below="@+id/mdp_text"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#81AA66"
+        android:text="@string/valider"
+        android:textAppearance="@style/valider" />
+
+
+
+
+</RelativeLayout>
