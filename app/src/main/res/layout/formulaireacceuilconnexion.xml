@@ -102,7 +102,9 @@
         android:layout_marginLeft="47.07dp"
         android:layout_marginTop="332dp"
         android:background="@drawable/frame_16"
-        android:clipToOutline="true"
+        android:clipToOutline="true">
+
+    </View>
 
     <TextView
         android:id="@+id/adresse_ema"
@@ -210,3 +212,4 @@
         android:translationY="-1.6sp" />
 
 
+</RelativeLayout>

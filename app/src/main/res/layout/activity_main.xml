@@ -9,7 +9,7 @@
         android:clipToOutline="true"
         android:background="@drawable/formulaire_"
 
-    />
+    >
 
 
     <!-- TitreApplication -->
@@ -22,7 +22,6 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="106dp"
         android:text="@string/titreapplic"
-        android:textAppearance="@style/titreapplic"
         android:lineSpacingExtra="8sp"
         android:translationY="-3.81sp"
         android:gravity="top"
@@ -63,3 +62,4 @@
         android:background="#00000000"
         />
 
+</RelativeLayout>
