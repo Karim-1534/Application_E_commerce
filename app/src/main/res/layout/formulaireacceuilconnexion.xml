@@ -5,16 +5,15 @@
     android:id="@+id/formulaire_"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:clipToOutline="true"
     android:background="@drawable/formulaire_">
 
     <ImageView
         android:id="@+id/logo"
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="186dp"
+        android:layout_marginStart="186dp"
         android:layout_marginTop="71dp"
         android:background="@drawable/logo" />
 
@@ -22,12 +21,11 @@
         android:id="@+id/titreapplic"
         android:layout_width="92dp"
         android:layout_height="102dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="159dp"
+        android:layout_marginStart="159dp"
         android:layout_marginTop="106dp"
         android:fontFamily="sans-serif"
-        android:gravity="top"
         android:includeFontPadding="true"
         android:lineHeight="51sp"
         android:lineSpacingExtra="8sp"
@@ -41,9 +39,9 @@
         android:id="@+id/choixcatego"
         android:layout_width="166.11dp"
         android:layout_height="56dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="208dp"
+        android:layout_marginStart="208dp"
         android:layout_marginTop="260dp"
         android:background="@drawable/rectangle_2" />
 
@@ -52,12 +50,11 @@
     <View
         android:layout_width="56.41dp"
         android:layout_height="15dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="220.54dp"
+        android:layout_marginStart="220.54dp"
         android:layout_marginTop="253dp"
-        android:background="@drawable/rectangle1cnx"
-        android:clipToOutline="true" />
+        android:background="@drawable/rectangle1cnx" />
 
     <!-- Profil -->
 
@@ -68,9 +65,9 @@
         android:id="@+id/profil"
         android:layout_width="36dp"
         android:layout_height="14dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="228dp"
+        android:layout_marginStart="228dp"
         android:layout_marginTop="250dp"
         android:fontFamily="sans-serif"
         android:gravity="center_horizontal|top"
@@ -87,32 +84,30 @@
         android:id="@+id/emailutilis"
         android:layout_width="341dp"
         android:layout_height="56dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="33dp"
+        android:layout_marginStart="33dp"
         android:layout_marginTop="332dp"
-        android:background="@drawable/rectangle_2" />
+        android:background="@drawable/rectangle_2"
+        android:text="@string/adresse_ema"/>
 
-    <View xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/frame_16"
+    <View
         android:layout_width="99dp"
         android:layout_height="16dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="47.07dp"
+        android:layout_marginStart="47.07dp"
         android:layout_marginTop="332dp"
-        android:background="@drawable/frame_16"
-        android:clipToOutline="true">
+        android:background="@drawable/frame_16"/>
 
-    </View>
 
     <TextView
         android:id="@+id/adresse_ema"
         android:layout_width="81dp"
         android:layout_height="14dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="55dp"
+        android:layout_marginStart="55dp"
         android:layout_marginTop="333dp"
         android:gravity="center_horizontal|top"
         android:lineSpacingExtra="2sp"
@@ -125,9 +120,9 @@
         android:id="@+id/group_18"
         android:layout_width="341dp"
         android:layout_height="56dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="33dp"
+        android:layout_marginStart="33dp"
         android:layout_marginTop="416dp"
         android:background="@drawable/rectangle_2" />
 
@@ -135,20 +130,19 @@
         android:id="@+id/frame_16"
         android:layout_width="99.59dp"
         android:layout_height="16dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="43dp"
+        android:layout_marginStart="43dp"
         android:layout_marginTop="416dp"
-        android:background="@drawable/frame_16"
-        android:clipToOutline="true" />
+        android:background="@drawable/frame_16" />
 
     <TextView
         android:id="@+id/mot_de_pass"
         android:layout_width="74dp"
         android:layout_height="14dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="55dp"
+        android:layout_marginStart="55dp"
         android:layout_marginTop="417dp"
         android:gravity="center_horizontal|top"
         android:lineSpacingExtra="2sp"
@@ -160,9 +154,9 @@
         android:id="@+id/bouttoncnxi"
         android:layout_width="279dp"
         android:layout_height="42.4dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="72dp"
+        android:layout_marginStart="72dp"
         android:layout_marginTop="494dp"
         android:gravity="center_horizontal|top"
         android:lineSpacingExtra="6sp"
@@ -175,8 +169,8 @@
         android:id="@+id/se_connecte"
         android:layout_width="344dp"
         android:layout_height="48dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="557dp"
         android:backgroundTint="#81AA66"
@@ -187,9 +181,9 @@
         android:id="@+id/pas_encore_"
         android:layout_width="184dp"
         android:layout_height="23dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="58dp"
+        android:layout_marginStart="58dp"
         android:layout_marginTop="654dp"
         android:gravity="center_horizontal|top"
         android:lineSpacingExtra="3sp"
@@ -201,15 +195,16 @@
         android:id="@+id/boutonsinsc"
         android:layout_width="71dp"
         android:layout_height="23dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="277dp"
+        android:layout_marginStart="277dp"
         android:layout_marginTop="654dp"
         android:gravity="center_horizontal|top"
         android:lineSpacingExtra="3sp"
         android:text="@string/boutonsinsc"
         android:textAppearance="@style/boutonsinsc"
-        android:translationY="-1.6sp" />
+        android:translationY="-1.6sp"
+        android:onClick="inscription"/>
 
 
 </RelativeLayout>
