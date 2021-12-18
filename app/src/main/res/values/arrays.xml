@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="categorie">
+        <item>Gestionnaire</item>
+        <item>Commerçant</item>
+        <item>Client</item>
+    </array>
+</resources>

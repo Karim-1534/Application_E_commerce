@@ -41,9 +41,11 @@
         android:layout_height="56dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
         android:layout_marginStart="208dp"
         android:layout_marginTop="260dp"
-        android:background="@drawable/rectangle_2" />
+        android:backgroundTint="@color/black">
+    </Spinner>
 
 
     <!-- rectangle1cnx -->
@@ -89,6 +91,7 @@
         android:layout_marginStart="33dp"
         android:layout_marginTop="332dp"
         android:background="@drawable/rectangle_2"
+        android:textColor="@android:color/black"
         android:text="@string/adresse_ema"/>
 
     <View
@@ -124,7 +127,10 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="33dp"
         android:layout_marginTop="416dp"
-        android:background="@drawable/rectangle_2" />
+        android:textColor="@android:color/black"
+        android:background="@drawable/rectangle_2"
+        android:text="@string/mot_de_pass"
+        android:autofillHints="password" />
 
     <View
         android:id="@+id/frame_16"
@@ -175,7 +181,8 @@
         android:layout_marginTop="557dp"
         android:backgroundTint="#81AA66"
         android:text="@string/se_connecte"
-        android:textAppearance="@style/se_connecte" />
+        android:textAppearance="@style/se_connecte"
+        android:onClick="connexion"/>
 
     <TextView
         android:id="@+id/pas_encore_"
