@@ -44,7 +44,7 @@
         android:layout_centerInParent="true"
         android:layout_marginStart="208dp"
         android:layout_marginTop="260dp"
-        android:backgroundTint="@color/black">
+        android:backgroundTint="#999999">
     </Spinner>
 
 

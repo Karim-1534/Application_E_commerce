@@ -34,4 +34,6 @@
     <string name="email_label">Email</string>
     <string name="email">Email du commerçant</string>
     <string name="valider" >Valider</string>
+    <string name="liste_de_co">Liste de commerçants :</string>
+    <string name="ajouter_un_">Ajouter un commerçant</string>
 </resources>

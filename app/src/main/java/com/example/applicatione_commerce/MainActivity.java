@@ -2,6 +2,7 @@ package com.example.applicatione_commerce;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -24,7 +25,7 @@ import java.util.List;
 import java.util.prefs.PreferenceChangeEvent;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
     //GoogleCredential credential = GoogleCredential.fromStream(resourceAsStream);
     public void inscription(View v){
         Intent intent = new Intent(this, InscriptionActivity.class);
@@ -34,7 +35,10 @@ public class MainActivity extends AppCompatActivity {
     public void connexion(View v){
         Spinner spinner = (Spinner) findViewById(R.id.choixcatego);
         TextView type = (TextView) spinner.getSelectedView();
-        Toast.makeText(this, type.getText(), Toast.LENGTH_LONG).show();
+        if(type.getText().equals("Gestionnaire")){
+            Intent intent = new Intent(this, ConnexGestActivity.class);
+            startActivity(intent);
+        }
 
     }
     @Override

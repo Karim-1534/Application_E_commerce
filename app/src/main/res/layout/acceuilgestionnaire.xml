@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/formulaire_">
+
+    <!-- logo -->
+    <View
+        android:id="@+id/logo"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="360dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="11dp"
+        android:background="@drawable/logo"
+        />
+
+    <!-- Liste de Commerçant -->
+    <TextView
+        android:id="@+id/liste_com"
+        android:layout_width="257dp"
+        android:layout_height="34dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="69dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="34dp"
+        android:text="@string/liste_de_co"
+        android:textAppearance="@style/liste_de_co"
+        android:textAlignment="center"
+        android:lineSpacingExtra="5sp"
+        android:translationY="-2.4sp"
+        />
+
+    <!-- S’inscrire -->
+    <Button
+        android:id="@+id/ajoutcommerce"
+        android:layout_width="315dp"
+        android:layout_height="48dp"
+        android:layout_below="@+id/liste_com"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#81AA66"
+        android:text="@string/ajouter_un_"
+        android:textAppearance="@style/ajouter_un_"/>
+
+</RelativeLayout>

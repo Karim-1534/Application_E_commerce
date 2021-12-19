@@ -5,11 +5,10 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class InscriptionActivity extends Activity {
-
+public class ConnexGestActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.form_inscr);
+        setContentView(R.layout.acceuilgestionnaire);
     }
 }
