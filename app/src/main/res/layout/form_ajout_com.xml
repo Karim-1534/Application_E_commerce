@@ -63,9 +63,11 @@
         android:layout_marginTop="-10dp"
         android:alpha="0.2"
         android:background="@drawable/rectangle_2"
-        android:gravity="center_horizontal|top"
+        android:gravity="center"
         android:lineSpacingExtra="3sp"
-        android:translationY="-1.6sp" />
+        android:translationY="-1.6sp"
+        android:hint="@string/nom"
+        android:textSize="12"/>
 
 
     <!-- Services -->
@@ -90,9 +92,9 @@
         android:layout_width="wrap_content"
         android:layout_height="33dp"
         android:layout_below="@+id/services"
-        android:layout_marginTop="20dp"
         android:layout_alignParentStart="true"
         android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
         android:lineSpacingExtra="0sp"
         android:text="@string/animaux"
@@ -154,9 +156,9 @@
         android:id="@+id/livre"
         android:layout_width="wrap_content"
         android:layout_height="33dp"
+        android:layout_below="@+id/services"
         android:layout_alignParentStart="true"
         android:layout_marginStart="230dp"
-        android:layout_below="@+id/services"
         android:layout_marginTop="20dp"
         android:gravity="center"
         android:lineSpacingExtra="0sp"
@@ -272,7 +274,7 @@
         android:alpha="0.2"
         android:background="@drawable/rectangle_2"
         android:gravity="center"
-        android:text="@string/email"
+        android:hint="@string/email"
         android:textAppearance="@style/email" />
 
     <!-- Mot de passe -->
@@ -301,7 +303,9 @@
         android:layout_marginTop="-10dp"
         android:alpha="0.2"
         android:background="@drawable/rectangle_2"
-        android:gravity="center" />
+        android:gravity="center"
+        android:hint="@string/mot_de_pass"
+        android:textSize="12" />
 
     <!-- S’inscrire -->
     <Button

@@ -54,18 +54,19 @@
         android:id="@+id/exemple_uer"
         android:layout_width="315dp"
         android:layout_height="48dp"
+        android:layout_below="@+id/nom_d_utili"
         android:layout_alignParentStart="true"
         android:layout_marginStart="49dp"
         android:layout_marginTop="-10dp"
-        android:layout_below="@+id/nom_d_utili"
-        android:alpha="0.2"
-        android:background="@drawable/rectangle_2"
-        android:lineSpacingExtra="3sp"
-        android:translationY="-1.6sp"
-        android:gravity="center"
         android:autofillHints="name"
+        android:background="@drawable/rectangle_2"
+        android:gravity="center"
+        android:alpha="0.2"
+        android:hint="@string/nom_d_utili"
         android:inputType="textPersonName"
-        android:hint="@string/nom_d_utili"/>
+        android:lineSpacingExtra="10sp"
+        android:textSize="12"
+        android:translationY="-1.6sp" />
 
     <!-- Adresse email -->
 
@@ -86,20 +87,22 @@
 
     <EditText
         android:id="@+id/email_exemp"
-        android:hint="@string/adresse_ema"
         android:layout_width="315dp"
         android:layout_height="48dp"
+        android:layout_below="@+id/adresse_ema"
         android:layout_alignParentStart="true"
         android:layout_marginStart="49dp"
         android:layout_marginTop="-10dp"
-        android:layout_below="@+id/adresse_ema"
         android:alpha="0.2"
-        android:background="@drawable/rectangle_2"
-        android:lineSpacingExtra="3sp"
-        android:translationY="-1.6sp"
-        android:gravity="center"
         android:autofillHints="emailAddress"
-        android:inputType="textEmailAddress" />
+        android:background="@drawable/rectangle_2"
+        android:gravity="center"
+        android:hint="@string/adresse_ema"
+        android:hint="@string/nom_d_utili"
+        android:inputType="textEmailAddress"
+        android:lineSpacingExtra="3sp"
+        android:textSize="12"
+        android:translationY="-1.6sp" />
 
     <!-- Num_tel -->
 
@@ -123,17 +126,18 @@
         android:id="@+id/android_exe"
         android:layout_width="315dp"
         android:layout_height="48dp"
+        android:layout_below="@+id/num_tel"
         android:layout_alignParentStart="true"
         android:layout_marginStart="49dp"
-        android:background="@drawable/rectangle_2"
-        android:alpha="0.2"
-        android:lineSpacingExtra="3sp"
-        android:translationY="-1.6sp"
-        android:gravity="center"
-        android:autofillHints="phone"
-        android:inputType="phone"
         android:layout_marginTop="-10dp"
-        android:layout_below="@+id/num_tel"/>
+        android:alpha="0.2"
+        android:background="@drawable/rectangle_2"
+        android:gravity="center"
+        android:hint="phone"
+        android:inputType="phone"
+        android:lineSpacingExtra="3sp"
+        android:textSize="12"
+        android:translationY="-1.6sp" />
 
 
     <!-- Adresse -->
@@ -159,10 +163,10 @@
         android:id="@+id/adresse_case"
         android:layout_width="315dp"
         android:layout_height="110dp"
+        android:layout_below="@+id/adresse"
         android:layout_alignParentStart="true"
         android:layout_marginStart="49dp"
         android:layout_marginTop="-10dp"
-        android:layout_below="@+id/adresse"
         android:alpha="0.2"
         android:background="@drawable/rectangle_2" />
 
@@ -170,53 +174,59 @@
         android:id="@+id/rue"
         android:layout_width="wrap_content"
         android:layout_height="24.66dp"
+        android:layout_below="@+id/adresse"
         android:layout_alignParentStart="true"
         android:layout_marginStart="66.06dp"
-        android:layout_marginEnd="66.06dp"
-        android:background="@drawable/rectangle_2"
         android:layout_marginTop="20dp"
-        android:layout_below="@+id/adresse"
+        android:layout_marginEnd="66.06dp"
         android:alpha="0.2"
-        android:lineSpacingExtra="3sp"
-        android:translationY="-1.3sp"
-        android:gravity="top"
         android:autofillHints="postalAddress"
-        android:inputType="textPostalAddress" />
+        android:background="@drawable/rectangle_2"
+        android:gravity="top"
+        android:hint="adresse"
+        android:inputType="textPostalAddress"
+        android:lineSpacingExtra="3sp"
+        android:textSize="12"
+        android:translationY="-1.3sp" />
 
 
     <EditText
         android:id="@+id/ville"
         android:layout_width="wrap_content"
         android:layout_height="24.66dp"
+        android:layout_below="@+id/rue"
         android:layout_alignParentStart="true"
         android:layout_marginStart="224.73dp"
-        android:layout_marginEnd="66.06dp"
         android:layout_marginTop="15dp"
-        android:layout_below="@+id/rue"
-        android:background="@drawable/rectangle_2"
+        android:layout_marginEnd="66.06dp"
         android:alpha="0.2"
+        android:autofillHints="postalAddress"
+        android:background="@drawable/rectangle_2"
+        android:gravity="top"
+        android:inputType="textPostalAddress"
         android:lineSpacingExtra="3sp"
         android:translationY="-1.3sp"
-        android:gravity="top"
-        android:autofillHints="postalAddress"
-        android:inputType="textPostalAddress" />
+        android:hint="Ville"
+        android:textSize="12"/>
 
 
     <EditText
         android:id="@+id/cp"
         android:layout_width="wrap_content"
         android:layout_height="24.66dp"
+        android:layout_below="@+id/rue"
         android:layout_alignParentStart="true"
         android:layout_marginStart="66.06dp"
-        android:layout_marginEnd="224.73dp"
         android:layout_marginTop="15dp"
-        android:layout_below="@+id/rue"
-        android:background="@drawable/rectangle_2"
+        android:layout_marginEnd="224.73dp"
         android:alpha="0.2"
         android:autofillHints="postalCode"
+        android:background="@drawable/rectangle_2"
         android:gravity="top"
+        android:hint="code postale"
         android:inputType="textPostalAddress"
         android:lineSpacingExtra="3sp"
+        android:textSize="12"
         android:translationY="-1.3sp" />
 
     <!-- mot de passe -->
@@ -242,17 +252,19 @@
         android:id="@+id/mdp_exemple"
         android:layout_width="315dp"
         android:layout_height="48dp"
+        android:layout_below="@+id/mot_de_pass"
         android:layout_alignParentStart="true"
         android:layout_marginStart="49dp"
         android:layout_marginTop="-10dp"
-        android:layout_below="@+id/mot_de_pass"
-        android:background="@drawable/rectangle_2"
         android:alpha="0.2"
-        android:lineSpacingExtra="3sp"
-        android:translationY="-1.6sp"
-        android:gravity="top"
         android:autofillHints="password"
-        android:inputType="textPassword" />
+        android:background="@drawable/rectangle_2"
+        android:gravity="center_horizontal|center"
+        android:hint="mot de passe"
+        android:inputType="textPassword"
+        android:lineSpacingExtra="3sp"
+        android:textSize="12"
+        android:translationY="-1.6sp" />
 
     <!-- confirmation du mot de passe -->
 
@@ -276,17 +288,18 @@
         android:id="@+id/mdp_confirm_exemple"
         android:layout_width="315dp"
         android:layout_height="48dp"
+        android:layout_below="@+id/confirmatio"
         android:layout_alignParentStart="true"
         android:layout_marginStart="49dp"
         android:layout_marginTop="-10dp"
-        android:layout_below="@+id/confirmatio"
-        android:background="@drawable/rectangle_2"
         android:alpha="0.2"
+        android:background="@drawable/rectangle_2"
+        android:gravity="center_horizontal|center"
+        android:hint="confirmer le mot de passe"
+        android:textSize="12"
+        android:inputType="textPassword"
         android:lineSpacingExtra="3sp"
-        android:translationY="-1.6sp"
-        android:gravity="top"
-        android:autofillHints="password"
-        android:inputType="textPassword" />
+        android:translationY="-1.6sp" />
 
     <!-- S’inscrire -->
     <Button
