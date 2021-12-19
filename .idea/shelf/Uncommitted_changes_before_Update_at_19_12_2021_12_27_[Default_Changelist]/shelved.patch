@@ -1,0 +1,362 @@
+Index: app/src/main/java/com/example/applicatione_commerce/ConnexGestActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.applicatione_commerce;\n\nimport android.app.Activity;\nimport android.os.Bundle;\n\nimport androidx.appcompat.app.AppCompatActivity;\n\npublic class ConnexGestActivity extends Activity {\n    @Override\n    protected void onCreate(Bundle savedInstanceState) {\n        super.onCreate(savedInstanceState);\n        setContentView(R.layout.acceuilgestionnaire);\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/applicatione_commerce/ConnexGestActivity.java b/app/src/main/java/com/example/applicatione_commerce/ConnexGestActivity.java
+--- a/app/src/main/java/com/example/applicatione_commerce/ConnexGestActivity.java	(revision b38731d279de8d5d348d1e42432188eeb7ae1784)
++++ b/app/src/main/java/com/example/applicatione_commerce/ConnexGestActivity.java	(date 1639913191638)
+@@ -1,14 +1,43 @@
+ package com.example.applicatione_commerce;
+ 
+ import android.app.Activity;
++import android.content.Intent;
+ import android.os.Bundle;
++import android.view.View;
++import android.widget.ArrayAdapter;
++import android.widget.ListView;
++import android.widget.TextView;
++import android.widget.Toast;
+ 
+ import androidx.appcompat.app.AppCompatActivity;
+ 
+ public class ConnexGestActivity extends Activity {
++    String commerce[]
++            = { "Commercant" };
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.acceuilgestionnaire);
++        ListView listView = (ListView)findViewById(R.id.listView);
++        ArrayAdapter<String> arr;
++        arr = new ArrayAdapter<String>(
++                this,
++                R.layout.list_item,
++                R.id.nom_commer_,
++                commerce);
++        listView.setAdapter(arr);
++    }
++
++    public void ajout(View v){
++        Intent intent = new Intent(this, AjoutCommerce.class);
++        startActivity(intent);
++    }
++
++    public void modifier(View v){
++        Toast.makeText(this, "modifier", Toast.LENGTH_SHORT).show();
++    }
++
++    public void supprimer(View v){
++        Toast.makeText(this, "supprimer", Toast.LENGTH_SHORT).show();
+     }
+ }
+Index: app/src/main/res/layout/acceuilgestionnaire.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<RelativeLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    android:layout_width=\"fill_parent\"\n    android:layout_height=\"fill_parent\"\n    android:background=\"@drawable/formulaire_\">\n\n    <!-- logo -->\n    <View\n        android:id=\"@+id/logo\"\n        android:layout_width=\"35dp\"\n        android:layout_height=\"35dp\"\n        android:layout_alignParentStart=\"true\"\n        android:layout_marginStart=\"360dp\"\n        android:layout_alignParentTop=\"true\"\n        android:layout_marginTop=\"11dp\"\n        android:background=\"@drawable/logo\"\n        />\n\n    <!-- Liste de Commerçant -->\n    <TextView\n        android:id=\"@+id/liste_com\"\n        android:layout_width=\"257dp\"\n        android:layout_height=\"34dp\"\n        android:layout_alignParentStart=\"true\"\n        android:layout_marginStart=\"69dp\"\n        android:layout_alignParentTop=\"true\"\n        android:layout_marginTop=\"34dp\"\n        android:text=\"@string/liste_de_co\"\n        android:textAppearance=\"@style/liste_de_co\"\n        android:textAlignment=\"center\"\n        android:lineSpacingExtra=\"5sp\"\n        android:translationY=\"-2.4sp\"\n        />\n\n    <!-- S’inscrire -->\n    <Button\n        android:id=\"@+id/ajoutcommerce\"\n        android:layout_width=\"315dp\"\n        android:layout_height=\"48dp\"\n        android:layout_below=\"@+id/liste_com\"\n        android:layout_alignParentStart=\"true\"\n        android:layout_marginStart=\"47dp\"\n        android:layout_marginTop=\"20dp\"\n        android:backgroundTint=\"#81AA66\"\n        android:text=\"@string/ajouter_un_\"\n        android:textAppearance=\"@style/ajouter_un_\"/>\n\n</RelativeLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/acceuilgestionnaire.xml b/app/src/main/res/layout/acceuilgestionnaire.xml
+--- a/app/src/main/res/layout/acceuilgestionnaire.xml	(revision b38731d279de8d5d348d1e42432188eeb7ae1784)
++++ b/app/src/main/res/layout/acceuilgestionnaire.xml	(date 1639912968193)
+@@ -43,6 +43,18 @@
+         android:layout_marginTop="20dp"
+         android:backgroundTint="#81AA66"
+         android:text="@string/ajouter_un_"
++        android:onClick="ajout"
+         android:textAppearance="@style/ajouter_un_"/>
+ 
++    <ListView
++        android:id="@+id/listView"
++        android:layout_width="340dp"
++        android:layout_height="fill_parent"
++        android:layout_alignParentStart="true"
++        android:layout_marginStart="35dp"
++        android:layout_alignParentTop="true"
++        android:layout_marginTop="166dp"
++        android:elevation="20dp"
++        android:layout_below="@+id/ajoutcommerce"/>
++
+ </RelativeLayout>
+\ No newline at end of file
+Index: app/src/main/res/values/styles.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<resources>\n    <style name=\"s_inscrire\">\n        <item name=\"android:textSize\">18sp</item>\n        <item name=\"android:textColor\">#FFFFFF</item>\n    </style>\n    <style name=\"nom_d_utili\">\n        <item name=\"android:textSize\">10sp</item>\n        <item name=\"android:textColor\">#FFFFFF</item>\n    </style>\n\n    <style name=\"adresse_ema\">\n        <item name=\"android:textSize\">10sp</item>\n        <item name=\"android:textColor\">#FFFFFF</item>\n    </style>\n\n\n    <style name=\"num_tel\">\n        <item name=\"android:textSize\">10sp</item>\n        <item name=\"android:textColor\">#FFFFFF</item>\n    </style>\n\n    <style name=\"adresse\">\n        <item name=\"android:textSize\">10sp</item>\n        <item name=\"android:textColor\">#FFFFFF</item>\n    </style>\n\n    <style name=\"rue\">\n        <item name=\"android:textSize\">13sp</item>\n        <item name=\"android:textColor\">#999999</item>\n    </style>\n\n    <style name=\"mot_de_pass\">\n        <item name=\"android:textSize\">10sp</item>\n        <item name=\"android:textColor\">#FFFFFF</item>\n    </style>\n\n    <style name=\"confirmatio\">\n        <item name=\"android:textSize\">10sp</item>\n        <item name=\"android:textColor\">#FFFFFF</item>\n    </style>\n\n    <style name=\"bienvenue\">\n        <item name=\"android:textSize\">30sp</item>\n        <item name=\"android:textColor\">#1E0702</item>\n    </style>\n\n\n    <style name=\"bouttoncnxi\">\n        <item name=\"android:textSize\">12sp</item>\n        <item name=\"android:textColor\">#81AA66</item>\n    </style>\n\n    <style name=\"profil\">\n        <item name=\"android:textSize\">10sp</item>\n        <item name=\"android:textColor\">#FFFFFF</item>\n    </style>\n\n    <style name=\"se_connecte\">\n        <item name=\"android:textSize\">18sp</item>\n        <item name=\"android:textColor\">#FFFFFF</item>\n    </style>\n\n\n    <style name=\"pas_encore_\">\n        <item name=\"android:textSize\">16sp</item>\n        <item name=\"android:textColor\">#999999</item>\n    </style>\n\n    <style name=\"boutonsinsc\">\n        <item name=\"android:textSize\">16sp</item>\n        <item name=\"android:textColor\">#81AA66</item>\n    </style>\n\n\n    <style name=\"nouveau_com\">\n        <item name=\"android:textSize\">24sp</item>\n        <item name=\"android:textColor\">#1E0702</item>\n    </style>\n\n    <style name=\"nom\">\n        <item name=\"android:textSize\">10sp</item>\n        <item name=\"android:textColor\">#FFFFFF</item>\n    </style>\n\n    <style name=\"services\">\n        <item name=\"android:textSize\">10sp</item>\n        <item name=\"android:textColor\">#FFFFFF</item>\n    </style>\n\n    <style name=\"animaux\">\n        <item name=\"android:textSize\">12sp</item>\n        <item name=\"android:textColor\">#272727</item>\n    </style>\n\n    <style name=\"mode\">\n        <item name=\"android:textSize\">12sp</item>\n        <item name=\"android:textColor\">#272727</item>\n    </style>\n\n    <style name=\"maison\">\n        <item name=\"android:textSize\">12sp</item>\n        <item name=\"android:textColor\">#272727</item>\n    </style>\n\n    <style name=\"appareil\">\n        <item name=\"android:textSize\">12sp</item>\n        <item name=\"android:textColor\">#272727</item>\n    </style>\n\n    <style name=\"musique\">\n        <item name=\"android:textSize\">12sp</item>\n        <item name=\"android:textColor\">#272727</item>\n    </style>\n\n    <style name=\"livre\">\n        <item name=\"android:textSize\">12sp</item>\n        <item name=\"android:textColor\">#272727</item>\n    </style>\n\n    <style name=\"jouet\">\n        <item name=\"android:textSize\">12sp</item>\n        <item name=\"android:textColor\">#272727</item>\n    </style>\n\n    <style name=\"auto\">\n        <item name=\"android:textSize\">12sp</item>\n        <item name=\"android:textColor\">#272727</item>\n    </style>\n\n    <style name=\"bureau\">\n        <item name=\"android:textSize\">12sp</item>\n        <item name=\"android:textColor\">#272727</item>\n    </style>\n\n    <style name=\"sport\">\n        <item name=\"android:textSize\">12sp</item>\n        <item name=\"android:textColor\">#272727</item>\n    </style>\n\n    <style name=\"num_siret\">\n        <item name=\"android:textSize\">16sp</item>\n        <item name=\"android:textColor\">#999999</item>\n    </style>\n\n    <style name=\"siret\">\n        <item name=\"android:textSize\">10sp</item>\n        <item name=\"android:textColor\">#FFFFFF</item>\n    </style>\n\n    <style name=\"email_label\">\n        <item name=\"android:textSize\">10sp</item>\n        <item name=\"android:textColor\">#FFFFFF</item>\n    </style>\n    <style name=\"email\">\n        <item name=\"android:textSize\">16sp</item>\n        <item name=\"android:textColor\">#999999</item>\n    </style>\n\n    <style name=\"valider\">\n        <item name=\"android:textSize\">18sp</item>\n        <item name=\"android:textColor\">#FFFFFF</item>\n    </style>\n\n    <style name=\"titreapplic\">\n        <item name=\"android:textSize\">38sp</item>\n        <item name=\"android:textColor\">#999999</item>\n    </style>\n    <style name=\"liste_de_co\">\n        <item name=\"android:textSize\">24sp</item>\n        <item name=\"android:textColor\">#1E0702</item>\n    </style>\n    <style name=\"ajouter_un_\">\n        <item name=\"android:textSize\">18sp</item>\n        <item name=\"android:textColor\">#FFFFFF</item>\n    </style>\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/styles.xml b/app/src/main/res/values/styles.xml
+--- a/app/src/main/res/values/styles.xml	(revision b38731d279de8d5d348d1e42432188eeb7ae1784)
++++ b/app/src/main/res/values/styles.xml	(date 1639910144381)
+@@ -174,4 +174,18 @@
+         <item name="android:textSize">18sp</item>
+         <item name="android:textColor">#FFFFFF</item>
+     </style>
++
++    <style name="cat_gorie">
++        <item name="android:textSize">14sp</item>
++        <item name="android:textColor">#81AA66</item>
++    </style>
++    <style name="nom_commer_">
++        <item name="android:textSize">18sp</item>
++        <item name="android:textColor">#000000</item>
++    </style>
++
++    <style name="modifier">
++        <item name="android:textSize">10sp</item>
++        <item name="android:textColor">#FFFFFF</item>
++    </style>
+ </resources>
+\ No newline at end of file
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    package=\"com.example.applicatione_commerce\">\n\n    <application\n        android:allowBackup=\"true\"\n        android:icon=\"@mipmap/ic_launcher\"\n        android:label=\"@string/app_name\"\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\n        android:supportsRtl=\"true\"\n        android:theme=\"@style/Theme.ApplicationEcommerce\">\n        <activity\n            android:name=\"MainActivity\"\n            android:exported=\"true\">\n            <intent-filter>\n                <action android:name=\"android.intent.action.MAIN\" />\n\n                <category android:name=\"android.intent.category.LAUNCHER\" />\n            </intent-filter>\n        </activity>\n        <activity\n            android:name=\"InscriptionActivity\"\n            android:exported=\"true\">\n            <intent-filter>\n                <action android:name=\"android.intent.action.MAIN\" />\n\n                <category android:name=\"android.intent.category.LAUNCHER\" />\n            </intent-filter>\n        </activity>\n        <activity\n            android:name=\"ConnexGestActivity\"\n            android:exported=\"true\">\n            <intent-filter>\n                <action android:name=\"android.intent.action.MAIN\" />\n\n                <category android:name=\"android.intent.category.LAUNCHER\" />\n            </intent-filter>\n        </activity>\n        <meta-data\n            android:name=\"preloaded_fonts\"\n            android:resource=\"@array/preloaded_fonts\" />\n    </application>\n\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	(revision b38731d279de8d5d348d1e42432188eeb7ae1784)
++++ b/app/src/main/AndroidManifest.xml	(date 1639913094440)
+@@ -10,7 +10,7 @@
+         android:supportsRtl="true"
+         android:theme="@style/Theme.ApplicationEcommerce">
+         <activity
+-            android:name="MainActivity"
++            android:name=".MainActivity"
+             android:exported="true">
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+@@ -19,7 +19,7 @@
+             </intent-filter>
+         </activity>
+         <activity
+-            android:name="InscriptionActivity"
++            android:name=".InscriptionActivity"
+             android:exported="true">
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+@@ -28,7 +28,16 @@
+             </intent-filter>
+         </activity>
+         <activity
+-            android:name="ConnexGestActivity"
++            android:name=".ConnexGestActivity"
++            android:exported="true">
++            <intent-filter>
++                <action android:name="android.intent.action.MAIN" />
++
++                <category android:name="android.intent.category.LAUNCHER" />
++            </intent-filter>
++        </activity>
++        <activity
++            android:name=".AjoutCommerce"
+             android:exported="true">
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources>\n    <string name=\"app_name\">Cute Shop</string>\n    <string name=\"titreapplic\"> Cute \\nShop </string>\n    <string name=\"profil\">Profil</string>\n    <string name=\"s_inscrire\">S\\'inscrire</string>\n    <string name=\"nom_d_utili\">Nom d\\'utilisateur</string>\n    <string name=\"adresse_ema\">Adresse email</string>\n    <string name=\"num_tel\">Téléphone</string>\n    <string name=\"logo\">logo</string>\n    <string name=\"adresse\">Adresse</string>\n    <string name=\"rue\">Rue/Avenue</string>\n    <string name=\"mot_de_pass\">Mot de passe</string>\n    <string name=\"confirmatio\">Confirmation du mot de passe</string>\n    <string name=\"bienvenue\">Bienvenue</string>\n    <string name=\"bouttoncnxi\">Se connecter en tant qu\\'inviter</string>\n    <string name=\"se_connecte\">Se connecter</string>\n    <string name=\"pas_encore_\">Pas encore de compte ?</string>\n    <string name=\"boutonsinsc\">S\\'inscrire</string>\n    <string name=\"nouveau_com\">Nouveau Commerçant</string>\n    <string name=\"nom\">Nom</string>\n    <string name=\"services\">Services</string>\n    <string name=\"animaux\">Animaux de compagnie</string>\n    <string name=\"mode\">Mode et beauté</string>\n    <string name=\"maison\">Maison et bricolage</string>\n    <string name=\"appareil\">Appareils &amp; Electronique</string>\n    <string name=\"musique\">Musique, vidéo et jeux</string>\n    <string name=\"livre\">Livres et lecture</string>\n    <string name=\"jouet\">Jouets, enfants et bébé</string>\n    <string name=\"auto\">Auto et Moto</string>\n    <string name=\"bureau\">Bureau et Professionnel</string>\n    <string name=\"sport\">Sport et boutique de fans</string>\n    <string name=\"num_siret\">000 000 000 00000</string>\n    <string name=\"siret\">N°siret/siren</string>\n    <string name=\"email_label\">Email</string>\n    <string name=\"email\">Email du commerçant</string>\n    <string name=\"valider\" >Valider</string>\n    <string name=\"liste_de_co\">Liste de commerçants :</string>\n    <string name=\"ajouter_un_\">Ajouter un commerçant</string>\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+--- a/app/src/main/res/values/strings.xml	(revision b38731d279de8d5d348d1e42432188eeb7ae1784)
++++ b/app/src/main/res/values/strings.xml	(date 1639910172641)
+@@ -36,4 +36,7 @@
+     <string name="valider" >Valider</string>
+     <string name="liste_de_co">Liste de commerçants :</string>
+     <string name="ajouter_un_">Ajouter un commerçant</string>
++    <string name="cat_gorie">Catégorie</string>
++    <string name="nom_commer_">Nom commerçant</string>
++    <string name="modifier">Modifier</string>
+ </resources>
+\ No newline at end of file
+Index: app/src/main/java/com/example/applicatione_commerce/AjoutCommerce.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/applicatione_commerce/AjoutCommerce.java b/app/src/main/java/com/example/applicatione_commerce/AjoutCommerce.java
+new file mode 100644
+--- /dev/null	(date 1639913006737)
++++ b/app/src/main/java/com/example/applicatione_commerce/AjoutCommerce.java	(date 1639913006737)
+@@ -0,0 +1,13 @@
++package com.example.applicatione_commerce;
++
++import android.app.Activity;
++import android.os.Bundle;
++
++public class AjoutCommerce extends Activity {
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.form_ajout_com);
++    }
++}
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"DesignSurface\">\n    <option name=\"filePathToZoomLevelMap\">\n      <map>\n        <entry key=\"app/src/main/res/drawable/formulaire_.xml\" value=\"0.371875\" />\n        <entry key=\"app/src/main/res/drawable/frame_16.xml\" value=\"0.371875\" />\n        <entry key=\"app/src/main/res/drawable/logo.xml\" value=\"0.371875\" />\n        <entry key=\"app/src/main/res/drawable/navheader_t.xml\" value=\"0.371875\" />\n        <entry key=\"app/src/main/res/drawable/rectangle_2.xml\" value=\"0.371875\" />\n        <entry key=\"app/src/main/res/drawable/rectangle_3.xml\" value=\"0.371875\" />\n        <entry key=\"app/src/main/res/drawable/shape.xml\" value=\"0.371875\" />\n        <entry key=\"app/src/main/res/layout-v31/form_inscr.xml\" value=\"0.35572916666666665\" />\n        <entry key=\"app/src/main/res/layout/acceuilgestionnaire.xml\" value=\"0.35572916666666665\" />\n        <entry key=\"app/src/main/res/layout/activity_main.xml\" value=\"0.35572916666666665\" />\n        <entry key=\"app/src/main/res/layout/form_ajout_com.xml\" value=\"0.5\" />\n        <entry key=\"app/src/main/res/layout/form_inscr.xml\" value=\"0.35572916666666665\" />\n        <entry key=\"app/src/main/res/layout/formulaireacceuilconnexion.xml\" value=\"0.5\" />\n        <entry key=\"app/src/main/res/layout/spinner_item.xml\" value=\"0.35572916666666665\" />\n      </map>\n    </option>\n  </component>\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" default=\"true\" project-jdk-name=\"Android Studio default JDK\" project-jdk-type=\"JavaSDK\">\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\n  </component>\n  <component name=\"ProjectType\">\n    <option name=\"id\" value=\"Android\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision b38731d279de8d5d348d1e42432188eeb7ae1784)
++++ b/.idea/misc.xml	(date 1639912969633)
+@@ -9,6 +9,8 @@
+         <entry key="app/src/main/res/drawable/navheader_t.xml" value="0.371875" />
+         <entry key="app/src/main/res/drawable/rectangle_2.xml" value="0.371875" />
+         <entry key="app/src/main/res/drawable/rectangle_3.xml" value="0.371875" />
++        <entry key="app/src/main/res/drawable/rectangle_5.xml" value="0.2140625" />
++        <entry key="app/src/main/res/drawable/rectangle_6.xml" value="0.2140625" />
+         <entry key="app/src/main/res/drawable/shape.xml" value="0.371875" />
+         <entry key="app/src/main/res/layout-v31/form_inscr.xml" value="0.35572916666666665" />
+         <entry key="app/src/main/res/layout/acceuilgestionnaire.xml" value="0.35572916666666665" />
+@@ -16,6 +18,7 @@
+         <entry key="app/src/main/res/layout/form_ajout_com.xml" value="0.5" />
+         <entry key="app/src/main/res/layout/form_inscr.xml" value="0.35572916666666665" />
+         <entry key="app/src/main/res/layout/formulaireacceuilconnexion.xml" value="0.5" />
++        <entry key="app/src/main/res/layout/list_item.xml" value="0.6214511041009464" />
+         <entry key="app/src/main/res/layout/spinner_item.xml" value="0.35572916666666665" />
+       </map>
+     </option>
+Index: app/src/main/res/layout/list_item.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/list_item.xml b/app/src/main/res/layout/list_item.xml
+new file mode 100644
+--- /dev/null	(date 1639913235102)
++++ b/app/src/main/res/layout/list_item.xml	(date 1639913235102)
+@@ -0,0 +1,63 @@
++<?xml version="1.0" encoding="utf-8"?>
++<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    android:layout_width="wrap_content"
++    android:layout_height="wrap_content"
++    android:background="@drawable/rectangle_5"
++    >
++
++    <!-- Nom commerçant -->
++    <TextView
++        android:id="@+id/nom_commer_"
++        android:layout_width="179.9dp"
++        android:layout_height="30dp"
++        android:text="@string/nom_commer_"
++        android:textAppearance="@style/nom_commer_"
++        android:lineSpacingExtra="8sp"
++        android:gravity="center_vertical"
++
++        />
++
++    <!-- Catégorie -->
++    <TextView
++        android:id="@+id/cat_gorie"
++        android:layout_width="71.96dp"
++        android:layout_height="23dp"
++        android:layout_below="@+id/nom_commer_"
++        android:layout_marginTop="10dp"
++        android:gravity="center_vertical"
++        android:lineSpacingExtra="6sp"
++        android:text="@string/cat_gorie"
++        android:textAppearance="@style/cat_gorie" />
++
++    <Button
++        android:id="@+id/modifier"
++        android:layout_width="69.22dp"
++        android:layout_height="25.41dp"
++        android:layout_below="@+id/nom_commer_"
++        android:layout_marginStart="29dp"
++        android:layout_marginTop="10dp"
++        android:layout_toEndOf="@+id/cat_gorie"
++        android:text="@string/modifier"
++        android:gravity="center"
++        android:textAppearance="@style/modifier"
++        android:lineSpacingExtra="5sp"
++        android:background="#999999"
++        android:onClick="modifier"/>
++
++    <Button
++        android:id="@+id/supprimer"
++        android:layout_width="27.29dp"
++        android:layout_height="25.41dp"
++        android:layout_below="@+id/nom_commer_"
++        android:layout_marginStart="15dp"
++        android:layout_marginTop="10dp"
++        android:layout_toEndOf="@+id/modifier"
++        android:text="x"
++        android:gravity="center"
++        android:textAppearance="@style/modifier"
++        android:lineSpacingExtra="5sp"
++        android:background="#999999"
++        android:onClick="supprimer"/>
++
++</RelativeLayout>
++
+Index: app/src/main/res/drawable/rectangle_6.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/rectangle_6.xml b/app/src/main/res/drawable/rectangle_6.xml
+new file mode 100644
+--- /dev/null	(date 1639909839257)
++++ b/app/src/main/res/drawable/rectangle_6.xml	(date 1639909839257)
+@@ -0,0 +1,19 @@
++<?xml version="1.0" encoding="utf-8"?>
++<vector
++    xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:aapt="http://schemas.android.com/aapt"
++    android:width="69.22dp"
++    android:height="25.41dp"
++    android:viewportWidth="69.22"
++    android:viewportHeight="25.41"
++    >
++    <group>
++        <clip-path
++            android:pathData="M0.934191 0H68.2896C68.8055 0 69.2238 0.418251 69.2238 0.934191V24.48C69.2238 24.9959 68.8055 25.4141 68.2896 25.4141H0.934191C0.418251 25.4141 0 24.9959 0 24.48V0.934191C0 0.418251 0.418251 0 0.934191 0Z"
++            />
++        <path
++            android:pathData="M0 0V25.4141H69.2238V0"
++            android:fillColor="#999999"
++            />
++    </group>
++</vector>
+\ No newline at end of file
+Index: app/src/main/res/drawable/rectangle_5.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/rectangle_5.xml b/app/src/main/res/drawable/rectangle_5.xml
+new file mode 100644
+--- /dev/null	(date 1639908712447)
++++ b/app/src/main/res/drawable/rectangle_5.xml	(date 1639908712447)
+@@ -0,0 +1,19 @@
++<?xml version="1.0" encoding="utf-8"?>
++<vector
++    xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:aapt="http://schemas.android.com/aapt"
++    android:width="340dp"
++    android:height="99dp"
++    android:viewportWidth="340"
++    android:viewportHeight="99"
++    >
++    <group>
++        <clip-path
++            android:pathData="M4 0H336C338.209 0 340 1.79086 340 4V95C340 97.2091 338.209 99 336 99H4C1.79086 99 0 97.2091 0 95V4C0 1.79086 1.79086 0 4 0Z"
++            />
++        <path
++            android:pathData="M0 0V99H340V0"
++            android:fillColor="#FFFFFF"
++            />
++    </group>
++</vector>
+\ No newline at end of file
