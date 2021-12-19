@@ -39,4 +39,10 @@
     <string name="cat_gorie">Catégorie</string>
     <string name="nom_commer_">Nom commerçant</string>
     <string name="modifier">Modifier</string>
+    <string name="bonjour" />
+    <string name="nomcommerca" />
+    <string name="tu_souhaite" />
+    <string name="ajouter_un_p" />
+    <string name="faire_une_of" />
+    <string name="voir_les_com_com" />
 </resources>

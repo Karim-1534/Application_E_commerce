@@ -188,4 +188,10 @@
         <item name="android:textSize">10sp</item>
         <item name="android:textColor">#FFFFFF</item>
     </style>
+
+    <style name="bonjour"></style>
+
+    <style name="nomcommerca"></style>
+
+    <style name="tu_souhaite"></style>
 </resources>
