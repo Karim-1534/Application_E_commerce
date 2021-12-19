@@ -39,16 +39,22 @@
     <string name="cat_gorie">Catégorie</string>
     <string name="nom_commer_">Nom commerçant</string>
     <string name="modifier">Modifier</string>
-    <string name="bonjour" />
-    <string name="nomcommerca" />
-    <string name="tu_souhaite" />
-    <string name="ajouter_un_p" />
-    <string name="faire_une_of" />
-    <string name="voir_les_com_com" />
     <string name="voulez_vous">Voulez-vous vraiment supprimer ce commerçant ?</string>
     <string name="oui" >OUI</string>
     <string name="non" >NON</string>
     <string name="ajout_commerce">Le commerçant a bien été ajouté !</string>
     <string name="ok" >OK</string>
     <string name="modif_commerce">Le commerçant a bien été modifié !</string>
+    <string name="bonjour">Bonjour</string>
+    <string name="nomcommerca">Toto</string>
+    <string name="tu_souhaite">Tu souhaites ?</string>
+    <string name="ajouter_un_p">Ajouter un produit</string>
+    <string name="faire_une_of">Faire une offre de r\éduction</string>
+    <string name="voir_les_com_com">Voir les commandes re\çues</string>
+    <string name="ajoutannonc">Ajouter une annonce</string>
+    <string name="image">Image</string>
+    <string name="prix">Prix</string>
+    <string name="d_tails_du_">D\étails du produit</string>
+    <string name="description">Description</string>
+
 </resources>

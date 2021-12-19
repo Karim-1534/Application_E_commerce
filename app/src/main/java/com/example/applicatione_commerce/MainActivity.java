@@ -38,6 +38,9 @@ public class MainActivity extends Activity {
         if(type.getText().equals("Gestionnaire")){
             Intent intent = new Intent(this, ConnexGestActivity.class);
             startActivity(intent);
+        }else if(type.getText().equals("Commerçant")){
+            Intent intent = new Intent(this, ConnexComActivity.class);
+            startActivity(intent);
         }
 
     }
