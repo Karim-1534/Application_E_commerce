@@ -36,7 +36,10 @@
     <string name="valider" >Valider</string>
     <string name="liste_de_co">Liste de commerçants :</string>
     <string name="ajouter_un_">Ajouter un commerçant</string>
-    <string name="cat_gorie">Catégorie</string>
-    <string name="nom_commer_">Nom commerçant</string>
-    <string name="modifier">Modifier</string>
+    <string name="ajouter_un_p">Ajouter un produit</string>
+    <string name="faire_une_of">Faire une offre de r\éduction</string>
+    <string name="voir_les_com_com">Voir les commandes re\çues</string>
+    <string name="tu_souhaite">Tu souhaites ?</string>
+    <string name="bonjour">Bonjour</string>
+    <string name="nomcommerca">Toto</string>
 </resources>

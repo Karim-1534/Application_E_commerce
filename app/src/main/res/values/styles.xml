@@ -170,22 +170,25 @@
         <item name="android:textSize">24sp</item>
         <item name="android:textColor">#1E0702</item>
     </style>
+
     <style name="ajouter_un_">
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">#FFFFFF</item>
     </style>
-
-    <style name="cat_gorie">
-        <item name="android:textSize">14sp</item>
-        <item name="android:textColor">#81AA66</item>
-    </style>
-    <style name="nom_commer_">
-        <item name="android:textSize">18sp</item>
-        <item name="android:textColor">#000000</item>
+    <style name="tu_souhaite">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#999999</item>
     </style>
 
-    <style name="modifier">
-        <item name="android:textSize">10sp</item>
-        <item name="android:textColor">#FFFFFF</item>
+    <style name="bonjour">
+        <item name="android:textSize">36sp</item>
+        <item name="android:textColor">#1E0702</item>
     </style>
+
+    <style name="nomcommerca">
+        <item name="android:textSize">36sp</item>
+        <item name="android:textColor">#1E0702</item>
+    </style>
+
+
 </resources>
