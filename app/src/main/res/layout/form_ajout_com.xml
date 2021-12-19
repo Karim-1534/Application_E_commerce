@@ -149,7 +149,8 @@
         android:background="#00000000"
         android:lineSpacingExtra="0sp"
         android:text="@string/musique"
-        android:textAppearance="@style/musique" />
+        android:textAppearance="@style/musique"
+        />
 
     <!-- livre -->
     <CheckBox
@@ -319,6 +320,7 @@
         android:backgroundTint="#81AA66"
         android:text="@string/valider"
         android:textAppearance="@style/valider" />
+
 
 
 

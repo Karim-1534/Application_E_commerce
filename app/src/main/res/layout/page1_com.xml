@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/formulaire_"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/formulaire_">
+
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="360dp"
+        android:layout_marginTop="11dp"
+        android:background="@drawable/logo"
+        android:contentDescription="@string/logo" />
+
+    <!-- Bonjour -->
+    <TextView
+        android:id="@+id/bonjour"
+        android:layout_width="133dp"
+        android:layout_height="51dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="52dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="51dp"
+        android:text="@string/bonjour"
+        android:textAppearance="@style/bonjour"
+        android:lineSpacingExtra="8sp"
+        android:translationY="-3.81sp"
+        android:gravity="top"
+        />
+
+    <!-- nomCommercant -->
+    <TextView
+        android:id="@+id/nomcommerca"
+        android:layout_width="128dp"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="206dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="51dp"
+        android:text="@string/nomcommerca"
+        android:textAppearance="@style/nomcommerca"
+        android:lineSpacingExtra="8sp"
+        android:translationY="-3.81sp"
+        android:gravity="top"
+        />
+
+    <TextView
+        android:id="@+id/tu_souhaite"
+        android:layout_width="110dp"
+        android:layout_height="23dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="51dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="151dp"
+        android:text="@string/tu_souhaite"
+        android:textAppearance="@style/tu_souhaite"
+        android:lineSpacingExtra="3sp"
+        android:translationY="-1.6sp"
+        android:gravity="center_horizontal|top"
+        />
+
+    <Button
+        android:id="@+id/btn_com_recu"
+        android:layout_width="315dp"
+        android:layout_height="48dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="49dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="269dp"
+        android:background="@drawable/rectangle_3"
+        android:gravity="center"
+        android:onClick="connexion"
+        android:text="@string/ajouter_un_p"
+        android:textAppearance="@style/se_connecte" />
+
+    <Button
+        android:id="@+id/btn_ajout_produit"
+        android:layout_width="315dp"
+        android:layout_height="48dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="49dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="383dp"
+        android:background="@drawable/rectangle_3"
+        android:gravity="center"
+        android:onClick="connexion"
+        android:text="@string/faire_une_of"
+        android:textAppearance="@style/se_connecte" />
+
+    <Button
+        android:id="@+id/btn_voir_com_com"
+        android:layout_width="315dp"
+        android:layout_height="48dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="51dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="507dp"
+        android:background="@drawable/rectangle_3"
+        android:gravity="center"
+        android:onClick="connexion"
+        android:text="@string/voir_les_com_com"
+        android:textAppearance="@style/se_connecte" />
+
+
+</RelativeLayout>
+
