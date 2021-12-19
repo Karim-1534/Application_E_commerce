@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rectangle_5"
+    >
+
+    <!-- Nom commerçant -->
+    <TextView
+        android:id="@+id/nom_commer_"
+        android:layout_width="179.9dp"
+        android:layout_height="30dp"
+        android:text="@string/nom_commer_"
+        android:textAppearance="@style/nom_commer_"
+        android:lineSpacingExtra="8sp"
+        android:gravity="center_vertical"
+
+        />
+
+    <!-- Catégorie -->
+    <TextView
+        android:id="@+id/cat_gorie"
+        android:layout_width="71.96dp"
+        android:layout_height="23dp"
+        android:layout_below="@+id/nom_commer_"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:lineSpacingExtra="6sp"
+        android:text="@string/cat_gorie"
+        android:textAppearance="@style/cat_gorie" />
+
+    <Button
+        android:id="@+id/modifier"
+        android:layout_width="69.22dp"
+        android:layout_height="25.41dp"
+        android:layout_below="@+id/nom_commer_"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/cat_gorie"
+        android:text="@string/modifier"
+        android:gravity="center"
+        android:textAppearance="@style/modifier"
+        android:lineSpacingExtra="5sp"
+        android:background="#999999"
+        android:onClick="modifier"/>
+
+    <Button
+        android:id="@+id/supprimer"
+        android:layout_width="27.29dp"
+        android:layout_height="25.41dp"
+        android:layout_below="@+id/nom_commer_"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/modifier"
+        android:text="x"
+        android:gravity="center"
+        android:textAppearance="@style/modifier"
+        android:lineSpacingExtra="5sp"
+        android:background="#999999"
+        android:onClick="supprimer"/>
+
+</RelativeLayout>
+
