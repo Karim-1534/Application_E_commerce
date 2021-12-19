@@ -15,7 +15,6 @@ public class ConnexComActivity  extends Activity {
     public void ajout(View v) {
         Intent intent = new Intent(this, AjoutAnnonce.class);
         startActivity(intent);
-
     }
 
 }

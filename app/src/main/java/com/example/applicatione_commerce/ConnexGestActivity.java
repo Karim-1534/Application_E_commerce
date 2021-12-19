@@ -21,7 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ConnexGestActivity extends Activity {
     String commerce[]
-            = { "Commercant" };
+            = {"Commercant"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

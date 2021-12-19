@@ -196,16 +196,16 @@
        />
 
     <Button
-        android:id="@+id/s_inscrire"
+        android:id="@+id/btn_ajout_annonce"
         android:layout_width="315dp"
         android:layout_height="48dp"
         android:layout_below="@+id/Rayon"
         android:layout_alignParentStart="true"
         android:layout_marginStart="50dp"
         android:layout_marginTop="9dp"
+        android:background="@drawable/rectangle_3"
         android:gravity="center"
         android:text="@string/valider"
-        android:background="@drawable/rectangle_3"
         android:textAppearance="@style/valider" />
 
 

@@ -45,6 +45,7 @@
     <string name="ajout_commerce">Le commerçant a bien été ajouté !</string>
     <string name="ok" >OK</string>
     <string name="modif_commerce">Le commerçant a bien été modifié !</string>
+    <string name="conf_ajout_annonce">L\'annonce a bien \ét\é ajout\ée !</string>
     <string name="bonjour">Bonjour</string>
     <string name="nomcommerca">Toto</string>
     <string name="tu_souhaite">Tu souhaites ?</string>

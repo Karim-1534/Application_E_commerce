@@ -30,7 +30,7 @@
         />
 
     <TextView
-        android:id="@+id/le_commer_a"
+        android:id="@+id/message_val"
         android:layout_width="183dp"
         android:layout_height="102dp"
         android:layout_alignParentStart="true"
@@ -46,7 +46,7 @@
         android:id="@+id/ok"
         android:layout_width="315dp"
         android:layout_height="48dp"
-        android:layout_below="@+id/le_commer_a"
+        android:layout_below="@+id/message_val"
         android:layout_alignParentStart="true"
         android:layout_marginStart="47dp"
         android:layout_marginTop="20dp"
