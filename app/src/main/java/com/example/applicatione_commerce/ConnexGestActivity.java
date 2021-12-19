@@ -1,10 +1,18 @@
 package com.example.applicatione_commerce;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,10 +42,17 @@ public class ConnexGestActivity extends Activity {
     }
 
     public void modifier(View v){
-        Toast.makeText(this, "modifier", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, ModifCommerce.class);
+        startActivity(intent);
     }
 
     public void supprimer(View v){
-        Toast.makeText(this, "supprimer", Toast.LENGTH_SHORT).show();
+
+        CustomDialogClass cdd = new CustomDialogClass(ConnexGestActivity.this);
+        cdd.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        cdd.show();
+
     }
+
+
 }

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/validation_"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/validation_">
+    <!-- Voulez-vous vraiment supprimer ce commerçant ? -->
+    <TextView
+        android:id="@+id/voulez_vous"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="center_horizontal|bottom"
+        android:lineSpacingExtra="5sp"
+        android:text="@string/voulez_vous"
+        android:textAppearance="@style/voulez_vous"
+        android:translationY="2.4sp" />
+
+    <Button
+        android:id="@+id/oui"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@+id/voulez_vous"
+        android:layout_alignParentStart="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="75sp"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="#FFFFFF"
+        android:gravity="center"
+        android:text="@string/oui"
+        android:textAlignment="center"
+        android:textAppearance="@style/oui" />
+
+    <Button
+        android:id="@+id/non"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@+id/voulez_vous"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="60dp"
+        android:layout_toEndOf="@+id/oui"
+        android:backgroundTint="#81AA66"
+        android:gravity="center"
+        android:text="@string/non"
+        android:textAlignment="center"
+        android:textAppearance="@style/non" />
+
+</RelativeLayout>

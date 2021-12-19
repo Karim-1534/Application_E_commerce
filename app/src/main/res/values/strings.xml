@@ -45,4 +45,10 @@
     <string name="ajouter_un_p" />
     <string name="faire_une_of" />
     <string name="voir_les_com_com" />
+    <string name="voulez_vous">Voulez-vous vraiment supprimer ce commerçant ?</string>
+    <string name="oui" >OUI</string>
+    <string name="non" >NON</string>
+    <string name="ajout_commerce">Le commerçant a bien été ajouté !</string>
+    <string name="ok" >OK</string>
+    <string name="modif_commerce">Le commerçant a bien été modifié !</string>
 </resources>

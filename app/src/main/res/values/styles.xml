@@ -194,4 +194,29 @@
     <style name="nomcommerca"></style>
 
     <style name="tu_souhaite"></style>
+
+    <style name="voulez_vous">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="oui">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#81AA66</item>
+    </style>
+
+    <style name="non">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="confirm_commerce">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="ok">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#81AA66</item>
+    </style>
 </resources>

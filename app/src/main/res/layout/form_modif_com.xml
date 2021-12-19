@@ -28,7 +28,7 @@
         android:layout_marginStart="69dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="34dp"
-        android:text="@string/nouveau_com"
+        android:text="Nom du commerçant"
         android:textAppearance="@style/nouveau_com"
         android:textAlignment="center"
         android:lineSpacingExtra="5sp"
@@ -310,7 +310,7 @@
 
     <!-- S’inscrire -->
     <Button
-        android:id="@+id/btn_ajout_commerce"
+        android:id="@+id/btn_modif"
         android:layout_width="315dp"
         android:layout_height="48dp"
         android:layout_below="@+id/mdp_text"

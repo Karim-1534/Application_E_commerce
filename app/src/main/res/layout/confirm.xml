@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/formulaire_"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/confirmation"
+    >
+
+    <!-- logo -->
+    <View
+        android:id="@+id/logo"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="360dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="11dp"
+        />
+
+    <View
+        android:id="@+id/ellipse_8"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="156dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="187dp"
+        android:background="@drawable/ellipse_8"
+        />
+
+    <TextView
+        android:id="@+id/le_commer_a"
+        android:layout_width="183dp"
+        android:layout_height="102dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="114dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="320dp"
+        android:lineSpacingExtra="5sp"
+        android:translationY="-2.4sp"
+        android:gravity="center_horizontal|top"
+        />
+
+    <Button
+        android:id="@+id/ok"
+        android:layout_width="315dp"
+        android:layout_height="48dp"
+        android:layout_below="@+id/le_commer_a"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="@string/ok"
+        android:textAppearance="@style/ok"
+        android:lineSpacingExtra="4sp"
+        android:translationY="-1.8sp"
+        android:gravity="center_horizontal|top" />
+
+
+</RelativeLayout>
