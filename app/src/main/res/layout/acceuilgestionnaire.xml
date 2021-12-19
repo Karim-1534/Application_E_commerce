@@ -43,6 +43,18 @@
         android:layout_marginTop="20dp"
         android:backgroundTint="#81AA66"
         android:text="@string/ajouter_un_"
+        android:onClick="ajout"
         android:textAppearance="@style/ajouter_un_"/>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="340dp"
+        android:layout_height="fill_parent"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="166dp"
+        android:elevation="20dp"
+        android:layout_below="@+id/ajoutcommerce"/>
 
 </RelativeLayout>
