@@ -1,32 +1,25 @@
 package com.example.applicatione_commerce;
 
-import androidx.appcompat.app.AppCompatActivity;
+
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
+
 import android.view.View;
-import android.widget.AdapterView;
+
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.applicatione_commerce.R;
-/*import com.google.firebase.FirebaseApp;
-import com.google.firebase.FirebaseOptions;
-import com.google.firebase.auth.GoogleAuthCredential;*/
-import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.prefs.PreferenceChangeEvent;
 
 
-public class MainActivity extends Activity {
-    //GoogleCredential credential = GoogleCredential.fromStream(resourceAsStream);
+
+public class MainActivity extends Activity{
+
     public void inscription(View v){
         Intent intent = new Intent(this, InscriptionActivity.class);
         startActivity(intent);
@@ -55,6 +48,7 @@ public class MainActivity extends Activity {
         Spinner spinner = (Spinner) findViewById(R.id.choixcatego);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinner_item,list);
         spinner.setAdapter(adapter);
+
 
 
 
