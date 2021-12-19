@@ -67,7 +67,7 @@
         android:lineSpacingExtra="3sp"
         android:translationY="-1.6sp"
         android:hint="@string/nom"
-        android:textSize="12"/>
+        android:textSize="12sp"/>
 
 
     <!-- Services -->
@@ -306,7 +306,7 @@
         android:background="@drawable/rectangle_2"
         android:gravity="center"
         android:hint="@string/mot_de_pass"
-        android:textSize="12" />
+        android:textSize="12sp" />
 
     <!-- S’inscrire -->
     <Button
