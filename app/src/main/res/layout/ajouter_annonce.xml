@@ -30,10 +30,11 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="45dp"
         android:layout_marginTop="159.43dp"
-        android:alpha="0.2"
         android:background="@drawable/rectangle_2"
         android:gravity="center"
         android:hint="@string/nom"
+        android:textColorHint="@color/grey"
+        android:textAppearance="@style/ChampsParDefault"
         android:lineSpacingExtra="3sp"
         android:textSize="12sp"
         android:translationY="-1.6sp" />
@@ -55,29 +56,40 @@
         android:translationY="-1sp" />
 
 
-    <EditText
+    <TextView
         android:id="@+id/image"
-        android:layout_width="315dp"
+        android:layout_width="220dp"
         android:layout_height="38.57dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
         android:layout_marginLeft="45dp"
-        android:layout_marginTop="225.43dp"
-        android:alpha="0.2"
+        android:layout_marginTop="224dp"
         android:background="@drawable/rectangle_2"
-        android:gravity="center"
+        android:gravity="left|center"
+        android:hint="@string/image"
+        android:textAppearance="@style/ChampsParDefault"
+        android:textColorHint="@color/grey"
         android:translationY="-1.6sp" />
+
+    <Button
+        android:id="@+id/btn_import_image"
+        android:layout_width="95dp"
+        android:layout_height="38.57dp"
+        android:layout_marginLeft="265dp"
+        android:layout_marginTop="222dp"
+        android:background="@drawable/frame_16"
+        android:gravity="center"
+        android:text="@string/importer"
+        android:textAppearance="@style/valider" />
 
     <TextView
 
-        android:layout_width="51dp"
+        android:layout_width="90dp"
         android:layout_height="16dp"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="58dp"
         android:layout_alignParentTop="true"
+        android:layout_marginLeft="58dp"
         android:layout_marginTop="219dp"
-        android:clipToOutline="true"
         android:background="@drawable/frame_16"
+        android:clipToOutline="true"
         android:gravity="center_horizontal|top"
         android:lineSpacingExtra="2sp"
         android:text="@string/image"
@@ -91,10 +103,11 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="45dp"
         android:layout_marginTop="291.43dp"
-        android:alpha="0.2"
         android:background="@drawable/rectangle_2"
         android:gravity="center"
         android:hint="____________________€"
+        android:textAppearance="@style/ChampsParDefault"
+        android:textColorHint="@color/grey"
         android:textSize="12sp"
         android:translationY="-1.6sp" />
 
@@ -112,7 +125,7 @@
         android:text="@string/prix"
         android:textAppearance="@style/prix"
         android:translationY="-1sp"
-     />
+        />
 
     <TextView
 
@@ -138,10 +151,11 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="45dp"
         android:layout_marginTop="357.43dp"
-        android:alpha="0.2"
         android:background="@drawable/rectangle_2"
         android:gravity="center"
         android:hint="@string/d_tails_du_"
+        android:textColorHint="@color/grey"
+        android:textAppearance="@style/ChampsParDefault"
         android:textSize="12sp"
         android:translationY="-1.6sp" />
 
@@ -166,7 +180,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="45dp"
         android:layout_marginTop="439dp"
-        android:spinnerMode="dropdown" />
+        android:spinnerMode="dropdown"
+        />
 
 
     <TextView
@@ -193,7 +208,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="207dp"
         android:layout_marginTop="439dp"
-       />
+        />
 
     <Button
         android:id="@+id/btn_ajout_annonce"
