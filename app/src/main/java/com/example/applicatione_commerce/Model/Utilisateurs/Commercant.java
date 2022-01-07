@@ -1,53 +1,64 @@
 package com.example.applicatione_commerce.Model.Utilisateurs;
 
-import com.example.applicatione_commerce.Model.Produit;
-
+import com.google.firebase.firestore.DocumentReference;
 import java.util.List;
 
+
 public class Commercant {
-    String adresse;
-    String email;
-    String motdepasse;
-    String nom;
-    List<Produit> produits;
+    String EMAIL;
+    String MOTDEPASSE;
+    String NOM;
+    String NUMSIRET;
+    List<DocumentReference> PRODUITS;
 
-    public List<Produit> getProduits() {
-        return produits;
+    public Commercant() {
     }
 
-    public void setProduits(List<Produit> produits) {
-        this.produits = produits;
+    public Commercant(String EMAIL, String MOTDEPASSE, String NOM, String NUMSIRET, List<DocumentReference> PRODUITS) {
+        this.EMAIL = EMAIL;
+        this.MOTDEPASSE = MOTDEPASSE;
+        this.NOM = NOM;
+        this.NUMSIRET = NUMSIRET;
+        this.PRODUITS = PRODUITS;
     }
 
-    public String getAdresse() {
-        return adresse;
+    public String getNUMSIRET() {
+        return NUMSIRET;
     }
 
-    public void setAdresse(String adresse) {
-        this.adresse = adresse;
+    public void setNUMSIRET(String NUMSIRET) {
+        this.NUMSIRET = NUMSIRET;
     }
 
-    public String getEmail() {
-        return email;
+    public List<DocumentReference> getPRODUITS() {
+        return PRODUITS;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setPRODUITS(List<DocumentReference> PRODUITS) {
+        this.PRODUITS = PRODUITS;
     }
 
-    public String getMotdepasse() {
-        return motdepasse;
+    public String getEMAIL() {
+        return EMAIL;
     }
 
-    public void setMotdepasse(String motdepasse) {
-        this.motdepasse = motdepasse;
+    public void setEMAIL(String EMAIL) {
+        this.EMAIL = EMAIL;
     }
 
-    public String getNom() {
-        return nom;
+    public String getMOTDEPASSE() {
+        return MOTDEPASSE;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setMOTDEPASSE(String MOTDEPASSE) {
+        this.MOTDEPASSE = MOTDEPASSE;
+    }
+
+    public String getNOM() {
+        return NOM;
+    }
+
+    public void setNOM(String NOM) {
+        this.NOM = NOM;
     }
 }

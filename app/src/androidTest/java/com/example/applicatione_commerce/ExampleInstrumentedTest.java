@@ -1,15 +1,14 @@
 package com.example.applicatione_commerce;
 
-import android.content.Context;
-import android.view.View;
+import static org.junit.Assert.assertEquals;
 
-import androidx.test.platform.app.InstrumentationRegistry;
+import android.content.Context;
+
 import androidx.test.ext.junit.runners.AndroidJUnit4;
+import androidx.test.platform.app.InstrumentationRegistry;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
-import static org.junit.Assert.*;
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -23,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         assertEquals("com.example.applicatione_commerce", appContext.getPackageName());
-        View v = new View();
+        //View v = new View();
     }
 }

@@ -1,33 +1,46 @@
 package com.example.applicatione_commerce.Model;
+import com.google.firebase.firestore.DocumentReference;
 
 import java.util.List;
 
 public class Panier {
-    List<Produit> produits;
-    Integer quantite;
-    float totale;
 
-    public List<Produit> getProduits() {
-        return produits;
+    Integer QUANTITE;
+    float TOTALE;
+
+    List<DocumentReference> PRODUITS;
+
+    public Panier() {
     }
 
-    public void setProduits(List<Produit> produits) {
-        this.produits = produits;
+
+    public Panier(Integer QUANTITE, float TOTALE, List<DocumentReference> PRODUITS) {
+        this.QUANTITE = QUANTITE;
+        this.TOTALE = TOTALE;
+        this.PRODUITS = PRODUITS;
     }
 
-    public Integer getQuantite() {
-        return quantite;
+    public List<DocumentReference> getPRODUITS() {
+        return PRODUITS;
     }
 
-    public void setQuantite(Integer quantite) {
-        this.quantite = quantite;
+    public void setPRODUITS(List<DocumentReference> PRODUITS) {
+        this.PRODUITS = PRODUITS;
     }
 
-    public float getTotale() {
-        return totale;
+    public Integer getQUANTITE() {
+        return QUANTITE;
     }
 
-    public void setTotale(float totale) {
-        this.totale = totale;
+    public void setQUANTITE(Integer QUANTITE) {
+        this.QUANTITE = QUANTITE;
+    }
+
+    public float getTOTALE() {
+        return TOTALE;
+    }
+
+    public void setTOTALE(float TOTALE) {
+        this.TOTALE = TOTALE;
     }
 }

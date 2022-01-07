@@ -58,4 +58,8 @@
     <string name="d_tails_du_">D\étails du produit</string>
     <string name="description">Description</string>
     <string name="importer">Importer</string>
+    <string name="error_unknown_error">Erreur inconnu</string>
+    <string name="facebook_application_id" translatable="false">YOUR_APP_ID</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fbYOUR_APP_ID</string>
+
 </resources>
