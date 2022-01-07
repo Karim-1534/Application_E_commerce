@@ -27,8 +27,7 @@ public class Confirm extends Activity {
         btn_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(Confirm.this, ConnexGestActivity.class);
-                startActivity(intent1);
+                Confirm.this.finish();
             }
         });
 
