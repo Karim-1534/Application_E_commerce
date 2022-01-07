@@ -39,8 +39,6 @@ public class AjoutAnnonce extends Activity {
 
 
     private void initActivity(){
-        TextView nom = (TextView) findViewById(R.id.nom);
-        initActivity();
 
        spinner = (Spinner) findViewById(R.id.categorie);
         initSpinnerCatergorie();
@@ -123,6 +121,7 @@ public void onResume() {
     * initialisation du spinner catégorie
     * */
     private void initSpinnerCatergorie(){
+        list.clear();
         list.add("------");
         list.add("Animaux de compagnie");
         list.add("Mode et beauté");

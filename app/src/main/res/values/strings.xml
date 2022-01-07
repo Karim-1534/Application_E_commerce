@@ -63,5 +63,7 @@
     <string name="offre">Offre</string>
     <string name="disponibili">Disponibilité</string>
     <string name="conf_modif_annonce">L\'annonce a bien été modifié</string>
+    <string name="importer">Importer</string>
+
 
 </resources>

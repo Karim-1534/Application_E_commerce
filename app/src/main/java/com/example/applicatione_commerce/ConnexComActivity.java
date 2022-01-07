@@ -17,4 +17,9 @@ public class ConnexComActivity  extends Activity {
         startActivity(intent);
     }
 
+    public void modif(View v) {
+        Intent intent = new Intent(this, ModifAnnonce.class);
+        startActivity(intent);
+    }
+
 }

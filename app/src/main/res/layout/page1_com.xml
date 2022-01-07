@@ -87,7 +87,7 @@
         android:layout_marginTop="383dp"
         android:background="@drawable/rectangle_3"
         android:gravity="center"
-        android:onClick="connexion"
+        android:onClick="modif"
         android:text="@string/faire_une_of"
         android:textAppearance="@style/se_connecte" />
 
