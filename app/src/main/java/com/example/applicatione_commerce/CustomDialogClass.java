@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class CustomDialogClass extends Dialog implements
@@ -14,7 +15,14 @@ public class CustomDialogClass extends Dialog implements
 
     public Activity c;
     public Button oui, non;
+    public TextView text;
+    public String result;
+    private Intent intent;
 
+
+    public void setResult(String string){
+        result = string;
+    }
 
     public CustomDialogClass(Activity a) {
         super(a);
@@ -32,19 +40,21 @@ public class CustomDialogClass extends Dialog implements
     }
 
     private void initActivity() {
-
+        text = (TextView) findViewById(R.id.voulez_vous);
+        text.setText("null");
         oui = (Button) findViewById(R.id.oui);
         oui.setOnClickListener(this);
 
         non = (Button) findViewById(R.id.non);
         non.setOnClickListener(this);
+
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.oui:
-                Toast.makeText(v.getContext(), "Supprimé", Toast.LENGTH_SHORT).show();
+                Toast.makeText(v.getContext(),result, Toast.LENGTH_SHORT).show();
                 break;
             case R.id.non:
                 dismiss();

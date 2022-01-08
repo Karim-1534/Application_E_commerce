@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/modifAnnonce"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/formulaire_">
+
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:layout_toEndOf="@+id/searchannonce"
+        android:background="@drawable/logo"
+        android:contentDescription="@string/logo" />
+
+
+    <Spinner
+        android:id="@+id/filtre"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp" />
+
+    <SearchView
+        android:id="@+id/searchannonce"
+        android:layout_width="291dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="25dp"
+        android:layout_toEndOf="@+id/filtre"
+        android:iconifiedByDefault="false"
+        android:queryHint="Produit" />
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/searchannonce"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="10dp"
+        android:elevation="20dp" />
+
+    <ImageButton
+        android:id="@+id/btn_commandes"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:onClick="commandes"
+        android:layout_toStartOf="@+id/btn_panier"
+        android:background="@drawable/rectangle_3"
+        android:src="@drawable/ic_baseline_all_inbox_24" />
+
+    <Button
+        android:id="@+id/btn_connexion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:layout_toStartOf="@+id/btn_panier"
+        android:background="@drawable/rectangle_3"
+        android:gravity="center"
+        android:onClick="connexion"
+        android:src="@drawable/ic_baseline_all_inbox_24"
+        android:text="@string/se_connecte"
+        android:textAppearance="@style/btn" />
+
+    <ImageButton
+        android:id="@+id/btn_panier"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:background="@drawable/rectangle_3"
+        android:onClick="panier"
+        android:src="@drawable/ic_baseline_shopping_cart_checkout_24"
+        android:text="@string/panier" />
+
+
+</RelativeLayout>

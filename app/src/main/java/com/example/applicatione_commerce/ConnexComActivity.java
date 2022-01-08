@@ -22,4 +22,8 @@ public class ConnexComActivity  extends Activity {
         startActivity(intent);
     }
 
+    public void consulter(View view) {
+        Intent intent = new Intent(this, CommandeRecueActivity.class);
+        startActivity(intent);
+    }
 }

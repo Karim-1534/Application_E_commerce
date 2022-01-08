@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/modifAnnonce"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/formulaire_">
+
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="360dp"
+        android:layout_marginTop="15dp"
+        android:layout_toEndOf="@+id/commande"
+        android:background="@drawable/logo"
+        android:contentDescription="@string/logo" />
+
+
+    <TextView
+        android:id="@+id/commande"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="34dp"
+        android:lineSpacingExtra="5sp"
+        android:text="@string/commande_client"
+        android:textAlignment="center"
+        android:textAppearance="@style/titre"
+        android:translationY="-2.4sp" />
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/commande"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="10dp"
+        android:elevation="20dp" />
+
+    <TextView
+        android:id="@+id/service"
+        android:layout_width="315dp"
+        android:layout_height="48dp"
+        android:layout_below="@id/listView"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="25dp"
+        android:gravity="center_horizontal|top"
+        android:lineSpacingExtra="3sp"
+        android:onClick="service"
+        android:text="@string/contacter"
+        android:textAppearance="@style/txt_btn_2"
+        android:translationY="-1.6sp" />
+
+
+    <ImageButton
+        android:id="@+id/btn_home"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:layout_toStartOf="@+id/btn_panier"
+        android:background="@drawable/rectangle_3"
+        android:onClick="home"
+        android:src="@drawable/ic_baseline_home_24" />
+
+
+
+    <ImageButton
+        android:id="@+id/btn_panier"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:onClick="panier"
+        android:background="@drawable/rectangle_3"
+        android:src="@drawable/ic_baseline_shopping_cart_checkout_24"
+        android:text="@string/panier" />
+
+
+</RelativeLayout>

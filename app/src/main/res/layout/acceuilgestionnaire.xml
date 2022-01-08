@@ -10,11 +10,10 @@
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="360dp"
         android:layout_alignParentTop="true"
+        android:layout_marginStart="360dp"
         android:layout_marginTop="11dp"
-        android:background="@drawable/logo"
-        />
+        android:background="@drawable/logo" />
 
     <!-- Liste de Commerçant -->
     <TextView

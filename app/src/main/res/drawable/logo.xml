@@ -2,7 +2,6 @@
  <!-- drawable/logo.xml -->
     <vector
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:aapt="http://schemas.android.com/aapt"
         android:width="35dp"
         android:height="35dp"
         android:viewportWidth="35"
@@ -14,4 +13,3 @@
                 />
         </group>
     </vector>
-</vector>

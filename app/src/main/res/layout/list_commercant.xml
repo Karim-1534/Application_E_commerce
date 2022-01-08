@@ -37,14 +37,14 @@
         android:layout_marginStart="29dp"
         android:layout_marginTop="10dp"
         android:layout_toEndOf="@+id/cat_gorie"
-        android:text="@string/modifier"
-        android:gravity="center"
-        android:textAppearance="@style/label"
-        android:lineSpacingExtra="5sp"
         android:background="#999999"
-        android:onClick="modifier"/>
+        android:gravity="center"
+        android:lineSpacingExtra="5sp"
+        android:onClick="modifier"
+        android:text="@string/modifier"
+        android:textAppearance="@style/label" />
 
-    <Button
+    <ImageButton
         android:id="@+id/supprimer"
         android:layout_width="27.29dp"
         android:layout_height="25.41dp"
@@ -56,8 +56,7 @@
         android:gravity="center"
         android:lineSpacingExtra="5sp"
         android:onClick="supprimer"
-        android:text="x"
-        android:textAppearance="@style/label" />
+        android:src="@drawable/ic_baseline_close_24"/>
 
 </RelativeLayout>
 

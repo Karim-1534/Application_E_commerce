@@ -19,20 +19,28 @@ import java.util.List;
 public class MainActivity extends Activity{
     private  List<String> list;
     private Spinner spinner;
+    private Intent intent;
+    private Bundle bundle = new Bundle();
 
     public void inscription(View v){
-        Intent intent = new Intent(this, InscriptionActivity.class);
+        intent = new Intent(this, InscriptionActivity.class);
         startActivity(intent);
     }
 
     public void connexion(View v){
-        Spinner spinner = (Spinner) findViewById(R.id.choixcatego);
+        spinner = (Spinner) findViewById(R.id.choixcatego);
         TextView type = (TextView) spinner.getSelectedView();
         if(type.getText().equals("Gestionnaire")){
-            Intent intent = new Intent(this, ConnexGestActivity.class);
+            intent = new Intent(this, ConnexGestActivity.class);
             startActivity(intent);
         }else if(type.getText().equals("Commerçant")){
-            Intent intent = new Intent(this, ConnexComActivity.class);
+            intent = new Intent(this, ConnexComActivity.class);
+            startActivity(intent);
+        }else if(type.getText().equals("Client")){
+            String str = "connecté";
+            intent = new Intent(this, ConnexClientActivity.class);
+            bundle.putString("type",str);
+            intent.putExtras(bundle);
             startActivity(intent);
         }
 
@@ -69,4 +77,11 @@ public class MainActivity extends Activity{
         super.onResume();
     }
 
+    public void anonyme(View view) {
+        String str = "anonyme";
+        intent = new Intent(this, ConnexClientActivity.class);
+        bundle.putString("type",str);
+        intent.putExtras(bundle);
+        startActivity(intent);
+    }
 }

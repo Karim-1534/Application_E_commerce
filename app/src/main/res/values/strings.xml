@@ -9,7 +9,7 @@
     <string name="valider" >Valider</string>
     <string name="ajout_com">Ajouter un commerçant</string>
     <string name="modifier">Modifier</string>
-    <string name="supprimer">Voulez-vous vraiment supprimer ?</string>
+    <string name="supprimer">Êtes-vous sûr ?</string>
     <string name="oui" >OUI</string>
     <string name="non" >NON</string>
     <string name="ok" >OK</string>
@@ -65,5 +65,20 @@
     <string name="valid_modif_annonce">L\'annonce a bien été modifié</string>
     <string name="ville">ville</string>
     <string name="code_postale">code postale</string>
+    <string name="commande_recues">Commandes reçues</string>
+    <string name="nom_client">Nom du client</string>
+    <string name="date">"Date et heure de la reception: \n(DD/MM/YY) ; HH:MM:SS "</string>
+    <string name="annuler">Annuler</string>
+    <string name="confirmer">Confirmer</string>
+    <string name="status">Statut:</string>
+    <string name="preparation">En preparation</string>
+    <string name="livraison">En livraison</string>
+    <string name="termine">Terminé</string>
+    <string name="valid_modif_commande">Les commandes ont bien été modifiées.</string>
+    <string name="panier">Panier</string>
+    <string name="vider">Vider le panier</string>
+    <string name="commande_client">Commandes</string>
+    <string name="contacter">Contacter le service client</string>
+    <string name="valid_panier">La commande a bien été passé</string>
 
 </resources>

@@ -1,21 +1,13 @@
 package com.example.applicatione_commerce;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Spinner;
-import android.widget.TextView;
 
 
 public class ConnexGestActivity extends Activity {
@@ -40,7 +32,7 @@ public class ConnexGestActivity extends Activity {
         ArrayAdapter<String> arr;
         arr = new ArrayAdapter<String>(
                 this,
-                R.layout.list_item,
+                R.layout.list_commercant,
                 R.id.nom_commer_,
                 commerce);
         listView.setAdapter(arr);
@@ -60,8 +52,11 @@ public class ConnexGestActivity extends Activity {
     public void supprimer(View v){
 
         CustomDialogClass cdd = new CustomDialogClass(ConnexGestActivity.this);
+        cdd.setResult("Commerçant supprimé");
         cdd.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         cdd.show();
+        cdd.text.setText("Voulez-vous vraiment supprimer ce commerçant ?");
+
 
     }
 

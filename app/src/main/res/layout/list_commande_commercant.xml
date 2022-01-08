@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rectangle_5"
+    >
+
+    <!-- Nom du produit -->
+    <TextView
+        android:id="@+id/produit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/img_produit"
+        android:gravity="center_vertical"
+        android:lineSpacingExtra="6sp"
+        android:text="@string/nom_produit"
+
+        android:textAppearance="@style/item" />
+
+    <!-- Nom du client -->
+    <TextView
+        android:id="@+id/nom_client"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/produit"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/img_produit"
+        android:gravity="center_vertical"
+        android:lineSpacingExtra="6sp"
+        android:text="@string/nom_client"
+        android:textAppearance="@style/item" />
+
+    <!-- nom du client -->
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nom_client"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/img_produit"
+        android:gravity="center_vertical"
+        android:lineSpacingExtra="6sp"
+        android:text="@string/date"
+        android:textAppearance="@style/soustitre_item" />
+
+    <ImageView
+        android:id="@+id/img_produit"
+        android:layout_width="87dp"
+        android:layout_height="77dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/rectangle_3"
+        android:contentDescription="@string/image" />
+
+    <Button
+        android:id="@+id/confirmer"
+        android:layout_width="69.22dp"
+        android:layout_height="25.41dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp"
+        android:layout_toEndOf="@+id/date"
+        android:background="#81AA66"
+        android:gravity="center"
+        android:lineSpacingExtra="5sp"
+        android:onClick="confirmer"
+        android:text="@string/confirmer"
+        android:textAppearance="@style/label" />
+
+    <Button
+        android:id="@+id/modifier"
+        android:layout_width="69.22dp"
+        android:layout_height="25.41dp"
+        android:layout_below="@+id/confirmer"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/date"
+        android:background="#999999"
+        android:gravity="center"
+        android:lineSpacingExtra="5sp"
+        android:onClick="annuler"
+        android:text="@string/annuler"
+        android:textAppearance="@style/label" />
+
+    <!-- Nom du statut -->
+    <TextView
+        android:id="@+id/statut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/confirmer"
+        android:gravity="center_vertical"
+        android:lineSpacingExtra="6sp"
+        android:text="@string/status"
+        android:textAppearance="@style/item" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/statut"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_toEndOf="@+id/confirmer"
+        android:checkedButton="1"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/preparation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/preparation"
+            android:textAppearance="@style/soustitre_item" />
+
+        <RadioButton
+            android:id="@+id/livraison"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/livraison"
+            android:textAppearance="@style/soustitre_item" />
+
+        <RadioButton
+            android:id="@+id/termin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/termine"
+            android:textAppearance="@style/soustitre_item" />
+    </RadioGroup>
+
+</RelativeLayout>
+

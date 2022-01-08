@@ -35,7 +35,7 @@ public class ModifAnnonce extends Activity {
 
     private void initActivity(){
 
-        spinner = (Spinner) findViewById(R.id.dispo);
+        spinner = (Spinner) findViewById(R.id.filtre);
         initSpinnerDispo();
 
         btn_valider = (Button) findViewById(R.id.btn_modif_annonce);
@@ -51,8 +51,8 @@ public class ModifAnnonce extends Activity {
         ArrayAdapter<String> arr;
         arr = new ArrayAdapter<String>(
                 this,
-                R.layout.list_annonce,
-                R.id.nom_annonce,
+                R.layout.list_produit_commercant,
+                R.id.produit,
                 produit);
         listView.setAdapter(arr);
     }
@@ -101,8 +101,11 @@ public class ModifAnnonce extends Activity {
     public void supprimer(View v){
 
         CustomDialogClass cdd = new CustomDialogClass(ModifAnnonce.this);
+        cdd.setResult("Produit supprimé");
         cdd.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         cdd.show();
+        cdd.text.setText("Voulez-vous vraiment supprimer ce produit ?");
+
 
     }
 
