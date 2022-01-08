@@ -9,11 +9,16 @@ public class ConnexComActivity  extends Activity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.page1_com);
+        setContentView(R.layout.acceuilcommercant);
     }
 
     public void ajout(View v) {
         Intent intent = new Intent(this, AjoutAnnonce.class);
+        startActivity(intent);
+    }
+
+    public void modif(View v) {
+        Intent intent = new Intent(this, ModifAnnonce.class);
         startActivity(intent);
     }
 

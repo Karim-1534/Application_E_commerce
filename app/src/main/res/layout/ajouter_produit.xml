@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Gestionnaire Ajout Commercant -->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ajoutAnnonce"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/formulaire_">
+
+
+    <TextView
+        android:id="@+id/ajoutproduit"
+        android:layout_width="298dp"
+        android:layout_height="33dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="51dp"
+        android:gravity="center_horizontal|top"
+        android:lineSpacingExtra="0sp"
+        android:text="@string/ajout_produit"
+        android:textAppearance="@style/titre" />
+
+    <TextView
+        android:id="@+id/nom_produit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="50dp"
+        android:layout_below="@id/ajoutproduit"
+        android:background="@drawable/frame_16"
+        android:gravity="center_horizontal|top"
+        android:lineSpacingExtra="2sp"
+        android:text="@string/nom"
+        android:textAppearance="@style/label"
+        android:translationY="-1sp" />
+
+
+    <EditText
+        android:id="@+id/nom"
+        android:layout_width="315dp"
+        android:layout_height="38.57dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="-10dp"
+        android:layout_below="@id/nom_produit"
+        android:background="@drawable/rectangle_2"
+        android:textColorHint="@android:color/darker_gray"
+        android:gravity="center"
+        android:hint="@string/nom"
+        android:textAppearance="@style/ChampsParDefault"
+        android:lineSpacingExtra="3sp"
+        android:textSize="12sp"
+        android:translationY="-1.6sp"
+        android:autofillHints="name"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/nom"
+        android:background="@drawable/frame_16"
+        android:gravity="center_horizontal|top"
+        android:lineSpacingExtra="2sp"
+        android:text="@string/image"
+        android:textAppearance="@style/label"
+        android:translationY="-1sp" />
+
+
+    <TextView
+        android:id="@+id/image"
+        android:layout_width="222dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="-10dp"
+        android:background="@drawable/rectangle_2"
+        android:gravity="left|center"
+        android:hint="@string/image"
+        android:textAppearance="@style/ChampsParDefault"
+        android:textColorHint="@color/grey"
+        android:translationY="-1.6sp" />
+
+    <Button
+        android:id="@+id/btn_import_image"
+        android:layout_width="95dp"
+        android:layout_height="39dp"
+        android:layout_below="@id/img"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="-10dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toEndOf="@+id/image"
+        android:background="@drawable/frame_16"
+        android:gravity="center"
+        android:text="@string/importer"
+        android:textAppearance="@style/btn" />
+
+    <TextView
+        android:id="@+id/prix_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="58dp"
+        android:layout_below="@id/btn_import_image"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/frame_16"
+        android:gravity="center_horizontal|top"
+        android:lineSpacingExtra="2sp"
+        android:text="@string/prix"
+        android:textAppearance="@style/label"
+        android:translationY="-1sp"
+        />
+
+
+
+    <EditText
+        android:id="@+id/prix"
+        android:layout_width="315dp"
+        android:layout_height="38.57dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="45dp"
+        android:layout_below="@id/prix_label"
+        android:layout_marginTop="-10dp"
+        android:background="@drawable/rectangle_2"
+        android:gravity="center"
+        android:hint="@string/prix"
+        android:textAppearance="@style/ChampsParDefault"
+        android:textColorHint="@color/grey"
+        android:textSize="12sp"
+        android:translationY="-1.6sp"
+        android:autofillHints="price"
+        android:inputType="numberDecimal" />
+
+
+
+    <TextView
+        android:id="@+id/description_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="58dp"
+        android:layout_below="@id/prix"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/frame_16"
+        android:gravity="center_horizontal|top"
+        android:lineSpacingExtra="2sp"
+        android:text="@string/description"
+        android:textAppearance="@style/label"
+        android:translationY="-1sp" />
+
+    <EditText
+        android:id="@+id/description"
+        android:layout_width="315dp"
+        android:layout_height="38.57dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="45dp"
+        android:layout_below="@id/description_label"
+        android:layout_marginTop="-10dp"
+        android:background="@drawable/rectangle_2"
+        android:gravity="center"
+        android:hint="@string/details_produit"
+        android:textColorHint="@color/grey"
+        android:textAppearance="@style/ChampsParDefault"
+        android:textSize="12sp"
+        android:translationY="-1.6sp"
+        android:autofillHints="description"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/categorie_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="51dp"
+        android:layout_below="@id/description"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/frame_16"
+        android:gravity="center"
+        android:text="@string/categorie"
+        android:textAppearance="@style/label"
+        android:translationY="-1sp" />
+
+    <Spinner
+        android:id="@+id/categorie"
+        android:layout_width="153dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/categorie_label"
+        android:layout_marginTop="-10dp"
+        android:layout_marginStart="45dp"
+        android:spinnerMode="dropdown" />
+
+
+    <TextView
+        android:id="@+id/services_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="213dp"
+        android:layout_below="@id/description"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/frame_16"
+        android:gravity="center"
+        android:text="@string/services"
+        android:textAppearance="@style/label"
+        android:translationY="-1sp"
+        />
+
+
+    <Spinner
+        android:id="@+id/Rayon"
+        android:layout_width="153dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="207dp"
+        android:layout_below="@id/services_label"
+        android:layout_marginTop="-10dp"
+        />
+
+    <Button
+        android:id="@+id/btn_ajout_annonce"
+        android:layout_width="315dp"
+        android:layout_height="48dp"
+        android:layout_below="@+id/Rayon"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/rectangle_3"
+        android:gravity="center"
+        android:text="@string/valider"
+        android:textAppearance="@style/btn" />
+
+
+
+</RelativeLayout>

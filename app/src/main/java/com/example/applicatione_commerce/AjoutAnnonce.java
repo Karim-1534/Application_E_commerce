@@ -3,16 +3,12 @@ package com.example.applicatione_commerce;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,7 +27,7 @@ public class AjoutAnnonce extends Activity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ajouter_annonce);
+        setContentView(R.layout.ajouter_produit);
         initActivity();
     }
 
@@ -39,8 +35,6 @@ public class AjoutAnnonce extends Activity {
 
 
     private void initActivity(){
-        TextView nom = (TextView) findViewById(R.id.nom);
-        initActivity();
 
        spinner = (Spinner) findViewById(R.id.categorie);
         initSpinnerCatergorie();
@@ -63,7 +57,7 @@ public class AjoutAnnonce extends Activity {
         btn_valider.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String str = getResources().getString(R.string.conf_ajout_annonce);
+                String str = getResources().getString(R.string.valid_ajout_annonce);
                 Intent intent = new Intent(AjoutAnnonce.this, Confirm.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("type",str);
@@ -123,6 +117,7 @@ public void onResume() {
     * initialisation du spinner catégorie
     * */
     private void initSpinnerCatergorie(){
+        list.clear();
         list.add("------");
         list.add("Animaux de compagnie");
         list.add("Mode et beauté");

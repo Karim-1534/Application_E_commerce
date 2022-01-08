@@ -30,15 +30,15 @@
         android:translationY="-2.4sp"
         android:textAlignment="center"
         android:text="@string/bienvenue"
-        android:textAppearance="@style/bienvenue" />
+        android:textAppearance="@style/titre" />
 
 
     <!-- Nom d'utilisateur -->
 
     <TextView
         android:id="@+id/nom_d_utili"
-        android:layout_width="120dp"
-        android:layout_height="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_marginStart="62.03dp"
         android:layout_marginTop="20dp"
@@ -46,8 +46,8 @@
         android:background="@drawable/frame_16"
         android:gravity="center_horizontal|top"
         android:lineSpacingExtra="2sp"
-        android:text="@string/nom_d_utili"
-        android:textAppearance="@style/nom_d_utili"
+        android:text="@string/username"
+        android:textAppearance="@style/label"
         android:translationY="-1sp" />
 
     <EditText
@@ -61,10 +61,10 @@
         android:autofillHints="name"
         android:background="@drawable/rectangle_2"
         android:gravity="center"
-        android:alpha="0.2"
-        android:hint="@string/nom_d_utili"
+        android:hint="@string/username"
         android:inputType="textPersonName"
         android:lineSpacingExtra="10sp"
+        android:textColorHint="@color/grey"
         android:textSize="12sp"
         android:translationY="-1.6sp" />
 
@@ -72,8 +72,8 @@
 
     <TextView
         android:id="@+id/adresse_ema"
-        android:layout_width="99dp"
-        android:layout_height="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_marginStart="62dp"
         android:layout_marginTop="20dp"
@@ -81,8 +81,8 @@
         android:gravity="center_horizontal|top"
         android:background="@drawable/frame_16"
         android:lineSpacingExtra="2sp"
-        android:text="@string/adresse_ema"
-        android:textAppearance="@style/adresse_ema"
+        android:text="@string/adresse_email"
+        android:textAppearance="@style/label"
         android:translationY="-1sp" />
 
     <EditText
@@ -93,13 +93,13 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="49dp"
         android:layout_marginTop="-10dp"
-        android:alpha="0.2"
         android:autofillHints="emailAddress"
         android:background="@drawable/rectangle_2"
         android:gravity="center"
-        android:hint="@string/adresse_ema"
+        android:hint="@string/adresse_email"
         android:inputType="textEmailAddress"
         android:lineSpacingExtra="3sp"
+        android:textColorHint="@color/grey"
         android:textSize="12sp"
         android:translationY="-1.6sp" />
 
@@ -108,12 +108,12 @@
     <TextView
         android:id="@+id/num_tel"
         android:text="@string/num_tel"
-        android:textAppearance="@style/num_tel"
+        android:textAppearance="@style/label"
         android:lineSpacingExtra="2sp"
         android:translationY="-1sp"
         android:gravity="center_horizontal|top"
-        android:layout_width="93dp"
-        android:layout_height="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@drawable/frame_16"
         android:layout_alignParentStart="true"
         android:layout_marginStart="62dp"
@@ -129,12 +129,13 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="49dp"
         android:layout_marginTop="-10dp"
-        android:alpha="0.2"
+        android:autofillHints="phone"
         android:background="@drawable/rectangle_2"
         android:gravity="center"
-        android:hint="phone"
+        android:hint="@string/num_tel"
         android:inputType="phone"
         android:lineSpacingExtra="3sp"
+        android:textColorHint="@color/grey"
         android:textSize="12sp"
         android:translationY="-1.6sp" />
 
@@ -144,15 +145,15 @@
 
     <TextView
         android:id="@+id/adresse"
-        android:layout_width="65dp"
-        android:layout_height="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_marginStart="62dp"
         android:layout_marginTop="20dp"
         android:layout_below="@+id/android_exe"
         android:background="@drawable/frame_16"
         android:text="@string/adresse"
-        android:textAppearance="@style/adresse"
+        android:textAppearance="@style/label"
         android:lineSpacingExtra="2sp"
         android:translationY="-1sp"
         android:gravity="center_horizontal|top"
@@ -178,11 +179,11 @@
         android:layout_marginStart="66.06dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="66.06dp"
-        android:alpha="0.2"
         android:autofillHints="postalAddress"
         android:background="@drawable/rectangle_2"
         android:gravity="top"
-        android:hint="adresse"
+        android:hint="@string/adresse"
+        android:textColorHint="@color/grey"
         android:inputType="textPostalAddress"
         android:lineSpacingExtra="3sp"
         android:textSize="12sp"
@@ -198,14 +199,14 @@
         android:layout_marginStart="224.73dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="66.06dp"
-        android:alpha="0.2"
         android:autofillHints="postalAddress"
         android:background="@drawable/rectangle_2"
         android:gravity="top"
         android:inputType="textPostalAddress"
         android:lineSpacingExtra="3sp"
         android:translationY="-1.3sp"
-        android:hint="Ville"
+        android:textColorHint="@color/grey"
+        android:hint="@string/ville"
         android:textSize="12sp"/>
 
 
@@ -218,13 +219,13 @@
         android:layout_marginStart="66.06dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="224.73dp"
-        android:alpha="0.2"
         android:autofillHints="postalCode"
         android:background="@drawable/rectangle_2"
         android:gravity="top"
-        android:hint="code postale"
+        android:hint="@string/code_postale"
         android:inputType="textPostalAddress"
         android:lineSpacingExtra="3sp"
+        android:textColorHint="@color/grey"
         android:textSize="12sp"
         android:translationY="-1.3sp" />
 
@@ -232,8 +233,8 @@
 
 
     <TextView
-        android:layout_width="92dp"
-        android:layout_height="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_marginStart="62dp"
         android:layout_marginTop="20dp"
@@ -241,7 +242,7 @@
         android:background="@drawable/frame_16"
         android:id="@+id/mot_de_pass"
         android:text="@string/mot_de_pass"
-        android:textAppearance="@style/mot_de_pass"
+        android:textAppearance="@style/label"
         android:lineSpacingExtra="2sp"
         android:translationY="-1sp"
         android:gravity="center_horizontal|top"
@@ -255,13 +256,13 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="49dp"
         android:layout_marginTop="-10dp"
-        android:alpha="0.2"
         android:autofillHints="password"
         android:background="@drawable/rectangle_2"
         android:gravity="center_horizontal|center"
-        android:hint="mot de passe"
+        android:hint="@string/mot_de_pass"
         android:inputType="textPassword"
         android:lineSpacingExtra="3sp"
+        android:textColorHint="@color/grey"
         android:textSize="12sp"
         android:translationY="-1.6sp" />
 
@@ -269,19 +270,18 @@
 
     <TextView
         android:id="@+id/confirmatio"
-        android:layout_width="190dp"
-        android:layout_height="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mdp_exemple"
         android:layout_alignParentStart="true"
         android:layout_marginStart="62dp"
         android:layout_marginTop="20dp"
-        android:layout_below="@+id/mdp_exemple"
-        android:text="@string/confirmatio"
         android:background="@drawable/frame_16"
-        android:textAppearance="@style/confirmatio"
-        android:lineSpacingExtra="2sp"
-        android:translationY="-1sp"
         android:gravity="center_horizontal|top"
-        />
+        android:lineSpacingExtra="2sp"
+        android:text="@string/mdp_confirm"
+        android:textAppearance="@style/label"
+        android:translationY="-1sp" />
 
     <EditText
         android:id="@+id/mdp_confirm_exemple"
@@ -291,14 +291,15 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="49dp"
         android:layout_marginTop="-10dp"
-        android:alpha="0.2"
         android:background="@drawable/rectangle_2"
         android:gravity="center_horizontal|center"
-        android:hint="confirmer le mot de passe"
+        android:textColorHint="@color/grey"
+        android:hint="@string/mdp_confirm"
         android:textSize="12sp"
         android:inputType="textPassword"
         android:lineSpacingExtra="3sp"
-        android:translationY="-1.6sp" />
+        android:translationY="-1.6sp"
+        android:autofillHints="password" />
 
     <!-- S’inscrire -->
     <Button
@@ -311,7 +312,7 @@
         android:layout_marginTop="20dp"
         android:backgroundTint="#81AA66"
         android:text="@string/s_inscrire"
-        android:textAppearance="@style/s_inscrire" />
+        android:textAppearance="@style/btn" />
 
 
 </RelativeLayout>

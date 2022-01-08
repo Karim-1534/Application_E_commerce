@@ -52,7 +52,7 @@
         android:layout_marginTop="20dp"
         android:backgroundTint="#FFFFFF"
         android:text="@string/ok"
-        android:textAppearance="@style/ok"
+        android:textAppearance="@style/txt_btn"
         android:lineSpacingExtra="4sp"
         android:translationY="-1.8sp"
         android:gravity="center_horizontal|top" />

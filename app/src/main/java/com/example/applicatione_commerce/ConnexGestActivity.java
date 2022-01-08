@@ -14,16 +14,29 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 
 public class ConnexGestActivity extends Activity {
+    private ListView listView;
     String commerce[]
-            = {"Commercant"};
+            = {"Commerçant 1","Commerçant 2","Commerçant 3","Commerçant 4"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acceuilgestionnaire);
-        ListView listView = (ListView)findViewById(R.id.listView);
+        initActivity();
+
+    }
+
+    private void initActivity(){
+
+        listView = (ListView)findViewById(R.id.listView);
+        initListView();
+    }
+
+    private void initListView() {
         ArrayAdapter<String> arr;
         arr = new ArrayAdapter<String>(
                 this,
@@ -32,6 +45,7 @@ public class ConnexGestActivity extends Activity {
                 commerce);
         listView.setAdapter(arr);
     }
+
 
     public void ajout(View v){
         Intent intent = new Intent(this, AjoutCommerce.class);
