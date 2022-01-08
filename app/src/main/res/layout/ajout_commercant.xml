@@ -22,36 +22,34 @@
     <!-- Nouveau Commerçant -->
     <TextView
         android:id="@+id/nouveau_com"
-        android:layout_width="257dp"
+        android:layout_width="wrap_content"
         android:layout_height="34dp"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="69dp"
         android:layout_alignParentTop="true"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="34dp"
-        android:text="@string/nouveau_com"
-        android:textAppearance="@style/nouveau_com"
-        android:textAlignment="center"
         android:lineSpacingExtra="5sp"
-        android:translationY="-2.4sp"
-        />
+        android:text="@string/nouveau_com"
+        android:textAlignment="center"
+        android:textAppearance="@style/titre"
+        android:translationY="-2.4sp" />
 
     <!-- Nom_commercant -->
 
     <TextView
         android:id="@+id/nom"
-        android:layout_width="43dp"
-        android:layout_height="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nouveau_com"
         android:layout_alignParentStart="true"
         android:layout_marginStart="69dp"
         android:layout_marginTop="34dp"
-        android:layout_below="@+id/nouveau_com"
         android:background="@drawable/frame_16"
-        android:text="@string/nom"
-        android:textAppearance="@style/nom"
-        android:lineSpacingExtra="2sp"
-        android:translationY="-1sp"
         android:gravity="center_horizontal|top"
-        />
+        android:lineSpacingExtra="2sp"
+        android:text="@string/nom"
+        android:textAppearance="@style/label"
+        android:translationY="-1sp" />
 
     <EditText
         android:id="@+id/nom_text"
@@ -61,29 +59,31 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="49dp"
         android:layout_marginTop="-10dp"
-        android:alpha="0.2"
+        android:autofillHints="name"
         android:background="@drawable/rectangle_2"
         android:gravity="center"
-        android:lineSpacingExtra="3sp"
-        android:translationY="-1.6sp"
         android:hint="@string/nom"
-        android:textSize="12sp"/>
+        android:inputType="textPersonName"
+        android:lineSpacingExtra="3sp"
+        android:textColorHint="@color/grey"
+        android:textSize="12sp"
+        android:translationY="-1.6sp" />
 
 
     <!-- Services -->
     <TextView
         android:id="@+id/services"
-        android:layout_width="68dp"
-        android:layout_height="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nom_text"
         android:layout_alignParentStart="true"
         android:layout_marginStart="62dp"
-        android:layout_below="@+id/nom_text"
         android:layout_marginTop="13dp"
         android:background="@drawable/frame_16"
         android:gravity="center_horizontal|top"
         android:lineSpacingExtra="2sp"
         android:text="@string/services"
-        android:textAppearance="@style/services"
+        android:textAppearance="@style/label"
         android:translationY="-1sp" />
 
     <!-- animaux -->
@@ -94,11 +94,11 @@
         android:layout_below="@+id/services"
         android:layout_alignParentStart="true"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="-6dp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
         android:lineSpacingExtra="0sp"
         android:text="@string/animaux"
-        android:textAppearance="@style/animaux" />
+        android:textAppearance="@style/categorie" />
 
     <!-- mode -->
     <CheckBox
@@ -111,7 +111,7 @@
         android:gravity="center"
         android:lineSpacingExtra="0sp"
         android:text="@string/mode"
-        android:textAppearance="@style/mode" />
+        android:textAppearance="@style/categorie" />
 
     <!-- maison -->
     <CheckBox
@@ -124,7 +124,7 @@
         android:gravity="center"
         android:lineSpacingExtra="0sp"
         android:text="@string/maison"
-        android:textAppearance="@style/maison" />
+        android:textAppearance="@style/categorie" />
 
     <!-- appareils -->
     <CheckBox
@@ -137,7 +137,7 @@
         android:gravity="center"
         android:lineSpacingExtra="0sp"
         android:text="@string/appareil"
-        android:textAppearance="@style/appareil" />
+        android:textAppearance="@style/categorie" />
 
     <!-- musique -->
     <CheckBox
@@ -149,7 +149,7 @@
         android:background="#00000000"
         android:lineSpacingExtra="0sp"
         android:text="@string/musique"
-        android:textAppearance="@style/musique"
+        android:textAppearance="@style/categorie"
         />
 
     <!-- livre -->
@@ -164,7 +164,7 @@
         android:gravity="center"
         android:lineSpacingExtra="0sp"
         android:text="@string/livre"
-        android:textAppearance="@style/livre" />
+        android:textAppearance="@style/categorie" />
 
     <!-- jouet -->
     <CheckBox
@@ -177,7 +177,7 @@
         android:gravity="center"
         android:lineSpacingExtra="0sp"
         android:text="@string/jouet"
-        android:textAppearance="@style/jouet" />
+        android:textAppearance="@style/categorie" />
 
     <!-- auto -->
     <CheckBox
@@ -190,7 +190,7 @@
         android:gravity="center"
         android:lineSpacingExtra="0sp"
         android:text="@string/auto"
-        android:textAppearance="@style/auto" />
+        android:textAppearance="@style/categorie" />
 
     <!-- bureau -->
     <CheckBox
@@ -203,7 +203,7 @@
         android:gravity="center"
         android:lineSpacingExtra="0sp"
         android:text="@string/bureau"
-        android:textAppearance="@style/bureau" />
+        android:textAppearance="@style/categorie" />
 
     <!-- sport -->
     <CheckBox
@@ -216,13 +216,13 @@
         android:gravity="center"
         android:lineSpacingExtra="0sp"
         android:text="@string/sport"
-        android:textAppearance="@style/sport" />
+        android:textAppearance="@style/categorie" />
 
     <!-- Numéro Siret -->
     <TextView
         android:id="@+id/siret"
-        android:layout_width="92dp"
-        android:layout_height="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/musique"
         android:layout_alignParentStart="true"
         android:layout_marginStart="62dp"
@@ -231,7 +231,7 @@
         android:gravity="center_horizontal|top"
         android:lineSpacingExtra="2sp"
         android:text="@string/siret"
-        android:textAppearance="@style/siret"
+        android:textAppearance="@style/label"
         android:translationY="-1sp" />
 
     <EditText
@@ -242,26 +242,28 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="49dp"
         android:layout_marginTop="-8dp"
-        android:alpha="0.2"
+        android:textColorHint="@color/grey"
+        android:autofillHints="numero siret"
         android:background="@drawable/rectangle_2"
         android:gravity="center"
-        android:text="@string/num_siret"
-        android:textAppearance="@style/num_siret" />
+        android:hint="@string/num_siret"
+        android:textAppearance="@style/commentaire"
+        android:inputType="number" />
 
     <!-- Email -->
     <TextView
         android:id="@+id/email"
-        android:layout_width="50dp"
-        android:layout_height="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/num_siret"
         android:layout_alignParentStart="true"
         android:layout_marginStart="62dp"
-        android:layout_marginTop="5dp"
-        android:layout_below="@+id/num_siret"
+        android:layout_marginTop="10dp"
         android:background="@drawable/frame_16"
         android:gravity="center_horizontal|top"
         android:lineSpacingExtra="2sp"
-        android:text="@string/email_label"
-        android:textAppearance="@style/email_label"
+        android:text="@string/adresse_email"
+        android:textAppearance="@style/label"
         android:translationY="-1sp" />
 
     <EditText
@@ -272,26 +274,28 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="50dp"
         android:layout_marginTop="-5dp"
-        android:alpha="0.2"
         android:background="@drawable/rectangle_2"
         android:gravity="center"
-        android:hint="@string/email"
-        android:textAppearance="@style/email" />
+        android:hint="@string/adresse_email"
+        android:textColorHint="@color/grey"
+        android:textAppearance="@style/commentaire"
+        android:autofillHints="emailAddress"
+        android:inputType="textEmailAddress" />
 
     <!-- Mot de passe -->
     <TextView
         android:id="@+id/mdp"
-        android:layout_width="74dp"
+        android:layout_width="wrap_content"
         android:layout_height="14dp"
+        android:layout_below="@+id/email_text"
         android:layout_alignParentStart="true"
         android:layout_marginStart="60dp"
-        android:layout_below="@+id/email_text"
         android:layout_marginTop="13dp"
         android:background="@drawable/frame_16"
         android:gravity="center_horizontal|top"
         android:lineSpacingExtra="2sp"
         android:text="@string/mot_de_pass"
-        android:textAppearance="@style/mot_de_pass"
+        android:textAppearance="@style/label"
         android:translationY="-1sp" />
 
     <EditText
@@ -302,11 +306,13 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="50dp"
         android:layout_marginTop="-9dp"
-        android:alpha="0.2"
+        android:textColorHint="@color/grey"
         android:background="@drawable/rectangle_2"
         android:gravity="center"
         android:hint="@string/mot_de_pass"
-        android:textSize="12sp" />
+        android:textSize="12sp"
+        android:autofillHints="password"
+        android:inputType="textPassword" />
 
     <!-- S’inscrire -->
     <Button
@@ -320,7 +326,7 @@
         android:background="@drawable/rectangle_3"
         android:gravity="center"
         android:text="@string/valider"
-        android:textAppearance="@style/valider" />
+        android:textAppearance="@style/btn" />
 
 
 

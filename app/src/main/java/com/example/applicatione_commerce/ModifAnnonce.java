@@ -2,21 +2,14 @@ package com.example.applicatione_commerce;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.media.Image;
-import android.net.Uri;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
 
 
 import java.util.ArrayList;
@@ -27,6 +20,8 @@ public class ModifAnnonce extends Activity {
     private List<String> list = new ArrayList<String>();
     private Spinner spinner;
     private ListView listView ;
+    String produit[]
+            = {"Produit 1","Produit 2","Produit 3"};
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,8 +47,7 @@ public class ModifAnnonce extends Activity {
     }
 
     private void initListView() {
-        String produit[]
-                = {"Produit","Produit","Produit"};
+
         ArrayAdapter<String> arr;
         arr = new ArrayAdapter<String>(
                 this,
@@ -73,7 +67,7 @@ public class ModifAnnonce extends Activity {
         btn_valider.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String str = getResources().getString(R.string.conf_modif_annonce);
+                String str = getResources().getString(R.string.valid_modif_annonce);
                 Intent intent = new Intent(ModifAnnonce.this, Confirm.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("type",str);
@@ -100,6 +94,15 @@ public class ModifAnnonce extends Activity {
         list.add("Indisponible");
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinner_item,list);
         spinner.setAdapter(adapter);
+
+    }
+
+
+    public void supprimer(View v){
+
+        CustomDialogClass cdd = new CustomDialogClass(ModifAnnonce.this);
+        cdd.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        cdd.show();
 
     }
 

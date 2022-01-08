@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/modifAnnonce"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -18,7 +17,7 @@
         android:layout_marginTop="25dp"
         android:gravity="center_horizontal|top"
         android:lineSpacingExtra="0sp"
-        android:text="@string/modifannonc"
+        android:text="@string/gestion_produit"
         android:textAppearance="@style/ajoutannonc" />
 
 
@@ -56,7 +55,7 @@
         android:gravity="center"
         android:labelFor="@+id/offre"
         android:text="@string/offre"
-        android:textAppearance="@style/offre"
+        android:textAppearance="@style/label"
         android:translationY="-1sp" />
 
     <EditText
@@ -67,9 +66,10 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="45dp"
         android:layout_marginTop="10dp"
-        android:spinnerMode="dropdown"
         android:autofillHints="% de réduction"
-        android:inputType="number" />
+        android:inputType="number"
+        android:spinnerMode="dropdown"
+        android:textColorHint="@color/grey" />
 
 
     <TextView
@@ -82,9 +82,9 @@
         android:layout_alignParentStart="true"
         android:background="@drawable/frame_16"
         android:gravity="center"
-        android:text="@string/disponibili"
+        android:text="@string/disponibilite"
         android:labelFor="@+id/dispo"
-        android:textAppearance="@style/disponibili"
+        android:textAppearance="@style/label"
         android:translationY="-1sp"
         />
 
@@ -109,7 +109,7 @@
         android:background="@drawable/rectangle_3"
         android:gravity="center"
         android:text="@string/valider"
-        android:textAppearance="@style/valider" />
+        android:textAppearance="@style/btn" />
 
 
 

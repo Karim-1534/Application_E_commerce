@@ -30,7 +30,7 @@
         android:gravity="top"
         android:lineSpacingExtra="8sp"
         android:text="@string/bonjour"
-        android:textAppearance="@style/bonjour"
+        android:textAppearance="@style/titre"
         android:translationY="-3.81sp" />
 
     <!-- nomCommercant -->
@@ -42,8 +42,8 @@
         android:layout_marginLeft="206dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="51dp"
-        android:text="@string/nomcommerca"
-        android:textAppearance="@style/nomcommerca"
+        android:text="@string/nom_com"
+        android:textAppearance="@style/titre"
         android:lineSpacingExtra="8sp"
         android:translationY="-3.81sp"
         android:gravity="top"
@@ -59,8 +59,8 @@
         android:layout_marginTop="151dp"
         android:gravity="center_horizontal|top"
         android:lineSpacingExtra="3sp"
-        android:text="@string/tu_souhaite"
-        android:textAppearance="@style/tu_souhaite"
+        android:text="@string/tu_souhaites"
+        android:textAppearance="@style/commentaire"
         android:translationY="-1.6sp" />
 
     <Button
@@ -74,8 +74,8 @@
         android:background="@drawable/rectangle_3"
         android:gravity="center"
         android:onClick="ajout"
-        android:text="@string/ajouter_un_p"
-        android:textAppearance="@style/se_connecte" />
+        android:text="@string/ajout_produit"
+        android:textAppearance="@style/btn" />
 
     <Button
         android:id="@+id/btn_faire_offre"
@@ -88,8 +88,8 @@
         android:background="@drawable/rectangle_3"
         android:gravity="center"
         android:onClick="modif"
-        android:text="@string/faire_une_of"
-        android:textAppearance="@style/se_connecte" />
+        android:text="@string/gestion_produit"
+        android:textAppearance="@style/btn" />
 
     <Button
         android:id="@+id/btn_voir_com"
@@ -102,8 +102,8 @@
         android:background="@drawable/rectangle_3"
         android:gravity="center"
         android:onClick="connexion"
-        android:text="@string/voir_les_com_com"
-        android:textAppearance="@style/se_connecte" />
+        android:text="@string/commande"
+        android:textAppearance="@style/btn" />
 
 
 </RelativeLayout>

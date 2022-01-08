@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/formulaire_"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/formulaire_">
+
+    <!-- logo -->
+
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="187dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/logo"
+        android:contentDescription="@string/logo" />
+
+    <!-- ChoixCategorie -->
+
+    <TextView
+        android:id="@+id/titreapplic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="62dp"
+        android:fontFamily="sans-serif"
+        android:includeFontPadding="true"
+        android:lineHeight="51sp"
+        android:lineSpacingExtra="8sp"
+        android:text="@string/titre"
+        android:textAlignment="center"
+        android:textAppearance="@style/appname"
+        android:textSize="36sp"/>
+
+
+    <!-- profil -->
+    <TextView
+        android:id="@+id/profil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/titreapplic"
+        android:layout_marginStart="216dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center_horizontal|top"
+        android:lineSpacingExtra="2sp"
+        android:text="@string/profil"
+        android:textAlignment="center"
+        android:textAppearance="@style/label"
+        android:textColorHint="#CDDC39"
+        android:textSize="12sp"
+        android:background="@drawable/rectangle1cnx"/>
+
+    <Spinner
+        android:id="@+id/choixcatego"
+        android:layout_width="166.11dp"
+        android:layout_height="56dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="209dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/profil"
+        android:layout_marginTop="-5dp"
+        android:backgroundTint="@color/black">
+
+    </Spinner>
+
+    <!-- email -->
+
+    <TextView
+        android:id="@+id/adresse_ema"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/choixcatego"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/frame_16"
+        android:gravity="center_horizontal|top"
+        android:text="@string/adresse_email"
+        android:textAppearance="@style/label" />
+
+    <EditText
+        android:id="@+id/emailutilis"
+        android:layout_width="341dp"
+        android:layout_height="56dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="35dp"
+        android:background="@drawable/rectangle_2"
+        android:layout_marginTop="-10dp"
+        android:layout_below="@id/adresse_ema"
+        android:gravity="center"
+        android:textColorHint="@android:color/darker_gray"
+        android:hint="@string/adresse_email"
+        android:autofillHints="emailAddress"
+        android:inputType="textEmailAddress" />
+
+    <!--Mot de passe-->
+    <TextView
+        android:id="@+id/mot_de_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emailutilis"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/frame_16"
+        android:gravity="center"
+        android:lineSpacingExtra="2sp"
+        android:text="@string/mot_de_pass"
+        android:textAppearance="@style/label" />
+
+    <EditText
+        android:id="@+id/mdputilisé"
+        android:layout_width="341dp"
+        android:layout_height="56dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="32dp"
+        android:layout_below="@id/mot_de_pass"
+        android:layout_marginTop="-10dp"
+        android:gravity="center"
+        android:autofillHints="password"
+        android:background="@drawable/rectangle_2"
+        android:hint="@string/mot_de_pass"
+        android:textColorHint="@android:color/darker_gray"
+        android:inputType="textPassword"
+        android:translationY="-1.6sp"/>
+
+    <!-- se connecter -->
+
+    <Button
+        android:id="@+id/se_connecte"
+        android:layout_width="344dp"
+        android:layout_height="48dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        android:layout_below="@id/mdputilisé"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="#81AA66"
+        android:onClick="connexion"
+        android:text="@string/se_connecte"
+        android:textAppearance="@style/btn" />
+
+    <!-- inviter -->
+    <TextView
+        android:id="@+id/invité"
+        android:layout_width="279dp"
+        android:layout_height="42.4dp"
+        android:layout_below="@id/se_connecte"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center_horizontal|top"
+        android:lineSpacingExtra="6sp"
+        android:text="@string/connexion_invité"
+        android:textAppearance="@style/txt_btn"
+        android:translationY="-2.91sp" />
+
+
+    <TextView
+        android:id="@+id/boutonsinsc"
+        android:layout_width="71dp"
+        android:layout_height="23dp"
+        android:layout_below="@id/invité"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="277dp"
+        android:layout_marginTop="50dp"
+        android:gravity="center_horizontal|top"
+        android:lineSpacingExtra="3sp"
+        android:onClick="inscription"
+        android:text="@string/s_inscrire"
+        android:textAppearance="@style/txt_btn"
+        android:translationY="-1.6sp" />
+
+    <TextView
+        android:id="@+id/pas_encore_"
+        android:layout_width="184dp"
+        android:layout_height="23dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="58dp"
+        android:layout_below="@id/invité"
+        android:layout_marginTop="50dp"
+        android:gravity="center_horizontal|top"
+        android:lineSpacingExtra="3sp"
+        android:text="@string/inscription"
+        android:textAppearance="@style/commentaire"
+        android:translationY="-1.6sp" />
+
+
+</RelativeLayout>

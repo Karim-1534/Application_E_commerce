@@ -14,11 +14,11 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.prefs.PreferenceChangeEvent;
-
 
 
 public class MainActivity extends Activity{
+    private  List<String> list;
+    private Spinner spinner;
 
     public void inscription(View v){
         Intent intent = new Intent(this, InscriptionActivity.class);
@@ -40,27 +40,27 @@ public class MainActivity extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.formulaireacceuilconnexion);
-        List<String> list = new ArrayList<String>();
+        setContentView(R.layout.acceuilconnexion);
+        initActivity();
+
+    }
+
+    private void initActivity() {
+
+        list = new ArrayList<String>();
+        spinner = (Spinner) findViewById(R.id.choixcatego);
+        createSpinnerCategorie();
+
+    }
+
+    private void createSpinnerCategorie() {
+        list.clear();
         list.add("Gestionnaire");
         list.add("Commerçant");
         list.add("Client");
-        Spinner spinner = (Spinner) findViewById(R.id.choixcatego);
+
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinner_item,list);
         spinner.setAdapter(adapter);
-
-
-
-
-        /*FileInputStream serviceAccount =
-                new FileInputStream("path/to/serviceAccountKey.json");
-
-        FirebaseOptions options = new FirebaseOptions.Builder()
-                .setCredentials(GoogleCredentials.fromStream(serviceAccount))
-                .setDatabaseUrl("https://application-e-commerce-b47b4-default-rtdb.europe-west1.firebasedatabase.app")
-                .build();
-
-        FirebaseApp.initializeApp(options);*/
     }
 
 

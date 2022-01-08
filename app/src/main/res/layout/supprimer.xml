@@ -15,8 +15,8 @@
         android:layout_alignParentEnd="true"
         android:gravity="center_horizontal|bottom"
         android:lineSpacingExtra="5sp"
-        android:text="@string/voulez_vous"
-        android:textAppearance="@style/voulez_vous"
+        android:text="@string/supprimer"
+        android:textAppearance="@style/supprimer"
         android:translationY="2.4sp" />
 
     <Button
@@ -46,6 +46,6 @@
         android:gravity="center"
         android:text="@string/non"
         android:textAlignment="center"
-        android:textAppearance="@style/non" />
+        android:textAppearance="@style/btn" />
 
 </RelativeLayout>

@@ -10,7 +10,7 @@
         android:id="@+id/nom_commer_"
         android:layout_width="179.9dp"
         android:layout_height="30dp"
-        android:text="@string/nom_commer_"
+        android:text="@string/nom_com"
         android:textAppearance="@style/nom_commer_"
         android:lineSpacingExtra="8sp"
         android:gravity="center_vertical"
@@ -26,7 +26,7 @@
         android:layout_marginTop="10dp"
         android:gravity="center_vertical"
         android:lineSpacingExtra="6sp"
-        android:text="@string/cat_gorie"
+        android:text="@string/categorie"
         android:textAppearance="@style/cat_gorie" />
 
     <Button
@@ -39,7 +39,7 @@
         android:layout_toEndOf="@+id/cat_gorie"
         android:text="@string/modifier"
         android:gravity="center"
-        android:textAppearance="@style/modifier"
+        android:textAppearance="@style/label"
         android:lineSpacingExtra="5sp"
         android:background="#999999"
         android:onClick="modifier"/>
@@ -52,12 +52,12 @@
         android:layout_marginStart="15dp"
         android:layout_marginTop="10dp"
         android:layout_toEndOf="@+id/modifier"
-        android:text="x"
-        android:gravity="center"
-        android:textAppearance="@style/modifier"
-        android:lineSpacingExtra="5sp"
         android:background="#999999"
-        android:onClick="supprimer"/>
+        android:gravity="center"
+        android:lineSpacingExtra="5sp"
+        android:onClick="supprimer"
+        android:text="x"
+        android:textAppearance="@style/label" />
 
 </RelativeLayout>
 

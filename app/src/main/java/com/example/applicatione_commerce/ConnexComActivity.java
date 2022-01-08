@@ -9,7 +9,7 @@ public class ConnexComActivity  extends Activity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.page1_com);
+        setContentView(R.layout.acceuilcommercant);
     }
 
     public void ajout(View v) {

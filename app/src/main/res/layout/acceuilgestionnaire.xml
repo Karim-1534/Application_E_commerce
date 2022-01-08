@@ -19,18 +19,17 @@
     <!-- Liste de Commerçant -->
     <TextView
         android:id="@+id/liste_com"
-        android:layout_width="257dp"
-        android:layout_height="34dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="69dp"
         android:layout_alignParentTop="true"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="34dp"
-        android:text="@string/liste_de_co"
-        android:textAppearance="@style/liste_de_co"
-        android:textAlignment="center"
         android:lineSpacingExtra="5sp"
-        android:translationY="-2.4sp"
-        />
+        android:text="@string/liste_commercant"
+        android:textAlignment="center"
+        android:textAppearance="@style/titre"
+        android:translationY="-2.4sp" />
 
     <!-- S’inscrire -->
     <Button
@@ -42,9 +41,9 @@
         android:layout_marginStart="47dp"
         android:layout_marginTop="20dp"
         android:backgroundTint="#81AA66"
-        android:text="@string/ajouter_un_"
+        android:text="@string/ajout_com"
         android:onClick="ajout"
-        android:textAppearance="@style/ajouter_un_"/>
+        android:textAppearance="@style/btn"/>
 
     <ListView
         android:id="@+id/listView"
