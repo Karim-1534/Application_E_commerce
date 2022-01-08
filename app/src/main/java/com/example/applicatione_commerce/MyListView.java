@@ -1,5 +1,5 @@
 package com.example.applicatione_commerce;
-
+/*
 public class MyListView {
 
     private String produit;
@@ -39,4 +39,4 @@ public class NumbersView {
     public String getNumbersInText() {
         return mNumbersInText;
     }
-}
+}*/
