@@ -1,31 +1,43 @@
 package com.example.applicatione_commerce.Model.Utilisateurs;
 
 public class Gestionnaire {
-    String email;
-    String motdepasse;
-    String nom;
+    String EMAIL;
+    String MOTDEPASSE;
+    String NOM;
 
-    public String getEmail() {
-        return email;
+
+    public Gestionnaire() {
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public Gestionnaire(String EMAIL, String MOTDEPASSE, String NOM) {
+        this.EMAIL = EMAIL;
+        this.MOTDEPASSE = MOTDEPASSE;
+        this.NOM = NOM;
     }
 
-    public String getMotdepasse() {
-        return motdepasse;
+
+
+    public String getEMAIL() {
+        return EMAIL;
     }
 
-    public void setMotdepasse(String motdepasse) {
-        this.motdepasse = motdepasse;
+    public void setEMAIL(String EMAIL) {
+        this.EMAIL = EMAIL;
     }
 
-    public String getNom() {
-        return nom;
+    public String getMOTDEPASSE() {
+        return MOTDEPASSE;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setMOTDEPASSE(String MOTDEPASSE) {
+        this.MOTDEPASSE = MOTDEPASSE;
+    }
+
+    public String getNOM() {
+        return NOM;
+    }
+
+    public void setNOM(String NOM) {
+        this.NOM = NOM;
     }
 }

@@ -1,49 +1,60 @@
 package com.example.applicatione_commerce.Model.Utilisateurs;
 
 public class Client  {
-    String adresse;
-    String email;
-    String motdepasse;
-    Integer numero_tel;
-    String nom;
+    String ADRESSE;
+    String EMAIL;
+    String MOTDEPASSE;
+    Integer NUMERO_TEL;
+    String NOM;
 
-    public String getAdresse() {
-        return adresse;
+    public Client() {
     }
 
-    public void setAdresse(String adresse) {
-        this.adresse = adresse;
+    public Client(String ADRESSE, String EMAIL, String MOTDEPASSE, Integer NUMERO_TEL, String NOM) {
+        this.ADRESSE = ADRESSE;
+        this.EMAIL = EMAIL;
+        this.MOTDEPASSE = MOTDEPASSE;
+        this.NUMERO_TEL = NUMERO_TEL;
+        this.NOM = NOM;
     }
 
-    public String getEmail() {
-        return email;
+    public String getADRESSE() {
+        return ADRESSE;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setADRESSE(String ADRESSE) {
+        this.ADRESSE = ADRESSE;
     }
 
-    public String getMotdepasse() {
-        return motdepasse;
+    public String getEMAIL() {
+        return EMAIL;
     }
 
-    public void setMotdepasse(String motdepasse) {
-        this.motdepasse = motdepasse;
+    public void setEMAIL(String EMAIL) {
+        this.EMAIL = EMAIL;
     }
 
-    public Integer getNumero_tel() {
-        return numero_tel;
+    public String getMOTDEPASSE() {
+        return MOTDEPASSE;
     }
 
-    public void setNumero_tel(Integer numero_tel) {
-        this.numero_tel = numero_tel;
+    public void setMOTDEPASSE(String MOTDEPASSE) {
+        this.MOTDEPASSE = MOTDEPASSE;
     }
 
-    public String getNom() {
-        return nom;
+    public Integer getNUMERO_TEL() {
+        return NUMERO_TEL;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setNUMERO_TEL(Integer NUMERO_TEL) {
+        this.NUMERO_TEL = NUMERO_TEL;
+    }
+
+    public String getNOM() {
+        return NOM;
+    }
+
+    public void setNOM(String NOM) {
+        this.NOM = NOM;
     }
 }

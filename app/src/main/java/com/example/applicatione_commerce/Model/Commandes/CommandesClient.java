@@ -1,49 +1,55 @@
 package com.example.applicatione_commerce.Model.Commandes;
 
-import com.example.applicatione_commerce.Model.Panier;
-import com.example.applicatione_commerce.Model.Produit;
-import com.example.applicatione_commerce.Model.Utilisateurs.Client;
-
-import java.util.Date;
-import java.util.List;
+import com.google.firebase.Timestamp;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.ServerTimestamp;
 
 public class CommandesClient {
-    Panier panier;
-    Client client;
-    Date date;
-    String status;
+    DocumentReference PANIER;
+    DocumentReference CLIENT;
+    Timestamp DATE;
+    String STATUT;
 
-
-
-    public Panier getPanier() {
-        return panier;
+    public CommandesClient() {
     }
 
-    public void setPanier(Panier panier) {
-        this.panier = panier;
+    public CommandesClient(DocumentReference panier, DocumentReference CLIENT, Timestamp DATE, String STATUT) {
+        this.PANIER = panier;
+        this.CLIENT = CLIENT;
+        this.DATE = DATE;
+        this.STATUT = STATUT;
     }
 
-    public Date getDate() {
-        return date;
+    public DocumentReference getPANIER() {
+        return PANIER;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setPANIER(DocumentReference PANIER) {
+        this.PANIER = PANIER;
     }
 
-    public String getStatus() {
-        return status;
+    @ServerTimestamp
+    public Timestamp getDATE() {
+        return DATE;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setDATE(Timestamp DATE) {
+        this.DATE = DATE;
     }
 
-    public Client getClient() {
-        return client;
+    public String getSTATUT() {
+        return STATUT;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
+    public void setSTATUT(String STATUT) {
+        this.STATUT = STATUT;
+    }
+
+    public DocumentReference getCLIENT() {
+        return CLIENT;
+    }
+
+    public void setCLIENT(DocumentReference CLIENT) {
+        this.CLIENT = CLIENT;
     }
 }
