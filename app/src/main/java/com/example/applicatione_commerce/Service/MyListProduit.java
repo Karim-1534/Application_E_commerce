@@ -65,6 +65,9 @@ public class MyListProduit {
         return bm;
     }
 
+    public int getQuantite(){
+        return quantite;
+    }
 
     public void setQuantite(int q){
         quantite = q;

@@ -54,8 +54,7 @@ public class ConnexClientActivity extends Activity {
     private ArrayList<String> list;
     final ArrayList<MyListProduit> arrayList = new ArrayList<MyListProduit>();
     private MyListPCliAdapter produitAdapter;
-    Intent intentpanier = new Intent(this, PanierActivity.class);
-    Bundle bundlepanier = new Bundle();
+
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     List<DocumentReference> listProduit = new ArrayList<>();
     List<Produit> listProduits = new ArrayList<>();
@@ -77,8 +76,6 @@ public class ConnexClientActivity extends Activity {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                         listView = (ListView)findViewById(R.id.listView);
-                        HashMap<String, List<Produit>> produitHashMap = new HashMap<>();
-                        Log.d(TAG, " Réf commercant " + (db.collection("COMMERCANT").get().toString()));
                         if (queryDocumentSnapshots.isEmpty()) {
                             Log.d(TAG, "onSuccess: LIST EMPTY");
                         } else {
@@ -99,19 +96,13 @@ public class ConnexClientActivity extends Activity {
                                                 } catch (MalformedURLException e) {
                                                     e.printStackTrace();
                                                 }
-
                                                 initActivity();
                                             }
                                         });
                                     });
-                                    produitHashMap.put(c.getNOM(), listProduits);
                                 }
                             }
                         }
-                        produitHashMap.forEach((commercant, produits) -> {
-                            produits.forEach(produit -> {
-                            });
-                        });
                         produitAdapter = new MyListPCliAdapter(ConnexClientActivity.this, arrayList);
                         listView.setAdapter(produitAdapter);
                     }
@@ -169,7 +160,8 @@ public class ConnexClientActivity extends Activity {
         final String regex = "\\{[^}]*\\}";
         final Pattern pattern = Pattern.compile(regex, Pattern.MULTILINE);
         String panierJsonString = MyListPCliAdapter.getGsonParser().toJson(panier);
-
+        Intent intentpanier = new Intent(this, PanierActivity.class);
+        Bundle bundlepanier = new Bundle();
         final Matcher matcher = pattern.matcher(panierJsonString);
         ArrayList<String> produits = new ArrayList<>();
          while (matcher.find()) {

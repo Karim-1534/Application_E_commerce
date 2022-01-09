@@ -14,15 +14,29 @@ import android.widget.ListView;
 import android.widget.NumberPicker;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+
+import com.example.applicatione_commerce.Model.Panier;
+import com.example.applicatione_commerce.Model.Produit;
+import com.example.applicatione_commerce.Model.Utilisateurs.Commercant;
+import com.example.applicatione_commerce.Service.MyListPCliAdapter;
 import com.example.applicatione_commerce.Service.MyListProduit;
 import com.example.applicatione_commerce.Service.MyListPanierAdapter;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.net.MalformedURLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class PanierActivity extends Activity {
 
@@ -37,6 +51,7 @@ public class PanierActivity extends Activity {
     private ArrayList<String> produits ;
     private Button btn_valider;
     final ArrayList<MyListProduit> arrayList = new ArrayList<MyListProduit>();
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
 
     @Override
@@ -66,16 +81,62 @@ public class PanierActivity extends Activity {
     }
 
     private void createPanierandCommande() {
-        Log.d("produits", String.valueOf(arrayList));
         btn_valider.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String str = getResources().getString(R.string.valid_panier);
-                Intent intent = new Intent(PanierActivity.this, Confirm.class);
-                Bundle bundle = new Bundle();
-                bundle.putString("type",str);
-                intent.putExtras(bundle);
-                startActivity(intent);
+                Panier panier = new Panier();
+                panier.setTOTALE(0);
+                List<DocumentReference> produitpanier = new ArrayList<>();
+                db.collection("PRODUITS")
+                        .get()
+                        .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                            @Override
+                            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                                if (queryDocumentSnapshots.isEmpty()) {
+                                    Log.d(TAG, "onSuccess: LIST EMPTY");
+                                } else {
+                                    List<DocumentSnapshot> produitSnap = queryDocumentSnapshots.getDocuments();
+                                    List<DocumentReference> produitRef = new ArrayList<>();
+                                    produitSnap.forEach(documentSnapshot -> {
+                                        produitRef.add(documentSnapshot.getReference());
+                                    });
+                                    List<Produit> listProduit = queryDocumentSnapshots.toObjects(Produit.class);
+                                    for(int i=0; i<listProduit.size(); i++) {
+                                        int finalI = i;
+                                        arrayList.forEach(myListProduit -> {
+                                            if (myListProduit.getProduit().equals(listProduit.get(finalI).getNOM())) {
+                                                for(int j=0; j<=myListProduit.getQuantite(); j++) {
+                                                    produitpanier.add(produitRef.get(finalI));
+                                                    panier.setTOTALE(panier.getTOTALE()+Float.parseFloat(myListProduit.getPrix()));
+                                                }
+                                            }
+                                        });
+
+                                    }
+                                    panier.setPRODUITS(produitpanier);
+                                    db.collection("PANIER").add(panier).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                        @Override
+                                        public void onSuccess(DocumentReference documentReference) {
+                                            String str = getResources().getString(R.string.valid_panier);
+                                            Intent intent = new Intent(PanierActivity.this, Confirm.class);
+                                            Bundle bundle = new Bundle();
+                                            bundle.putString("type",str);
+                                            intent.putExtras(bundle);
+                                            startActivity(intent);
+                                        }
+                                    }).addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            // this method is called when the data addition process is failed.
+                                            // displaying a toast message when data addition is failed.
+                                            Toast.makeText(PanierActivity.this, "Echec commande \n" + e, Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+                                }
+                            }
+
+                        });
+
             }
         });
     }
