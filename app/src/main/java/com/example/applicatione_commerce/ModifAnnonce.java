@@ -12,6 +12,11 @@ import android.widget.ListView;
 import android.widget.Spinner;
 
 
+import com.example.applicatione_commerce.Service.CustomDialogClass;
+import com.example.applicatione_commerce.Service.MyListPCliAdapter;
+import com.example.applicatione_commerce.Service.MyListPComAdapter;
+import com.example.applicatione_commerce.Service.MyListProduit;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,13 +53,16 @@ public class ModifAnnonce extends Activity {
 
     private void initListView() {
 
-        ArrayAdapter<String> arr;
-        arr = new ArrayAdapter<String>(
-                this,
-                R.layout.list_produit_commercant,
-                R.id.produit,
-                produit);
-        listView.setAdapter(arr);
+        final ArrayList<MyListProduit> arrayList = new ArrayList<MyListProduit>();
+       /* arrayList.add(new MyListProduit(R.drawable.common_google_signin_btn_icon_dark, "basket","12€"));
+        arrayList.add(new MyListProduit(R.drawable.confirmation, "T-shirt","100€"));
+        arrayList.add(new MyListProduit(R.drawable.abc_vector_test, "bidule","15€"));
+        arrayList.add(new MyListProduit(R.drawable.check, "bière","3.55€"));
+        arrayList.add(new MyListProduit(R.drawable.common_full_open_on_phone, "chat","1099€"));
+        arrayList.add(new MyListProduit(R.drawable.common_google_signin_btn_icon_light_normal_background, "Téléphone","10€"));
+*/
+        MyListPComAdapter produitAdapter = new MyListPComAdapter(this, arrayList);
+        listView.setAdapter(produitAdapter);
     }
 
 

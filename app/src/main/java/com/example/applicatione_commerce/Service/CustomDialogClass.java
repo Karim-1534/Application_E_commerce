@@ -1,4 +1,4 @@
-package com.example.applicatione_commerce;
+package com.example.applicatione_commerce.Service;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.applicatione_commerce.R;
+
 public class CustomDialogClass extends Dialog implements
         android.view.View.OnClickListener {
 
@@ -18,11 +20,21 @@ public class CustomDialogClass extends Dialog implements
     public TextView text;
     public String result;
     private Intent intent;
+    private boolean state = true;
 
 
     public void setResult(String string){
         result = string;
     }
+
+    public void setDelete(){
+        state = true;
+    }
+
+    public boolean getDelete(){
+        return state;
+    }
+
 
     public CustomDialogClass(Activity a) {
         super(a);

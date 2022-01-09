@@ -61,15 +61,11 @@
     <NumberPicker
         android:id="@+id/quantite"
         android:layout_width="27.29dp"
-        android:layout_height="25.41dp"
-        android:layout_below="@+id/produit"
+        android:layout_height="50dp"
         android:layout_gravity="center"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="10dp"
-        android:layout_toEndOf="@+id/produit"
-        android:max="20"
-        android:min="1"
-        android:orientation="vertical" />
+        android:layout_marginTop="25dp"
+        android:layout_toEndOf="@+id/produit"/>
 
     <ImageButton
         android:id="@+id/delete"
@@ -81,7 +77,6 @@
         android:layout_toEndOf="@+id/quantite"
         android:gravity="center"
         android:lineSpacingExtra="5sp"
-        android:onClick="deletepanier"
         android:src="@drawable/ic_baseline_close_24" />
 
 </RelativeLayout>

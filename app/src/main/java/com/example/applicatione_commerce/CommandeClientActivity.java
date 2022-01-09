@@ -12,6 +12,9 @@ import android.widget.ListView;
 import android.widget.NumberPicker;
 import android.widget.Spinner;
 
+import com.example.applicatione_commerce.Service.MyListCCli;
+import com.example.applicatione_commerce.Service.MyListCCliAdapter;
+
 import java.util.ArrayList;
 
 public class CommandeClientActivity extends Activity {
@@ -52,15 +55,13 @@ public class CommandeClientActivity extends Activity {
     }
 
     private void initListView() {
-        commandes.add("commande 1");
-        commandes.add("commande 2");
-        ArrayAdapter<String> arr;
-        arr = new ArrayAdapter<String>(
-                this,
-                R.layout.list_commande_client,
-                R.id.commande,
-                commandes);
-        listView.setAdapter(arr);
+        final ArrayList<MyListCCli> arrayList = new ArrayList<MyListCCli>();
+        arrayList.add(new MyListCCli(R.drawable.fui_idp_button_background_apple, "654fdgfs","En livraison"));
+        arrayList.add(new MyListCCli(R.drawable.googleg_standard_color_18, "g876r7g6","En préparation"));
+        arrayList.add(new MyListCCli(R.drawable.rectangle_6, "sf86sf684s","Livré"));
+
+        MyListCCliAdapter cCliAdapter = new MyListCCliAdapter(this, arrayList);
+        listView.setAdapter(cCliAdapter);
     }
 
     public void home(View view) {

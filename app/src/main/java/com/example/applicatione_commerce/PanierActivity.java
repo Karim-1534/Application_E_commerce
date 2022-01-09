@@ -1,9 +1,11 @@
 package com.example.applicatione_commerce;
 
-import android.annotation.SuppressLint;
+import static android.content.ContentValues.TAG;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -12,8 +14,14 @@ import android.widget.ListView;
 import android.widget.NumberPicker;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.example.applicatione_commerce.Service.MyListProduit;
+import com.example.applicatione_commerce.Service.MyListPanierAdapter;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 
 public class PanierActivity extends Activity {
@@ -26,8 +34,10 @@ public class PanierActivity extends Activity {
     private NumberPicker np;
     private Spinner spinner;
     private ArrayList<String> list;
-    private ArrayList<String> produits = new ArrayList<>();
+    private ArrayList<String> produits ;
     private Button btn_valider;
+    final ArrayList<MyListProduit> arrayList = new ArrayList<MyListProduit>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +47,7 @@ public class PanierActivity extends Activity {
 
     }
 
-    private void initActivity(){
+    private void initActivity() {
         intent = getIntent();
         bundle = intent.getExtras();
 
@@ -56,6 +66,7 @@ public class PanierActivity extends Activity {
     }
 
     private void createPanierandCommande() {
+        Log.d("produits", String.valueOf(arrayList));
         btn_valider.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,13 +95,26 @@ public class PanierActivity extends Activity {
 
     private void initListView() {
         produits= bundle.getStringArrayList("panier");
-        ArrayAdapter<String> arr;
-        arr = new ArrayAdapter<String>(
-                this,
-                R.layout.list_panier,
-                R.id.produit,
-                produits);
-        listView.setAdapter(arr);
+
+        for (String p: produits ) {
+            Log.d("produit courant :", p);
+            JSONObject produitstojson = null;
+            try {
+                produitstojson = new JSONObject(p);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            if (produitstojson != null) {
+                try {
+                    arrayList.add(new MyListProduit(produitstojson.getString("img_produit"), produitstojson.getString("produit"), produitstojson.getDouble("prix"),  produitstojson.getString("commercant")));
+                } catch (JSONException | MalformedURLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        MyListPanierAdapter panierAdapter = new MyListPanierAdapter(this, arrayList);
+        listView.setAdapter(panierAdapter);
     }
 
     public void connexion(View view) {
@@ -112,18 +136,6 @@ public class PanierActivity extends Activity {
         bundlecommande.putString("type",bundle.getString("type"));
         intentcommande.putExtras(bundlecommande);
         startActivity(intentcommande);
-    }
-
-    public void deletepanier(View view){
-        TextView produit = (TextView) findViewById(R.id.produit);
-        produits.removeIf(s -> s.contentEquals(produit.getText()));
-        ArrayAdapter<String> arr;
-        arr = new ArrayAdapter<String>(
-                this,
-                R.layout.list_panier,
-                R.id.produit,
-                produits);
-        listView.setAdapter(arr);
     }
 
     public void vider(View view) {

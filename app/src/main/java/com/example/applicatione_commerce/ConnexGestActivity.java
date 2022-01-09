@@ -9,6 +9,12 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.applicatione_commerce.Service.CustomDialogClass;
+import com.example.applicatione_commerce.Service.MyListCommercant;
+import com.example.applicatione_commerce.Service.MyListCommercantAdapter;
+
+import java.util.ArrayList;
+
 
 public class ConnexGestActivity extends Activity {
     private ListView listView;
@@ -29,13 +35,14 @@ public class ConnexGestActivity extends Activity {
     }
 
     private void initListView() {
-        ArrayAdapter<String> arr;
-        arr = new ArrayAdapter<String>(
-                this,
-                R.layout.list_commercant,
-                R.id.nom_commer_,
-                commerce);
-        listView.setAdapter(arr);
+        final ArrayList<MyListCommercant> arrayList = new ArrayList<MyListCommercant>();
+        arrayList.add(new MyListCommercant("Apple","Multimedia,Informatique"));
+        arrayList.add(new MyListCommercant("Carrefour","Alimentaire"));
+        arrayList.add(new MyListCommercant("Boulanger","Multimedia,Electromenager"));
+        arrayList.add(new MyListCommercant("Zara","Mode"));
+
+        MyListCommercantAdapter commercantAdapter = new MyListCommercantAdapter(this, arrayList);
+        listView.setAdapter(commercantAdapter);
     }
 
 

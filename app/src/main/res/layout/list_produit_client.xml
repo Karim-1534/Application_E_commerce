@@ -52,36 +52,22 @@
         android:layout_width="87dp"
         android:layout_height="77dp"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="39dp"
         android:layout_alignParentTop="true"
+        android:layout_marginStart="39dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/rectangle_3"
         android:contentDescription="@string/image" />
-
-    <NumberPicker
-        android:id="@+id/quantite"
-        android:layout_width="27.29dp"
-        android:layout_height="25.41dp"
-        android:layout_below="@+id/produit"
-        android:layout_gravity="center"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="10dp"
-        android:layout_toEndOf="@+id/produit"
-        android:max="20"
-        android:min="1"
-        android:orientation="vertical" />
 
     <ImageButton
         android:id="@+id/panier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/produit"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="35dp"
         android:layout_marginTop="10dp"
-        android:layout_toEndOf="@+id/quantite"
+        android:layout_toEndOf="@+id/produit"
         android:gravity="center"
         android:lineSpacingExtra="5sp"
-        android:onClick="addpanier"
         android:src="@drawable/ic_baseline_add_shopping_cart_24" />
 
 </RelativeLayout>

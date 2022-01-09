@@ -81,5 +81,6 @@
     <string name="contacter">Contacter le service client</string>
     <string name="valid_panier">La commande a bien été passé</string>
     <string name="error_unknown_error">erreur</string>
+    <string name="statut">Statut</string>
 
 </resources>

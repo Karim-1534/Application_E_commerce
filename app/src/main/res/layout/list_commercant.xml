@@ -8,8 +8,8 @@
     <!-- Nom commerçant -->
     <TextView
         android:id="@+id/nom_commer_"
-        android:layout_width="179.9dp"
-        android:layout_height="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/nom_com"
         android:textAppearance="@style/nom_commer_"
         android:lineSpacingExtra="8sp"
@@ -20,8 +20,8 @@
     <!-- Catégorie -->
     <TextView
         android:id="@+id/cat_gorie"
-        android:layout_width="71.96dp"
-        android:layout_height="23dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/nom_commer_"
         android:layout_marginTop="10dp"
         android:gravity="center_vertical"
