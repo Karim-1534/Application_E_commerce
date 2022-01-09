@@ -47,7 +47,7 @@ public class ProduitMethode {
                             ArrayList<Produit> listproduit = new ArrayList<>();
                             listproduit.addAll(produits);
                             for (Produit p: listproduit){
-                                Log.d(TAG, "L'entité est : "+ p.getAll());
+                                Log.d(TAG, "L'entité est : ");
                                 produit = p;
                             }
                            
@@ -64,7 +64,7 @@ public class ProduitMethode {
     }
 
 
-    public void addProduitToFirestore(String DESCRIPTION, String NOM, Integer OFFRE, double PRIX, String urlPicture){
+    public void addProduitToFirestore(String DESCRIPTION, String NOM, Integer OFFRE, Double PRIX, DocumentReference RAYON, String SERVICE, String urlPicture){
 
 
         // creating a collection reference
@@ -72,7 +72,7 @@ public class ProduitMethode {
         CollectionReference dbTest = db.collection("PRODUITS");
 
         // adding our data to our courses object class.
-        Produit produit = new Produit(DESCRIPTION, NOM, OFFRE, PRIX, RAYON, urlPicture);
+        Produit produit = new Produit(DESCRIPTION, NOM, OFFRE, PRIX, RAYON, SERVICE, urlPicture);
 
         dbTest.add(produit).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override

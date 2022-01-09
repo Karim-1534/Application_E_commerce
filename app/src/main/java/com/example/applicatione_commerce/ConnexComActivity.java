@@ -13,7 +13,7 @@ public class ConnexComActivity  extends Activity {
     }
 
     public void ajout(View v) {
-        Intent intent = new Intent(this, AjoutAnnonce.class);
+        Intent intent = new Intent(this, AjoutProduit.class);
         startActivity(intent);
     }
 

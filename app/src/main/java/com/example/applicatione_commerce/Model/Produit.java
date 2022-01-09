@@ -19,22 +19,40 @@ public class Produit {
     Integer OFFRE;
     Double PRIX;
     DocumentReference RAYON;
+    String SERVICE;
     String urlPicture;
 
 
 
     public Produit() {
     }
-    public Produit(String DESCRIPTION, String NOM, Integer OFFRE, Double PRIX, DocumentReference RAYON , String urlPicture) {
+
+    public Produit(String DESCRIPTION, String NOM, Integer OFFRE, Double PRIX, DocumentReference RAYON, String SERVICE, String urlPicture) {
         this.DESCRIPTION = DESCRIPTION;
         this.NOM = NOM;
         this.OFFRE = OFFRE;
         this.PRIX = PRIX;
         this.RAYON = RAYON;
+        this.SERVICE = SERVICE;
         this.urlPicture = urlPicture;
     }
 
+    public Produit(String DESCRIPTION, String NOM, Double PRIX, DocumentReference RAYON, String SERVICE, String urlPicture) {
+        this.DESCRIPTION = DESCRIPTION;
+        this.NOM = NOM;
+        this.PRIX = PRIX;
+        this.RAYON = RAYON;
+        this.SERVICE = SERVICE;
+        this.urlPicture = urlPicture;
+    }
 
+    public String getSERVICE() {
+        return SERVICE;
+    }
+
+    public void setSERVICE(String SERVICE) {
+        this.SERVICE = SERVICE;
+    }
     public DocumentReference getRAYON() {
         return RAYON;
     }
@@ -84,7 +102,7 @@ public class Produit {
         this.urlPicture = urlPicture;
     }
 
-
+/*
     public String getAll(){
        return "Le nom:  " +this.getNOM()+"\n "+
                "Le PRIX:  "+ this.getPRIX()+"\n "+
@@ -93,6 +111,6 @@ public class Produit {
                this.getRAYON()+"\n "+
                this.getUrlPicture();
 
-    }
+    }*/
 }
 
