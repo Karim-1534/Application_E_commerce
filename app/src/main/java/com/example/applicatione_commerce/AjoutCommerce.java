@@ -142,7 +142,6 @@ public class AjoutCommerce extends Activity {
                                     if (!rayonSelectionne.contains(queryDocumentSnapshot.getReference())) {
                                         rayonSelectionne.add(queryDocumentSnapshot.getReference());
                                         initActivity();
-                                      //  Log.d("Avant "," " +rayonSelectionne);
                                     }
                                 }
                             }
@@ -153,23 +152,10 @@ public class AjoutCommerce extends Activity {
                             mdp.getText().toString(),
                             nom.getText().toString(),
                             nSiret.getText().toString(),documts);
-
-
                 }
-
-
             }
-
         });
-            //getDataService();
     }
-
-/*
-    public void referencesRecuperer( List<DocumentReference> references){
-        dr.addAll(references);
-        Log.d("référence recuperer "," " + dr);
-    }
-*/
 
 
     private void createOnClickValidationAjoutButton(){
@@ -181,12 +167,6 @@ public class AjoutCommerce extends Activity {
                 nom.getText().toString();
                 nSiret.getText().toString();
                 getDataService();
-
-                /*addDataToFirestore( email.getText().toString(),
-                        mdp.getText().toString(),
-                        nom.getText().toString(),
-                        nSiret.getText().toString(),documts);*/
-
                 Log.d(TAG, " Les documents récupérer "+documts);
                 String str = getResources().getString(R.string.valid_ajout_commerce);
                 Intent intent = new Intent(AjoutCommerce.this, Confirm.class);
