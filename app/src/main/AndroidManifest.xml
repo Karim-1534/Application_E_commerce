@@ -75,7 +75,7 @@
         </activity>
 
         <activity
-            android:name=".AjoutAnnonce"
+            android:name=".AjoutProduit"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

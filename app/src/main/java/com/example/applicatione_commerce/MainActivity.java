@@ -219,7 +219,7 @@ public class MainActivity extends Activity{
                                             listProduit.add(produits);
                                             for (Produit produit: listProduit){
 
-                                                Log.d(TAG, "Le produit mis dans le panier "+ produit.getAll());
+                                            //  Log.d(TAG, "Le produit mis dans le panier "+ produit.getAll());
                                                 Log.d(TAG, "La quantité du produit "+ p.getQUANTITE() );
                                                 Log.d(TAG,"Le totale du panier est  " + p.getTOTALE());
                                             }

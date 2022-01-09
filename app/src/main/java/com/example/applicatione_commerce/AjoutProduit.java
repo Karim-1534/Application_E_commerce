@@ -13,20 +13,30 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
+import androidx.annotation.NonNull;
+
+import com.example.applicatione_commerce.Model.Produit;
 import com.example.applicatione_commerce.Model.Rayon;
+import com.example.applicatione_commerce.Model.Utilisateurs.Commercant;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
-public class AjoutAnnonce extends Activity {
+public class AjoutProduit extends Activity {
     private TextView imgPhoto;
     private Button btnPhoto;
     private Button btn_valider ;
@@ -37,6 +47,15 @@ public class AjoutAnnonce extends Activity {
     List<String> serviceCorrespondant = new ArrayList<>();
     private Spinner spinnerRayon;
     private Spinner spinnerService;
+    private DocumentReference dr;
+    EditText nom;
+    EditText image;
+    EditText prix;
+    EditText descrpition;
+
+    private Uri uriImageSelected;
+
+
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -45,9 +64,6 @@ public class AjoutAnnonce extends Activity {
         setContentView(R.layout.ajouter_produit);
         initActivity();
     }
-
-
-
 
     private void initActivity(){
         spinnerRayon = (Spinner) findViewById(R.id.categorie);
@@ -60,20 +76,25 @@ public class AjoutAnnonce extends Activity {
         imgPhoto = (TextView)findViewById(R.id.image);
         btnPhoto = (Button) findViewById(R.id.btn_import_image);
         createOnClickPhotoButton();
+
+        nom = (EditText) findViewById(R.id.nom);
+        image = (EditText) findViewById(R.id.image);
+        prix = (EditText) findViewById(R.id.prix);
+        descrpition = (EditText) findViewById(R.id.description);
+
     }
 
 
-    /*
-    *événement boutton ajout validation d'ajout
-    *
-    * */
 
     private void createOnClickValidationAjoutButton(){
         btn_valider.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
+                getTextRayon();
+                getTextService();
+                getDataRayon();
                 String str = getResources().getString(R.string.valid_ajout_annonce);
-                Intent intent = new Intent(AjoutAnnonce.this, Confirm.class);
+                Intent intent = new Intent(AjoutProduit.this, Confirm.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("type",str);
                 intent.putExtras(bundle);
@@ -82,10 +103,39 @@ public class AjoutAnnonce extends Activity {
         });
     }
 
+    public void addProduitToFirestore(String DESCRIPTION, String NOM, Double PRIX, DocumentReference RAYON, String SERVICE, String urlPicture){
 
-    /*
-     *événement boutton importe annonce
-     * */
+        CollectionReference dbTest = db.collection("PRODUITS");
+        Produit produit = new Produit(DESCRIPTION, NOM, PRIX, RAYON, SERVICE, urlPicture);
+        dbTest.add(produit).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+            @Override
+            public void onSuccess(DocumentReference documentReference) {
+                 Toast.makeText(AjoutProduit.this, "Le produit a bien été ajouté", Toast.LENGTH_SHORT).show();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                 Toast.makeText(AjoutProduit.this, "Fail to add course \n" + e, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+    private String getTextRayon(){
+        String rayonSelec="";
+        TextView selected = (TextView) spinnerRayon.getSelectedView();
+        rayonSelec = selected.getText().toString();
+
+        Log.d("la valeur du rayon est", rayonSelec);
+        return rayonSelec;
+    }
+
+    private String getTextService(){
+        String Selec="";
+        TextView selected = (TextView) spinnerService.getSelectedView();
+        Selec = selected.getText().toString();
+        Log.d("la valeur du service est", Selec);
+        return Selec;
+    }
+
     private void createOnClickPhotoButton(){
         btnPhoto.setOnClickListener(new Button.OnClickListener(){
             @Override
@@ -127,11 +177,7 @@ public void onResume() {
 
     super.onResume();
    }
-    /*
-    * initialisation du spinner catégorie
-    * */
     private void initSpinnerRayonEtService(){
-
          db.collection("RAYON").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
@@ -145,11 +191,9 @@ public void onResume() {
                             rayons.forEach(rayon -> {
                                         listRayon.add(rayon.getNOM());
                                         listService.add(rayon.getSERVICES());
-                                       Log.d(TAG, "list rayon dans le for" + listRayon);
-                                       // Log.d(TAG, "list rayon imaginaire "+ listRayons);
                                     });
                         }
-                        ArrayAdapter<String> adapter = new ArrayAdapter<String>(AjoutAnnonce.this,
+                        ArrayAdapter<String> adapter = new ArrayAdapter<String>(AjoutProduit.this,
                                 R.layout.spinner_item_service_rayon,
                                 listRayon);
                         spinnerRayon.setAdapter(adapter);
@@ -165,28 +209,49 @@ public void onResume() {
                                         serviceCorrespondant.add(s1);
                                     });
                                 });
-                                Log.d(TAG, "Les listes de services " + serviceCorrespondant);
-                                Log.d(TAG,"Les sevices correspondants sont  " +serviceRecuperer);
-
-                                ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(AjoutAnnonce.this, R.layout.spinner_item_service_rayon, serviceCorrespondant);
+                                ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(AjoutProduit.this, R.layout.spinner_item_service_rayon, serviceCorrespondant);
                                 spinnerService.setAdapter(adapter1);
-
-
                             }
-
                             @Override
                             public void onNothingSelected(AdapterView<?> parent) {
-                                Log.d(TAG,"Y a pas de services selectionner ");
+                                Log.d(TAG,"Aucun service selectionné ");
                             }
                         });
-                        /*ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(AjoutAnnonce.this, R.layout.spinner_item, serviceRecuperer);
-                        spinnerService.setAdapter(adapter1);*/
-
                     }
                 });
-
-
     }
+
+
+private void getDataRayon(){
+        db.collection("RAYON").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+            public void onSuccess(QuerySnapshot querySnapshot) {
+                if(querySnapshot.isEmpty()){
+                    Log.d(TAG, "onSuccess: LIST EMPTY");
+                }else{
+                    Iterator<QueryDocumentSnapshot> rayon = querySnapshot.iterator();
+                    rayon.forEachRemaining(queryDocumentSnapshot -> {
+                        String  nomRayon = getTextRayon();
+                        if(nomRayon.equals(queryDocumentSnapshot.toObject(Rayon.class).getNOM())){
+                            dr = queryDocumentSnapshot.getReference();
+                            initActivity();
+                        }
+                    });
+                    //addProduitToFirestore();
+                    /*(String DESCRIPTION, String NOM, Integer OFFRE, Double PRIX, DocumentReference RAYON, String SERVICE, String urlPicture)
+                    * */
+                    addProduitToFirestore(descrpition.getText().toString(),
+                            nom.getText().toString(),
+                            Double.parseDouble(prix.getText().toString()),
+                            dr,
+                            getTextService(),
+                            image.getText().toString()
+                            );
+                    Log.d("La référence du rayon du produit récup", " "+dr);
+
+                }
+            }
+        });
+}
 
 
 }

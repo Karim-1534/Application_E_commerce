@@ -55,7 +55,7 @@ public class AjoutCommerce extends Activity {
     private EditText mdp;
 
     String id;
-    List<DocumentReference> dr = new ArrayList<>();
+    private List<DocumentReference> dr = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
