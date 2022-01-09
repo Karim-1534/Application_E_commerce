@@ -1,10 +1,14 @@
 package com.example.applicatione_commerce;
 
+import static android.content.ContentValues.TAG;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.StrictMode;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -12,11 +16,18 @@ import android.widget.ListView;
 import android.widget.Spinner;
 
 
+import com.example.applicatione_commerce.Model.Produit;
+import com.example.applicatione_commerce.Model.Utilisateurs.Commercant;
 import com.example.applicatione_commerce.Service.CustomDialogClass;
 import com.example.applicatione_commerce.Service.MyListPCliAdapter;
 import com.example.applicatione_commerce.Service.MyListPComAdapter;
 import com.example.applicatione_commerce.Service.MyListProduit;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +36,10 @@ public class ModifAnnonce extends Activity {
     private List<String> list = new ArrayList<String>();
     private Spinner spinner;
     private ListView listView ;
+    final ArrayList<MyListProduit> arrayList = new ArrayList<MyListProduit>();
+    private MyListPComAdapter produitAdapter;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+
     String produit[]
             = {"Produit 1","Produit 2","Produit 3"};
 
@@ -32,9 +47,44 @@ public class ModifAnnonce extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.modif_annonce);
-        initActivity();
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+        getData();
     }
 
+
+    private void getData() {
+        db.collection("COMMERCANT")
+                .get()
+                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                    @Override
+                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                        listView = (ListView)findViewById(R.id.listView);
+                        if (queryDocumentSnapshots.isEmpty()) {
+                            Log.d(TAG, "onSuccess: LIST EMPTY");
+                        } else {
+                            List<Commercant> commercant = queryDocumentSnapshots.toObjects(Commercant.class);
+                            commercant.get(0).getPRODUITS().forEach(documentReference -> {
+                                        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                                            @Override
+                                            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                                                Produit produit = (documentSnapshot.toObject(Produit.class));
+                                                try {
+                                                    arrayList.add(new MyListProduit(produit.getUrlPicture(), produit.getNOM(),produit.getPRIX()));
+                                                } catch (MalformedURLException e) {
+                                                    e.printStackTrace();
+                                                }
+                                                initActivity();
+                                            }
+                                        });
+                                    });
+                        }
+                        produitAdapter = new MyListPComAdapter(ModifAnnonce.this, arrayList);
+                        listView.setAdapter(produitAdapter);
+                    }
+
+                });
+        }
 
 
 
@@ -46,23 +96,6 @@ public class ModifAnnonce extends Activity {
         btn_valider = (Button) findViewById(R.id.btn_modif_annonce);
         createOnClickValidationModifButton();
 
-        listView = (ListView)findViewById(R.id.listView);
-        initListView();
-
-    }
-
-    private void initListView() {
-
-        final ArrayList<MyListProduit> arrayList = new ArrayList<MyListProduit>();
-       /* arrayList.add(new MyListProduit(R.drawable.common_google_signin_btn_icon_dark, "basket","12€"));
-        arrayList.add(new MyListProduit(R.drawable.confirmation, "T-shirt","100€"));
-        arrayList.add(new MyListProduit(R.drawable.abc_vector_test, "bidule","15€"));
-        arrayList.add(new MyListProduit(R.drawable.check, "bière","3.55€"));
-        arrayList.add(new MyListProduit(R.drawable.common_full_open_on_phone, "chat","1099€"));
-        arrayList.add(new MyListProduit(R.drawable.common_google_signin_btn_icon_light_normal_background, "Téléphone","10€"));
-*/
-        MyListPComAdapter produitAdapter = new MyListPComAdapter(this, arrayList);
-        listView.setAdapter(produitAdapter);
     }
 
 

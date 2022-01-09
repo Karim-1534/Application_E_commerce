@@ -10,37 +10,26 @@
         android:id="@+id/nom_commer_"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:lineSpacingExtra="8sp"
+        android:layout_marginTop="25dp"
         android:text="@string/nom_com"
         android:textAppearance="@style/nom_commer_"
-        android:lineSpacingExtra="8sp"
-        android:gravity="center_vertical"
 
         />
 
-    <!-- Catégorie -->
-    <TextView
-        android:id="@+id/cat_gorie"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/nom_commer_"
-        android:layout_marginTop="10dp"
-        android:gravity="center_vertical"
-        android:lineSpacingExtra="6sp"
-        android:text="@string/categorie"
-        android:textAppearance="@style/cat_gorie" />
 
     <Button
         android:id="@+id/modifier"
         android:layout_width="69.22dp"
         android:layout_height="25.41dp"
-        android:layout_below="@+id/nom_commer_"
-        android:layout_marginStart="29dp"
-        android:layout_marginTop="10dp"
-        android:layout_toEndOf="@+id/cat_gorie"
+        android:layout_marginStart="30dp"
+        android:layout_toEndOf="@+id/nom_commer_"
         android:background="#999999"
         android:gravity="center"
         android:lineSpacingExtra="5sp"
         android:onClick="modifier"
+        android:layout_marginTop="25dp"
         android:text="@string/modifier"
         android:textAppearance="@style/label" />
 
@@ -48,12 +37,11 @@
         android:id="@+id/supprimer"
         android:layout_width="27.29dp"
         android:layout_height="25.41dp"
-        android:layout_below="@+id/nom_commer_"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="10dp"
         android:layout_toEndOf="@+id/modifier"
         android:background="#999999"
         android:gravity="center"
+        android:layout_marginTop="25dp"
         android:lineSpacingExtra="5sp"
         android:onClick="supprimer"
         android:src="@drawable/ic_baseline_close_24"/>

@@ -1,9 +1,13 @@
 package com.example.applicatione_commerce;
 
+import static android.content.ContentValues.TAG;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.StrictMode;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -12,10 +16,20 @@ import android.widget.ListView;
 import android.widget.NumberPicker;
 import android.widget.Spinner;
 
+import com.example.applicatione_commerce.Model.Produit;
+import com.example.applicatione_commerce.Model.Utilisateurs.Commercant;
 import com.example.applicatione_commerce.Service.MyListCCli;
 import com.example.applicatione_commerce.Service.MyListCCliAdapter;
+import com.example.applicatione_commerce.Service.MyListPCliAdapter;
+import com.example.applicatione_commerce.Service.MyListProduit;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
+import java.net.MalformedURLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class CommandeClientActivity extends Activity {
     private ListView listView;
@@ -24,21 +38,65 @@ public class CommandeClientActivity extends Activity {
     private Button btn_connexion;
     private ImageButton btn_commande;
     private ArrayList<String> commandes = new ArrayList<>();
+    final ArrayList<MyListProduit> arrayList = new ArrayList<MyListProduit>();
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.commande_client);
-        initActivity();
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+        getData();
 
+    }
+
+    private void getData() {
+        db.collection("COMMANDES")
+                .get()
+                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                    @Override
+                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                        listView = (ListView)findViewById(R.id.listView);
+                        if (queryDocumentSnapshots.isEmpty()) {
+                            Log.d(TAG, "onSuccess: LIST EMPTY");
+                        } else {
+                            List<Commandes> commercant = queryDocumentSnapshots.toObjects(Commercant.class);
+                            ArrayList<Commercant> listcommercnt = new ArrayList<>();
+                            listcommercnt.addAll(commercant);
+                            for(Commercant c: listcommercnt) {
+                                if (c.getPRODUITS() != null) {
+                                    listProduit = c.getPRODUITS();
+                                    Log.d("liste", String.valueOf(listProduit));
+                                    listProduit.forEach(documentReference -> {
+                                        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                                            @Override
+                                            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                                                Produit produit = (documentSnapshot.toObject(Produit.class));
+                                                try {
+                                                    arrayList.add(new MyListProduit(produit.getUrlPicture(), produit.getNOM(), produit.getPRIX(), c.getNOM()));
+                                                } catch (MalformedURLException e) {
+                                                    e.printStackTrace();
+                                                }
+                                                initActivity();
+                                            }
+                                        });
+                                    });
+                                }
+                            }
+                        }
+                        produitAdapter = new MyListPCliAdapter(ConnexClientActivity.this, arrayList);
+                        listView.setAdapter(produitAdapter);
+                    }
+
+                });
     }
 
     private void initActivity(){
         intent = getIntent();
         bundle = intent.getExtras();
 
-        listView = (ListView)findViewById(R.id.listView);
-        initListView();
     }
 
     private void setBtn() {
@@ -63,6 +121,8 @@ public class CommandeClientActivity extends Activity {
         MyListCCliAdapter cCliAdapter = new MyListCCliAdapter(this, arrayList);
         listView.setAdapter(cCliAdapter);
     }
+
+
 
     public void home(View view) {
         Intent intenthome = new Intent(this, ConnexClientActivity.class);

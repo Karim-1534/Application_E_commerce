@@ -36,8 +36,6 @@ public class MyListCommercantAdapter extends ArrayAdapter<MyListCommercant> {
         TextView commercant = currentItemView.findViewById(R.id.nom_commer_);
         commercant.setText(currentNumberPosition.getCommercant());
 
-        TextView categorie = currentItemView.findViewById(R.id.cat_gorie);
-        categorie.setText(currentNumberPosition.getCategorie());
 
         return currentItemView;
     }

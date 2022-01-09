@@ -1,49 +1,79 @@
 package com.example.applicatione_commerce;
 
+import static android.content.ContentValues.TAG;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.StrictMode;
+import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.applicatione_commerce.Model.Rayon;
+import com.example.applicatione_commerce.Model.Utilisateurs.Commercant;
 import com.example.applicatione_commerce.Service.CustomDialogClass;
 import com.example.applicatione_commerce.Service.MyListCommercant;
 import com.example.applicatione_commerce.Service.MyListCommercantAdapter;
+import com.example.applicatione_commerce.Service.MyListProduit;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
+import java.net.MalformedURLException;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class ConnexGestActivity extends Activity {
     private ListView listView;
+    final ArrayList<MyListCommercant> arrayList = new ArrayList<MyListCommercant>();
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    List<DocumentReference> listservice = new ArrayList<>();
+    private MyListCommercantAdapter commercantAdapter;
+
     String commerce[]
             = {"Commerçant 1","Commerçant 2","Commerçant 3","Commerçant 4"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acceuilgestionnaire);
-        initActivity();
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+        getData();
 
     }
 
-    private void initActivity(){
+    private void getData() {
+        db.collection("COMMERCANT")
+                .get()
+                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                    @Override
+                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                        listView = (ListView) findViewById(R.id.listView);
+                        if (queryDocumentSnapshots.isEmpty()) {
+                        } else {
+                            List<Commercant> commercant = queryDocumentSnapshots.toObjects(Commercant.class);
+                            ArrayList<Commercant> listcommercnt = new ArrayList<>();
+                            listcommercnt.addAll(commercant);
+                            for (Commercant c : listcommercnt) {
+                                arrayList.add(new MyListCommercant(c.getNOM(), ""));
+                            }
+                        }
 
-        listView = (ListView)findViewById(R.id.listView);
-        initListView();
+                        commercantAdapter = new MyListCommercantAdapter(ConnexGestActivity.this, arrayList);
+                        listView.setAdapter(commercantAdapter);
+
+                    }
+
+                });
     }
 
-    private void initListView() {
-        final ArrayList<MyListCommercant> arrayList = new ArrayList<MyListCommercant>();
-        arrayList.add(new MyListCommercant("Apple","Multimedia,Informatique"));
-        arrayList.add(new MyListCommercant("Carrefour","Alimentaire"));
-        arrayList.add(new MyListCommercant("Boulanger","Multimedia,Electromenager"));
-        arrayList.add(new MyListCommercant("Zara","Mode"));
-
-        MyListCommercantAdapter commercantAdapter = new MyListCommercantAdapter(this, arrayList);
-        listView.setAdapter(commercantAdapter);
-    }
 
 
     public void ajout(View v){
