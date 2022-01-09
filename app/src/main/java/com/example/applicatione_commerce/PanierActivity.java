@@ -13,19 +13,21 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.NumberPicker;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.example.applicatione_commerce.Model.Commandes.Commande;
+import com.example.applicatione_commerce.Model.Commandes.CommandesClient;
 import com.example.applicatione_commerce.Model.Panier;
 import com.example.applicatione_commerce.Model.Produit;
 import com.example.applicatione_commerce.Model.Utilisateurs.Commercant;
-import com.example.applicatione_commerce.Service.MyListPCliAdapter;
 import com.example.applicatione_commerce.Service.MyListProduit;
 import com.example.applicatione_commerce.Service.MyListPanierAdapter;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.Timestamp;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -51,6 +53,7 @@ public class PanierActivity extends Activity {
     private ArrayList<String> produits ;
     private Button btn_valider;
     final ArrayList<MyListProduit> arrayList = new ArrayList<MyListProduit>();
+    List<DocumentReference> prod = new ArrayList<>();
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
 
@@ -92,6 +95,7 @@ public class PanierActivity extends Activity {
                         .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                             @Override
                             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                                //DocumentReference referencesPanier =
                                 if (queryDocumentSnapshots.isEmpty()) {
                                     Log.d(TAG, "onSuccess: LIST EMPTY");
                                 } else {
@@ -111,12 +115,67 @@ public class PanierActivity extends Activity {
                                                 }
                                             }
                                         });
-
                                     }
                                     panier.setPRODUITS(produitpanier);
                                     db.collection("PANIER").add(panier).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+
                                         @Override
                                         public void onSuccess(DocumentReference documentReference) {
+                                            documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                                                @Override
+                                                public void onSuccess(DocumentSnapshot documentSnapshot) {
+                                                    db.collection("COMMERCANT").get()
+                                                            .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                                                                @Override
+                                                                public void onSuccess(QuerySnapshot querySnapshot) {
+                                                                    List<DocumentReference> refProduit =  documentSnapshot.toObject(Panier.class).getPRODUITS();
+                                                                    List<DocumentReference> refCommers = new ArrayList<>();
+                                                                    DocumentReference refComm = null;
+                                                                    for(DocumentSnapshot q : querySnapshot){
+                                                                            refComm = q.getReference();
+                                                                            refCommers.add(refComm);
+                                                                            Commercant comme = q.toObject(Commercant.class);
+
+                                                                        DocumentReference finalRefComm = refComm;
+                                                                        refProduit.forEach(documentReference1 -> {
+                                                                                 refCommers.forEach(documentReference2 -> {
+                                                                                  documentReference2.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                                                                                         @Override
+                                                                                         public void onSuccess(DocumentSnapshot documentSnapshot) {
+                                                                                             Commercant c = documentSnapshot.toObject(Commercant.class);
+                                                                                            // Log.d("La réf du produit du c", "" + c.getPRODUITS());
+                                                                                             List<DocumentReference> rp = new ArrayList<>();
+                                                                                             if(c.getPRODUITS() != null){
+                                                                                                 c.getPRODUITS().forEach(documentReference3 -> {
+                                                                                                     Log.d("prod panier ",""+ documentReference1);
+                                                                                                     Log.d("prod commerc ",""+ documentReference3);
+                                                                                                     if(documentReference1 == documentReference3){
+                                                                                                         prod.add(documentReference1);
+
+                                                                                                         Log.d("La réf du prodiut 1", "" + prod);
+                                                                                                     }
+                                                                                                 });
+                                                                                             }
+                                                                                         }
+                                                                                     });
+
+                                                                                     Log.d("La réf du produit du panier", "" + documentReference1);
+
+                                                                                 });
+
+                                                                                // addCommandeToFirestore(prod, q.getReference(), q.getReference(), date, "");
+                                                                               //  Log.d("La réf du prodiut 2", "" + prod);
+                                                                             });
+
+                                                                    }
+
+                                                                   // Log.d("La réf du commerçant ", "" + refComm);
+                                                                }
+
+                                                            });
+                                                }
+                                            });
+
                                             String str = getResources().getString(R.string.valid_panier);
                                             Intent intent = new Intent(PanierActivity.this, Confirm.class);
                                             Bundle bundle = new Bundle();
@@ -124,22 +183,38 @@ public class PanierActivity extends Activity {
                                             intent.putExtras(bundle);
                                             startActivity(intent);
                                         }
+
+
                                     }).addOnFailureListener(new OnFailureListener() {
                                         @Override
                                         public void onFailure(@NonNull Exception e) {
-                                            // this method is called when the data addition process is failed.
-                                            // displaying a toast message when data addition is failed.
                                             Toast.makeText(PanierActivity.this, "Echec commande \n" + e, Toast.LENGTH_SHORT).show();
                                         }
                                     });
                                 }
                             }
-
                         });
-
             }
         });
     }
+
+    public void addCommandeToFirestore(List<DocumentReference> PRODUITS, DocumentReference CLIENT, DocumentReference COMMERCANT, Timestamp DATE, String STATUT){
+
+        CollectionReference dbTest = db.collection("COMMANDES");
+        Commande commande = new Commande(PRODUITS, CLIENT, COMMERCANT, DATE, STATUT);
+        dbTest.add(commande).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+            @Override
+            public void onSuccess(DocumentReference documentReference) {
+                Toast.makeText(PanierActivity.this, "La commande a bien été ajouté", Toast.LENGTH_SHORT).show();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(PanierActivity.this, "Fail to add course \n" + e, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 
     private void setBtn() {
         if(bundle.getString("type").equals("connecté")){

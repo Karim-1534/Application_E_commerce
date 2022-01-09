@@ -2,54 +2,25 @@ package com.example.applicatione_commerce.Model.Commandes;
 
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.ServerTimestamp;
+
+import java.util.List;
 
 public class CommandesClient {
-    DocumentReference PANIER;
-    DocumentReference CLIENT;
-    Timestamp DATE;
-    String STATUT;
+    DocumentReference commandesClients;
 
-    public CommandesClient() {
+
+    public CommandesClient(List<DocumentReference> PRODUITS, DocumentReference CLIENT, DocumentReference COMMERCANT, Timestamp DATE, String STATUT) {
     }
 
-    public CommandesClient(DocumentReference panier, DocumentReference CLIENT, Timestamp DATE, String STATUT) {
-        this.PANIER = panier;
-        this.CLIENT = CLIENT;
-        this.DATE = DATE;
-        this.STATUT = STATUT;
+    public CommandesClient(DocumentReference commandesClients) {
+        this.commandesClients = commandesClients;
     }
 
-    public DocumentReference getPANIER() {
-        return PANIER;
+    public DocumentReference getCommandesClients() {
+        return commandesClients;
     }
 
-    public void setPANIER(DocumentReference PANIER) {
-        this.PANIER = PANIER;
-    }
-
-    @ServerTimestamp
-    public Timestamp getDATE() {
-        return DATE;
-    }
-
-    public void setDATE(Timestamp DATE) {
-        this.DATE = DATE;
-    }
-
-    public String getSTATUT() {
-        return STATUT;
-    }
-
-    public void setSTATUT(String STATUT) {
-        this.STATUT = STATUT;
-    }
-
-    public DocumentReference getCLIENT() {
-        return CLIENT;
-    }
-
-    public void setCLIENT(DocumentReference CLIENT) {
-        this.CLIENT = CLIENT;
+    public void setCommandesClients(DocumentReference commandesClients) {
+        this.commandesClients = commandesClients;
     }
 }
