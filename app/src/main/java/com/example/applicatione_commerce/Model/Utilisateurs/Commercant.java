@@ -9,19 +9,37 @@ public class Commercant {
     String MOTDEPASSE;
     String NOM;
     String NUMSIRET;
+    List<DocumentReference> SERVICES;
     List<DocumentReference> PRODUITS;
+
+
 
     public Commercant() {
     }
 
-    public Commercant(String EMAIL, String MOTDEPASSE, String NOM, String NUMSIRET, List<DocumentReference> PRODUITS) {
-        this.EMAIL = EMAIL;
-        this.MOTDEPASSE = MOTDEPASSE;
+
+    public Commercant(String NOM, String NUMSIRET, List<DocumentReference> PRODUITS) {
         this.NOM = NOM;
         this.NUMSIRET = NUMSIRET;
         this.PRODUITS = PRODUITS;
     }
 
+    public Commercant(String EMAIL, String MOTDEPASSE, String NOM, String NUMSIRET, List<DocumentReference> SERVICES) {
+        this.EMAIL = EMAIL;
+        this.MOTDEPASSE = MOTDEPASSE;
+        this.NOM = NOM;
+        this.NUMSIRET = NUMSIRET;
+        this.SERVICES = SERVICES;
+
+    }
+
+    public List<DocumentReference> getSERVICES() {
+        return SERVICES;
+    }
+
+    public void setSERVICES(List<DocumentReference> SERVICES) {
+        this.SERVICES = SERVICES;
+    }
     public String getNUMSIRET() {
         return NUMSIRET;
     }
