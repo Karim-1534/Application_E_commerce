@@ -145,31 +145,30 @@ public class PanierActivity extends Activity {
                                                                                              Commercant c = documentSnapshot.toObject(Commercant.class);
                                                                                             // Log.d("La réf du produit du c", "" + c.getPRODUITS());
                                                                                              List<DocumentReference> rp = new ArrayList<>();
-                                                                                             if(c.getPRODUITS() != null){
-                                                                                                 c.getPRODUITS().forEach(documentReference3 -> {
-                                                                                                     Log.d("prod panier ",""+ documentReference1);
-                                                                                                     Log.d("prod commerc ",""+ documentReference3);
-                                                                                                     if(documentReference1 == documentReference3){
-                                                                                                         prod.add(documentReference1);
 
-                                                                                                         Log.d("La réf du prodiut 1", "" + prod);
+                                                                                                     if(c.getPRODUITS()!=null){
+                                                                                                         if(c.getPRODUITS().contains(documentReference1)){
+                                                                                                             if(!prod.contains(documentReference1)) {
+                                                                                                                 prod.add(documentReference1);
+                                                                                                                 //DocumentReference refc = c;
+                                                                                                                 Log.d("Réf commer",""+ documentSnapshot.getReference());
+                                                                                                                 DocumentReference rc = documentSnapshot.getReference();
+                                                                                                                 Log.d("La réf du prodiut 1", "" + prod);
+                                                                                                                    addCommandeToFirestore(prod, rc, rc, Timestamp.now(), "");
+                                                                                                             }
+                                                                                                         }
                                                                                                      }
-                                                                                                 });
-                                                                                             }
+
+
+
                                                                                          }
                                                                                      });
 
-                                                                                     Log.d("La réf du produit du panier", "" + documentReference1);
-
                                                                                  });
-
-                                                                                // addCommandeToFirestore(prod, q.getReference(), q.getReference(), date, "");
-                                                                               //  Log.d("La réf du prodiut 2", "" + prod);
                                                                              });
 
                                                                     }
 
-                                                                   // Log.d("La réf du commerçant ", "" + refComm);
                                                                 }
 
                                                             });
