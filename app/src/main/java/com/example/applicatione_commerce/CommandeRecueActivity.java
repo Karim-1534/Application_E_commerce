@@ -65,7 +65,7 @@ public class CommandeRecueActivity extends Activity {
                             List<Commande> commandes = queryDocumentSnapshots.toObjects(Commande.class);
 
                             for(Commande c: commandes) {
-                                    arrayList.add(new MyListCCom( String.valueOf(c.hashCode()),c.getCLIENT().getPath(), c.getDATE()));
+                                    arrayList.add(new MyListCCom( String.valueOf(c.hashCode()),c.getCLIENT().getId(), c.getDATE()));
                                 initActivity();
                             }
                         }

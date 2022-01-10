@@ -4,6 +4,7 @@ import static android.content.ContentValues.TAG;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Shader;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -155,7 +156,7 @@ public class PanierActivity extends Activity {
                                                                                                                  Log.d("Réf commer",""+ documentSnapshot.getReference());
                                                                                                                  DocumentReference rc = documentSnapshot.getReference();
                                                                                                                  Log.d("La réf du prodiut 1", "" + prod);
-                                                                                                                    addCommandeToFirestore(prod, rc, rc, ""+Timestamp.now().toString(), "");
+                                                                                                                    addCommandeToFirestore(prod, rc, rc, ""+ Timestamp.now().toDate().toString(), "");
                                                                                                              }
                                                                                                          }
                                                                                                      }
