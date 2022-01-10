@@ -10,13 +10,13 @@ public class Commande {
     List<DocumentReference> PRODUITS;
     DocumentReference CLIENT;
     DocumentReference COMMERCANT;
-    Timestamp DATE;
+    String  DATE;
     String STATUT;
 
     public Commande() {
     }
 
-    public Commande(List<DocumentReference> PRODUITS, DocumentReference CLIENT, DocumentReference COMMERCANT, Timestamp DATE, String STATUT) {
+    public Commande(List<DocumentReference> PRODUITS, DocumentReference CLIENT, DocumentReference COMMERCANT, String DATE, String STATUT) {
         this.PRODUITS = PRODUITS;
         this.CLIENT = CLIENT;
         this.COMMERCANT = COMMERCANT;
@@ -48,11 +48,11 @@ public class Commande {
         this.COMMERCANT = COMMERCANT;
     }
 
-    public Timestamp getDATE() {
+    public String getDATE() {
         return DATE;
     }
 
-    public void setDATE(Timestamp DATE) {
+    public void setDATE(String DATE) {
         this.DATE = DATE;
     }
 

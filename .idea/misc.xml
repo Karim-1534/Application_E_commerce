@@ -30,7 +30,7 @@
         <entry key="app/src/main/res/layout/acceuilclient.xml" value="0.20031055900621117" />
         <entry key="app/src/main/res/layout/acceuilcommercant.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/acceuilconnexion.xml" value="0.35572916666666665" />
-        <entry key="app/src/main/res/layout/acceuilgestionnaire.xml" value="0.37678207739307534" />
+        <entry key="app/src/main/res/layout/acceuilgestionnaire.xml" value="0.55" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/ajout_commercant.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/ajouter_annonce.xml" value="0.15454545454545454" />
@@ -47,7 +47,7 @@
         <entry key="app/src/main/res/layout/list_annonce.xml" value="0.33" />
         <entry key="app/src/main/res/layout/list_commande_client.xml" value="0.67" />
         <entry key="app/src/main/res/layout/list_commande_commercant.xml" value="0.6588380716934487" />
-        <entry key="app/src/main/res/layout/list_commercant.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/list_commercant.xml" value="0.1" />
         <entry key="app/src/main/res/layout/list_item.xml" value="0.33" />
         <entry key="app/src/main/res/layout/list_panier.xml" value="0.5" />
         <entry key="app/src/main/res/layout/list_produit.xml" value="0.19791666666666666" />

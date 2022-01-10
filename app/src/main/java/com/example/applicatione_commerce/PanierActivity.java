@@ -154,13 +154,10 @@ public class PanierActivity extends Activity {
                                                                                                                  Log.d("Réf commer",""+ documentSnapshot.getReference());
                                                                                                                  DocumentReference rc = documentSnapshot.getReference();
                                                                                                                  Log.d("La réf du prodiut 1", "" + prod);
-                                                                                                                    addCommandeToFirestore(prod, rc, rc, Timestamp.now(), "");
+                                                                                                                    addCommandeToFirestore(prod, rc, rc, Timestamp.now().toString(), "");
                                                                                                              }
                                                                                                          }
                                                                                                      }
-
-
-
                                                                                          }
                                                                                      });
 
@@ -170,10 +167,10 @@ public class PanierActivity extends Activity {
                                                                     }
 
                                                                 }
-
                                                             });
                                                 }
                                             });
+                                            //db.collection("PANIER").getFirestore().clearPersistence();
 
                                             String str = getResources().getString(R.string.valid_panier);
                                             Intent intent = new Intent(PanierActivity.this, Confirm.class);
@@ -197,7 +194,7 @@ public class PanierActivity extends Activity {
         });
     }
 
-    public void addCommandeToFirestore(List<DocumentReference> PRODUITS, DocumentReference CLIENT, DocumentReference COMMERCANT, Timestamp DATE, String STATUT){
+    public void addCommandeToFirestore(List<DocumentReference> PRODUITS, DocumentReference CLIENT, DocumentReference COMMERCANT, String DATE, String STATUT){
 
         CollectionReference dbTest = db.collection("COMMANDES");
         Commande commande = new Commande(PRODUITS, CLIENT, COMMERCANT, DATE, STATUT);
@@ -274,6 +271,22 @@ public class PanierActivity extends Activity {
     }
 
     public void vider(View view) {
+
+        db.collection("COMMANDES").document()
+                .delete()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, "DocumentSnapshot successfully deleted!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w(TAG, "Error deleting document", e);
+                    }
+                });
+
         produits.clear();
         ArrayAdapter<String> arr;
         arr = new ArrayAdapter<String>(
