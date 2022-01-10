@@ -202,6 +202,7 @@ public class PanierActivity extends Activity {
             @Override
             public void onSuccess(DocumentReference documentReference) {
                 Toast.makeText(PanierActivity.this, "La commande a bien été ajouté", Toast.LENGTH_SHORT).show();
+
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
