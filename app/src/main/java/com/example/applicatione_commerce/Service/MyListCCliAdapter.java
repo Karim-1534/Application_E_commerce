@@ -32,9 +32,6 @@ public class MyListCCliAdapter extends ArrayAdapter<MyListCCli>{
 
         MyListCCli currentNumberPosition = getItem(position);
 
-        ImageView produitImage = currentItemView.findViewById(R.id.img_produit);
-        assert currentNumberPosition != null;
-        produitImage.setImageResource(currentNumberPosition.getImg_produit());
 
         TextView commande = currentItemView.findViewById(R.id.commande);
         commande.setText(currentNumberPosition.getCommande());

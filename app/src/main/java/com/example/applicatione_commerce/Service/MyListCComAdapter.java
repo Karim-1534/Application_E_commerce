@@ -32,10 +32,6 @@ public class MyListCComAdapter extends ArrayAdapter<MyListCCom>{
 
         MyListCCom currentNumberPosition = getItem(position);
 
-        ImageView produitImage = currentItemView.findViewById(R.id.img_produit);
-        assert currentNumberPosition != null;
-        produitImage.setImageResource(currentNumberPosition.getImg_produit());
-
         TextView produit = currentItemView.findViewById(R.id.produit);
         produit.setText(currentNumberPosition.getProduit());
 
@@ -43,7 +39,7 @@ public class MyListCComAdapter extends ArrayAdapter<MyListCCom>{
         client.setText(currentNumberPosition.getClient());
 
         TextView date = currentItemView.findViewById(R.id.date);
-        date.setText(currentNumberPosition.getDate());
+        date.setText(currentNumberPosition.getDate().toString());
 
         return currentItemView;
     }

@@ -16,6 +16,7 @@ import android.widget.ListView;
 import android.widget.NumberPicker;
 import android.widget.Spinner;
 
+import com.example.applicatione_commerce.Model.Commandes.Commande;
 import com.example.applicatione_commerce.Model.Produit;
 import com.example.applicatione_commerce.Model.Utilisateurs.Commercant;
 import com.example.applicatione_commerce.Service.MyListCCli;
@@ -38,16 +39,15 @@ public class CommandeClientActivity extends Activity {
     private Button btn_connexion;
     private ImageButton btn_commande;
     private ArrayList<String> commandes = new ArrayList<>();
-    final ArrayList<MyListProduit> arrayList = new ArrayList<MyListProduit>();
+    final ArrayList<MyListCCli> arrayList = new ArrayList<MyListCCli>();
     FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private MyListCCliAdapter cCliAdapter;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.commande_client);
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
         getData();
 
     }
@@ -62,32 +62,17 @@ public class CommandeClientActivity extends Activity {
                         if (queryDocumentSnapshots.isEmpty()) {
                             Log.d(TAG, "onSuccess: LIST EMPTY");
                         } else {
-                            List<Commandes> commercant = queryDocumentSnapshots.toObjects(Commercant.class);
-                            ArrayList<Commercant> listcommercnt = new ArrayList<>();
-                            listcommercnt.addAll(commercant);
-                            for(Commercant c: listcommercnt) {
-                                if (c.getPRODUITS() != null) {
-                                    listProduit = c.getPRODUITS();
-                                    Log.d("liste", String.valueOf(listProduit));
-                                    listProduit.forEach(documentReference -> {
-                                        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                                            @Override
-                                            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                                                Produit produit = (documentSnapshot.toObject(Produit.class));
-                                                try {
-                                                    arrayList.add(new MyListProduit(produit.getUrlPicture(), produit.getNOM(), produit.getPRIX(), c.getNOM()));
-                                                } catch (MalformedURLException e) {
-                                                    e.printStackTrace();
-                                                }
-                                                initActivity();
-                                            }
-                                        });
-                                    });
+                            List<Commande> commandes = queryDocumentSnapshots.toObjects(Commande.class);
+
+                            for(Commande c: commandes) {
+                                if(c.getCOMMERCANT()!=null && c.getSTATUT()!=null) {
+                                    arrayList.add(new MyListCCli(String.valueOf(c.hashCode()), c.getSTATUT()));
                                 }
+                                initActivity();
                             }
                         }
-                        produitAdapter = new MyListPCliAdapter(ConnexClientActivity.this, arrayList);
-                        listView.setAdapter(produitAdapter);
+                        cCliAdapter = new MyListCCliAdapter(CommandeClientActivity.this, arrayList);
+                        listView.setAdapter(cCliAdapter);
                     }
 
                 });
@@ -111,18 +96,6 @@ public class CommandeClientActivity extends Activity {
         }
 
     }
-
-    private void initListView() {
-        final ArrayList<MyListCCli> arrayList = new ArrayList<MyListCCli>();
-        arrayList.add(new MyListCCli(R.drawable.fui_idp_button_background_apple, "654fdgfs","En livraison"));
-        arrayList.add(new MyListCCli(R.drawable.googleg_standard_color_18, "g876r7g6","En préparation"));
-        arrayList.add(new MyListCCli(R.drawable.rectangle_6, "sf86sf684s","Livré"));
-
-        MyListCCliAdapter cCliAdapter = new MyListCCliAdapter(this, arrayList);
-        listView.setAdapter(cCliAdapter);
-    }
-
-
 
     public void home(View view) {
         Intent intenthome = new Intent(this, ConnexClientActivity.class);

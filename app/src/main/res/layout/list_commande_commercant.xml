@@ -12,7 +12,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:layout_toEndOf="@+id/img_produit"
         android:gravity="center_vertical"
         android:lineSpacingExtra="6sp"
         android:text="@string/nom_produit"
@@ -22,12 +21,11 @@
     <!-- Nom du client -->
     <TextView
         android:id="@+id/nom_client"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/produit"
         android:layout_marginStart="10dp"
         android:layout_marginTop="5dp"
-        android:layout_toEndOf="@+id/img_produit"
         android:gravity="center_vertical"
         android:lineSpacingExtra="6sp"
         android:text="@string/nom_client"
@@ -41,22 +39,10 @@
         android:layout_below="@+id/nom_client"
         android:layout_marginStart="10dp"
         android:layout_marginTop="5dp"
-        android:layout_toEndOf="@+id/img_produit"
         android:gravity="center_vertical"
         android:lineSpacingExtra="6sp"
         android:text="@string/date"
         android:textAppearance="@style/soustitre_item" />
-
-    <ImageView
-        android:id="@+id/img_produit"
-        android:layout_width="87dp"
-        android:layout_height="77dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="25dp"
-        android:background="@drawable/rectangle_3"
-        android:contentDescription="@string/image" />
 
     <Button
         android:id="@+id/confirmer"
@@ -64,7 +50,7 @@
         android:layout_height="25.41dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="25dp"
-        android:layout_toEndOf="@+id/date"
+        android:layout_toEndOf="@+id/nom_client"
         android:background="#81AA66"
         android:gravity="center"
         android:lineSpacingExtra="5sp"
@@ -79,7 +65,7 @@
         android:layout_below="@+id/confirmer"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
-        android:layout_toEndOf="@+id/date"
+        android:layout_toEndOf="@+id/nom_client"
         android:background="#999999"
         android:gravity="center"
         android:lineSpacingExtra="5sp"

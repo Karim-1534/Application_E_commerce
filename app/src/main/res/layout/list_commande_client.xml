@@ -6,43 +6,30 @@
     >
 
     <!-- commande -->
+
+    <!-- statut -->
     <TextView
         android:id="@+id/commande"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
-        android:layout_toEndOf="@+id/img_produit"
         android:gravity="center_vertical"
         android:lineSpacingExtra="6sp"
         android:text="@string/commande_client"
         android:textAppearance="@style/item" />
 
-    <!-- statut -->
     <TextView
         android:id="@+id/statut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/commande"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
-        android:layout_toEndOf="@+id/commande"
+        android:layout_marginTop="10dp"
         android:alpha="0.5"
         android:gravity="center_vertical"
         android:lineSpacingExtra="6sp"
         android:text="@string/statut"
         android:textAppearance="@style/item" />
-
-
-    <ImageView
-        android:id="@+id/img_produit"
-        android:layout_width="87dp"
-        android:layout_height="77dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/rectangle_3"
-        android:contentDescription="@string/image" />
-
 </RelativeLayout>
 

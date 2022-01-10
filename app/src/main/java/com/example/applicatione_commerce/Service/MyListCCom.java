@@ -1,22 +1,19 @@
 package com.example.applicatione_commerce.Service;
 
+import com.google.firebase.Timestamp;
+
 public class MyListCCom {
 
     private String produit;
     private String client;
-    private String date;
-    private int img_produit;
+    private Timestamp date;
 
-    public MyListCCom(int URLimg, String nomProduit , String nomClient, String dateCommande){
+    public MyListCCom(String nomProduit , String nomClient, Timestamp dateCommande){
         produit = nomProduit;
         client = nomClient;
         date = dateCommande;
-        img_produit = URLimg;
     }
 
-    public int getImg_produit(){
-        return img_produit;
-    }
 
     public String getProduit(){
         return produit;
@@ -26,7 +23,7 @@ public class MyListCCom {
         return client;
     }
 
-    public String getDate(){
+    public Timestamp getDate(){
         return date;
     }
 
