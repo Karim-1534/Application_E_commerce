@@ -32,6 +32,7 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.protobuf.StringValue;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -154,7 +155,7 @@ public class PanierActivity extends Activity {
                                                                                                                  Log.d("Réf commer",""+ documentSnapshot.getReference());
                                                                                                                  DocumentReference rc = documentSnapshot.getReference();
                                                                                                                  Log.d("La réf du prodiut 1", "" + prod);
-                                                                                                                    addCommandeToFirestore(prod, rc, rc, Timestamp.now().toString(), "");
+                                                                                                                    addCommandeToFirestore(prod, rc, rc, ""+Timestamp.now().toString(), "");
                                                                                                              }
                                                                                                          }
                                                                                                      }

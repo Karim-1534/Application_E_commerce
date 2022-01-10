@@ -6,9 +6,9 @@ public class MyListCCom {
 
     private String produit;
     private String client;
-    private Timestamp date;
+    private String date;
 
-    public MyListCCom(String nomProduit , String nomClient, Timestamp dateCommande){
+    public MyListCCom(String nomProduit , String nomClient, String dateCommande){
         produit = nomProduit;
         client = nomClient;
         date = dateCommande;
@@ -23,7 +23,7 @@ public class MyListCCom {
         return client;
     }
 
-    public Timestamp getDate(){
+    public String getDate(){
         return date;
     }
 
