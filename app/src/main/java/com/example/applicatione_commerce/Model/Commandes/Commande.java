@@ -1,9 +1,6 @@
 package com.example.applicatione_commerce.Model.Commandes;
 
-import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.ServerTimestamp;
-
 import java.util.List;
 
 public class Commande {
